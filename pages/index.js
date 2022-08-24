@@ -27,12 +27,22 @@ const FontWeight = keyframes`
   }
 `;
 
+const FadeIn = keyframes`
+	from {
+		opacity: 0;
+		} to {
+			opacity: 1;
+		}
+`;
+
 export const Main = styled.main`
 	position: relative;
+	opacity: 0;
 	width: 100%;
 	height: 100vh;
 	background: #063525;
 	overflow: hidden;
+	animation: ${FadeIn} 2s linear forwards;
 `;
 
 export const Blobs = styled.div`
