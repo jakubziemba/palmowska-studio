@@ -29,11 +29,11 @@ export const Main = styled.main`
 
 export const Blobs = styled.div`
 	position: absolute;
-	top: -10%;
-	left: -80%;
+	top: 0;
+	left: 0;
 	transform: translate(-50%, -50%);
-	width: 300vw;
-	height: 100vw;
+	width: 500vw;
+	height: 100vh;
 	background-color: #e0a458;
 	filter: blur(86px);
 	animation: ${BlurInOut} 5s alternate infinite;
@@ -61,7 +61,7 @@ export const Heading = styled.h1`
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 10;
-	font-variation-settings: 'wght' 600;
+	font-variation-settings: 'wght' 420;
 	color: #dab1cf;
 	margin: 0;
 	white-space: nowrap;
