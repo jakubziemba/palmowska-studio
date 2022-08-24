@@ -2,13 +2,11 @@ import styled, { keyframes } from 'styled-components';
 
 export default function Home() {
 	return (
-		<>
-			<Main>
-				<Loader />
-				<Blobs></Blobs>
-				<Heading>coming soon</Heading>
-			</Main>
-		</>
+		<Main>
+			<Loader />
+			<Blobs></Blobs>
+			<Heading>coming soon</Heading>
+		</Main>
 	);
 }
 
