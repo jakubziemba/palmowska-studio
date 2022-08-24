@@ -19,6 +19,14 @@ const BlurInOut = keyframes`
   }
 `;
 
+const FontWeight = keyframes`
+  from {
+    font-variation-settings: 'wght' 420;
+  } to {
+    font-variation-settings: 'wght' 650;
+  }
+`;
+
 export const Main = styled.main`
 	position: relative;
 	width: 100%;
@@ -61,9 +69,11 @@ export const Heading = styled.h1`
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 10;
-	font-variation-settings: 'wght' 420;
+	/* font-variation-settings: 'wght' 420; */
 	color: #dab1cf;
 	margin: 0;
 	white-space: nowrap;
 	font-size: 10vw;
+	animation: ${FontWeight} 5s ease-in-out alternate infinite;
+	letter-spacing: 0.01em;
 `;
