@@ -47,7 +47,7 @@ export const Main = styled.main`
 
 export const Blobs = styled.div`
 	position: absolute;
-	top: 0;
+	top: -2%;
 	left: 0;
 	transform: translate(-50%, -50%);
 	width: 500vw;
@@ -58,7 +58,6 @@ export const Blobs = styled.div`
 	z-index: 0;
 	border-radius: 50%;
 	opacity: 70%;
-	animation: ${FadeIn} 2s linear forwards;
 `;
 
 export const Blob = styled.div`
@@ -72,7 +71,6 @@ export const Blob = styled.div`
 	top: ${props => props.top};
 	left: ${props => props.left};
 	/* transform: translate(-50%, -50%); */
-	animation: ${FadeIn} 2s linear forwards;
 `;
 
 export const Heading = styled.h1`
@@ -86,8 +84,7 @@ export const Heading = styled.h1`
 	margin: 0;
 	white-space: nowrap;
 	font-size: 10vw;
-	animation: ${FontWeight} 5s ease-in-out alternate infinite;
+	animation: ${FontWeight} 5s ease-in-out alternate infinite, ${FadeIn} 2s linear forwards;
 	letter-spacing: 0.01em;
 	opacity: 0;
-	animation: ${FadeIn} 2s linear forwards;
 `;
