@@ -2,12 +2,13 @@ import styled, { keyframes } from 'styled-components';
 
 export default function Home() {
 	return (
-		<Main>
-			<Blobs></Blobs>
-			{/* <Blob color='#419D78' top='31%' left='58%'></Blob> */}
-			{/* <Blob color='#C2E812' top='68%' left='38%'></Blob> */}
-			<Heading>coming soon</Heading>
-		</Main>
+		<>
+			<Main>
+				<Loader />
+				<Blobs></Blobs>
+				<Heading>coming soon</Heading>
+			</Main>
+		</>
 	);
 }
 
@@ -19,30 +20,20 @@ const BlurInOut = keyframes`
   }
 `;
 
-const FontWeight = keyframes`
-  from {
-    font-variation-settings: 'wght' 420;
-  } to {
-    font-variation-settings: 'wght' 650;
-  }
-`;
-
-const FadeIn = keyframes`
+const FadeOut = keyframes`
 	from {
-		opacity: 0;
+		opacity: 1;
 		} to {
-			opacity: 1;
+			opacity: 0;
 		}
 `;
 
 export const Main = styled.main`
 	position: relative;
-	opacity: 0;
 	width: 100%;
 	height: 100vh;
 	background: #063525;
 	overflow: hidden;
-	animation: ${FadeIn} 2s linear forwards;
 `;
 
 export const Blobs = styled.div`
@@ -79,12 +70,22 @@ export const Heading = styled.h1`
 	left: 50%;
 	transform: translate(-50%, -50%);
 	z-index: 10;
-	/* font-variation-settings: 'wght' 420; */
+	font-variation-settings: 'wght' 420;
 	color: #dab1cf;
 	margin: 0;
 	white-space: nowrap;
 	font-size: 10vw;
-	animation: ${FontWeight} 5s ease-in-out alternate infinite, ${FadeIn} 2s linear forwards;
 	letter-spacing: 0.01em;
-	opacity: 0;
+`;
+
+export const Loader = styled.div`
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: black;
+	opacity: 1;
+	z-index: 10000;
+	animation: ${FadeOut} 2s ease-out forwards;
 `;
