@@ -7,11 +7,12 @@ export default function Home() {
 			<TextContainer>
 				<Heading>Kamila Palmowska</Heading>
 				<Subheading>interior design studio</Subheading>
+				<Paragraph>website coming soon</Paragraph>
 			</TextContainer>
 			<Footer>
 				<Paragraph>contact:</Paragraph>
 				<Paragraph>
-					<a href='tel:+48600897921'>600 897 921</a>
+					<a href='tel:+48600897821'>600 897 821</a>
 				</Paragraph>
 				<Paragraph>
 					<a href='mailto:hello@kamilapalmowska.com'>hello@kamilapalmowska.com</a>
