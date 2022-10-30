@@ -1,0 +1,59 @@
+.container {
+	width: 100%;
+}
+
+.wrapper {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 2rem;
+	align-items: center;
+	padding: 4rem;
+}
+
+.title,
+.text {
+	margin: 0;
+}
+
+.title {
+	font-size: 5.6rem;
+	// font-size: 3rem;
+	font-weight: 600;
+	// font-style: italic;
+}
+
+.text {
+	font-size: 1.2rem;
+	margin-top: 0.5rem;
+	font-weight: 400;
+	text-align: justify;
+	line-height: 1.9;
+	align-self: end;
+}
+
+.featured {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	padding: 4rem;
+}
+
+.projects {
+	padding: 0 4rem;
+}
+
+.projectsImages {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 2rem;
+
+	// img {
+	// 	object-fit: contain;
+	// }
+}
+
+.imageWrapper {
+	img {
+		max-height: 700px;
+	}
+}

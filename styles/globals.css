@@ -1,8 +1,64 @@
+/**
+ * @license
+ *
+ * Font Family: Gambetta
+ * Designed by: Paul Troppmar
+ * URL: https://www.fontshare.com/fonts/gambetta
+ * © 2022 Indian Type Foundry
+ *
+ * Font Styles:
+ * Gambetta Regular
+ * Gambetta Semibold
+ * Gambetta Semibold Italic
+ *
+*/
+
 @font-face {
-	font-family: 'Krylon';
-	src: url('/Krylon-Regular.woff2') format('woff2'), url('/Krylon-Regular.woff') format('woff'),
-		url('/Krylon-Regular.ttf') format('truetype');
-	font-weight: 300;
+	font-family: 'Chillax';
+	src: url('../public/Chillax-Variable.woff2') format('woff2'),
+		url('../public/Chillax-Variable.woff') format('woff'),
+		url('../public/Chillax-Variable.ttf') format('truetype');
+	font-weight: 200 700;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gambetta';
+	src: url('../public/Gambetta-Regular.woff2') format('woff2'),
+		url('../public/Gambetta-Regular.woff') format('woff'),
+		url('../public/Gambetta-Regular.ttf') format('truetype');
+	font-weight: 400;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gambetta';
+	src: url('../public/Gambetta-Semibold.woff2') format('woff2'),
+		url('../public/Gambetta-Semibold.woff') format('woff'),
+		url('../public/Gambetta-Semibold.ttf') format('truetype');
+	font-weight: 600;
+	font-display: swap;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Gambetta';
+	src: url('../public/Gambetta-SemiboldItalic.woff2') format('woff2'),
+		url('../public/Gambetta-SemiboldItalic.woff') format('woff'),
+		url('../public/Gambetta-SemiboldItalic.ttf') format('truetype');
+	font-weight: 600;
+	font-display: swap;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('../public/Poppins-SemiBold.woff2') format('woff2'),
+		url('../public/Poppins-SemiBold.woff') format('woff'),
+		url('../public/Poppins-SemiBold.ttf') format('truetype');
+	font-weight: 600;
 	font-display: swap;
 	font-style: normal;
 }
@@ -11,8 +67,12 @@ html,
 body {
 	padding: 0;
 	margin: 0;
-	font-family: 'Krylon', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+	font-family: 'Gambetta', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
 		Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-weight: 400;
+	color: #333;
 }
 
 a {
@@ -24,7 +84,12 @@ a {
 	box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
+h1 {
+	font-family: 'Gambetta', sans-serif;
+	letter-spacing: -0.03em;
+}
+
+/* @media (prefers-color-scheme: dark) {
 	html {
 		color-scheme: dark;
 	}
@@ -32,4 +97,4 @@ a {
 		color: white;
 		background: black;
 	}
-}
+} */

@@ -1,0 +1,42 @@
+.container {
+	width: 100%;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2rem 4rem;
+	height: 3rem;
+	background-color: #fff;
+}
+
+.logo {
+	font-size: 1.5rem;
+	text-transform: uppercase;
+	color: #333;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+}
+
+.list {
+	display: flex;
+	align-items: center;
+	list-style: none;
+}
+
+.item {
+	margin: 0 0 0 2rem;
+	color: #333;
+}
+
+.link {
+	color: #333;
+	&:last-child {
+		border: 2px solid #333;
+		padding: 0.5rem 1rem;
+	}
+}

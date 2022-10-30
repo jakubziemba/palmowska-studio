@@ -1,111 +1,57 @@
-import styled, { keyframes } from 'styled-components';
+import Image from 'next/image';
+import fetchEntries from '../util/contentfulPosts';
+import styles from './page.module.scss';
 
-export default function Home() {
+export default function Home({ posts }) {
+	// console.log(posts);
+	const imageData = posts[1].images;
+	console.log(imageData);
+
 	return (
-		<Main>
-			<Loader />
-			<TextContainer>
-				<Heading>Kamila Palmowska</Heading>
-				<Subheading>interior design studio</Subheading>
-				<Paragraph>website coming soon</Paragraph>
-			</TextContainer>
-			<Footer>
-				<Paragraph>contact:</Paragraph>
-				<Paragraph>
-					<a href='tel:+48600897821'>600 897 821</a>
-				</Paragraph>
-				<Paragraph>
-					<a href='mailto:hello@kamilapalmowska.com'>hello@kamilapalmowska.com</a>
-				</Paragraph>
-			</Footer>
-		</Main>
+		<section className={styles.container}>
+			<div className={styles.wrapper}>
+				<h1 className={styles.title}>{posts[0].projectName}</h1>
+				<p className={styles.text}>
+					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quod quia quae voluptas
+					quas voluptates quibusdam lorem ipsum dolor sit amet consectetur adipisicing elit.
+					Quisquam quod quia quae voluptas quas voluptates quibusdam
+				</p>
+			</div>
+			<div className={styles.projects}>
+				<h1>Projekty</h1>
+				<div className={styles.projectsImages}>
+					{imageData.map((item, index) => {
+						const { file } = item.fields;
+						return (
+							<div key={index}>
+								<div className={styles.imageWrapper}>
+									<Image
+										src={`https:${file.url}`}
+										width={file.details.image.width}
+										height={file.details.image.height}
+										alt={file.fileName}
+										quality={90}
+										objectFit='contain'
+									/>
+								</div>
+							</div>
+						);
+					})}
+				</div>
+			</div>
+		</section>
 	);
 }
 
-const FadeOut = keyframes`
-	from {
-		opacity: 1;
-		} to {
-			opacity: 0;
-		}
-`;
+export async function getStaticProps() {
+	const res = await fetchEntries();
+	const posts = await res.map(p => {
+		return p.fields;
+	});
 
-export const Main = styled.main`
-	position: relative;
-	width: 100%;
-	height: 100vh;
-	background: #8099d1;
-	overflow: hidden;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	margin: 0;
-`;
-
-export const TextContainer = styled.div`
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-`;
-
-export const Footer = styled.footer`
-	margin-top: auto;
-	margin-bottom: 4rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: flex-end;
-	align-items: center;
-	position: relative;
-	bottom: 0;
-`;
-
-export const Heading = styled.h1`
-	color: #f3dedb;
-	margin: 0;
-	white-space: nowrap;
-	font-size: 10vw;
-	letter-spacing: 0.01em;
-	font-weight: 300;
-	-webkit-font-smoothing: antialiased;
-	line-height: 0.65;
-`;
-
-export const Subheading = styled.h2`
-	font-size: 4vw;
-	color: #f3dedb;
-	font-weight: 300;
-	-webkit-font-smoothing: antialiased;
-`;
-
-export const Paragraph = styled.p`
-	font-size: 1rem;
-	color: #f3dedb;
-	font-weight: 300;
-	-webkit-font-smoothing: antialiased;
-	line-height: 1;
-	margin-bottom: 0;
-
-	@media (min-width: 600px) {
-		font-size: 1.5rem;
-	}
-`;
-
-export const Loader = styled.div`
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background-color: black;
-	opacity: 1;
-	z-index: 10000;
-	animation: ${FadeOut} 2s ease-out forwards;
-	pointer-events: none;
-`;
+	return {
+		props: {
+			posts,
+		},
+	};
+}
