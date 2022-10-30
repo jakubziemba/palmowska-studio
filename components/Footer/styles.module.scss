@@ -3,10 +3,13 @@
 	justify-content: center;
 	align-items: center;
 	height: 3rem;
+	width: 100%;
 	padding: 2rem 0;
 	font-size: 0.75rem;
 
 	border-top: 1px solid hsla(0, 0%, 93%, 0.539);
 
 	margin-top: auto;
+	position: absolute;
+	bottom: 0;
 }
