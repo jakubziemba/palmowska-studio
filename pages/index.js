@@ -1,10 +1,9 @@
 import Image from 'next/future/image';
 import fetchEntries from '../util/contentfulPosts';
-import styled from 'styled-components';
 import styles from './page.module.scss';
 
 export default function Home({ posts }) {
-	console.log(posts);
+	// console.log(posts);
 	const projectData = posts[2].images;
 
 	return (
@@ -43,7 +42,8 @@ export default function Home({ posts }) {
 									alt={file.fileName}
 									quality={85}
 									placeholder='blur'
-									blurDataURL={`https:${file.url}?fm=jpg&fl=progressive&w=20`}
+									blurDataURL={`https:${file.url}?fm=jpg&fl=progressive`}
+									loading='lazy'
 								/>
 							</div>
 						);
