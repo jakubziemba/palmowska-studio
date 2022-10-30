@@ -1,0 +1,28 @@
+.container {
+	padding: 4rem 4rem;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1.5fr;
+	column-gap: 2rem;
+
+	img {
+		max-height: 700px;
+		height: 100%;
+		width: auto;
+		object-fit: cover;
+		justify-self: end;
+		align-self: stretch;
+		margin-top: 0.5rem;
+	}
+}
+
+.content {
+	padding: 2rem 4rem;
+}
+
+.description {
+	grid-column: 1 / 3;
+	column-count: 2;
+	column-gap: 4rem;
+	font-size: 1.2rem;
+	text-align: justify;
+}
