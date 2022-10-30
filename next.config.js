@@ -5,6 +5,7 @@ const nextConfig = {
 	images: {
 		domains: ['images.ctfassets.net'],
 	},
+	experimental: { images: { allowFutureImage: true } },
 };
 
 module.exports = nextConfig;
