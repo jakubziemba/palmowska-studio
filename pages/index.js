@@ -9,7 +9,7 @@ const client = createClient({
 });
 
 export default function Home({ projects }) {
-	// console.log(projects);
+	console.log(projects);
 
 	return (
 		<section className={styles.container}>
@@ -30,16 +30,15 @@ export default function Home({ projects }) {
 				<h1 className={styles.title}>Projekty</h1>
 				<div className={styles.projectsImages}>
 					{projects.map((project, index) => {
-						const thumbnail = project.fields.thumbnail.fields.file;
+						const thumbnail = project.fields.featuredImage.fields.file;
 						const width = thumbnail.details.image.width;
 						const height = thumbnail.details.image.height;
 
 						return (
 							<Link href={`/projekty/${project.fields.slug}`} key={index} passHref>
-								<a data-alt={project.fields.projectName}>
+								<a data-alt={project.fields.projectTitle}>
 									<div
-										// key={index}
-										data-alt={project.fields.projectName}
+										data-alt={project.fields.projectTitle}
 										className={styles.imageWrapper}
 										style={{ gridColumn: width > height ? '1 / 3' : 'auto' }}
 									>
@@ -47,12 +46,15 @@ export default function Home({ projects }) {
 											src={`https:${thumbnail.url}`}
 											width={width}
 											height={height}
-											alt={project.fields.projectName}
+											alt={project.fields.projectTitle}
 											quality={85}
 											placeholder='blur'
 											blurDataURL={`https:${thumbnail.url}?fm=jpg&fl=progressive`}
 											loading='lazy'
 										/>
+										<div className={styles.overlay}>
+											<div className={styles.text}>{project.fields.projectTitle}</div>
+										</div>
 									</div>
 								</a>
 							</Link>
@@ -69,7 +71,7 @@ export default function Home({ projects }) {
 
 export async function getStaticProps() {
 	const { items } = await client.getEntries({
-		content_type: 'project',
+		content_type: 'projectLink',
 	});
 
 	console.log(items);
