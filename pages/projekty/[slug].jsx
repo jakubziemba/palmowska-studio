@@ -11,13 +11,29 @@ const client = createClient({
 export default function Project({ project }) {
 	// console.log(project);
 	const { fields, sys } = project;
-	const { projectName, projectDescription, images } = fields;
-	console.log(fields, sys);
+	const {
+		projectName,
+		apartment,
+		location,
+		livingArea,
+		projectBy,
+		date,
+		photos,
+		projectDescription,
+		images,
+	} = fields;
+	console.log(fields);
 
 	return (
 		<section className={styles.container}>
 			<div className={styles.wrapper}>
 				<h1 className={styles.title}>{projectName}</h1>
+				{apartment && <p className={styles.text}>{apartment}</p>}
+				{location && <p className={styles.text}>{location}</p>}
+				{livingArea && <p className={styles.text}>{livingArea}</p>}
+				{projectBy && <p className={styles.text}>{projectBy}</p>}
+				{date && <p className={styles.text}>{date}</p>}
+				{photos && <p className={styles.text}>{photos}</p>}
 				{projectDescription && (
 					<div className={styles.text}>{documentToReactComponents(projectDescription)}</div>
 				)}

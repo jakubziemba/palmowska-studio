@@ -5,7 +5,7 @@
 	padding: 3rem var(--page-padding);
 
 	@media (min-width: 768px) {
-		grid-template-columns: 1fr 1fr 1.5fr;
+		grid-template-columns: 1fr 1fr 1fr;
 	}
 
 	h1 {
@@ -25,7 +25,6 @@
 
 		@media (min-width: 768px) {
 			grid-row: auto;
-			margin: 3rem auto 0;
 			padding-bottom: 0;
 		}
 	}
@@ -40,9 +39,9 @@
 	text-align: justify;
 
 	@media (min-width: 768px) {
-		// grid-column: 1 / 3;
-		// column-count: 2;
-		// column-gap: 4rem;
+		grid-column: 1 / 3;
+		column-count: 2;
+		column-gap: 4rem;
 	}
 
 	img {
