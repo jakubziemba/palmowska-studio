@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { createClient } from 'contentful';
 import Image from 'next/future/image';
 import Link from 'next/link';
-import styles from './styles.module.scss';
+import styles from './index.module.scss';
 
 const client = createClient({
 	space: process.env.CONTENTFUL_SPACE_ID,
