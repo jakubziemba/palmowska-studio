@@ -26,7 +26,7 @@ export default function Home({ projects }) {
 					Quisquam quod quia quae voluptas quas voluptates quibusdam
 				</p>
 			</div>
-			<div>
+			<div className={styles.projectsWrapper}>
 				<h1 className={styles.title}>Projekty</h1>
 				<div className={styles.projectsImages}>
 					{projects.map((project, index) => {
