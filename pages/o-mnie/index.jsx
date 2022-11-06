@@ -31,6 +31,7 @@ export default function About({ data }) {
 				/>
 			</div>
 			<Image
+				className={styles.portrait}
 				src={`https:${data.aboutImage.fields.file.url}`}
 				width={data.aboutImage.fields.file.details.image.width}
 				height={data.aboutImage.fields.file.details.image.height}
