@@ -13,9 +13,9 @@ export default function Nav() {
 						<li className={styles.item}>
 							<NavLink href='/projekty'>Projekty</NavLink>
 						</li>
-						<li className={styles.item}>
+						{/* <li className={styles.item}>
 							<NavLink href='/publikacje'>Publikacje</NavLink>
-						</li>
+						</li> */}
 						<li className={styles.item}>
 							<NavLink href='/o-mnie'>O mnie</NavLink>
 						</li>
