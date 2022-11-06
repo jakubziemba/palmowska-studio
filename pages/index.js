@@ -19,7 +19,7 @@ export default function Home({ projects }) {
 						{post.projectName}
 					</h1>
 				))} */}
-				{/* <h1 className={styles.title}>{posts[0].projectName}</h1> */}
+				<h1 className={styles.title}>Studio projektowania wnętrz</h1>
 				<p className={styles.text}>
 					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quod quia quae voluptas
 					quas voluptates quibusdam lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -62,7 +62,7 @@ export default function Home({ projects }) {
 					})}
 				</div>
 				<div className={styles.allProjects}>
-					<Link href='/projects'>Zobacz wszystkie projekty</Link>
+					<Link href='/projekty'>Zobacz wszystkie projekty</Link>
 				</div>
 			</div>
 		</section>
