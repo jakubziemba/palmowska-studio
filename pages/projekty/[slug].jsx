@@ -67,7 +67,9 @@ export default function Project({ project }) {
 									width={width}
 									height={height}
 									alt={file.fileName}
-									quality={90}
+									quality={85}
+									placeholder='blur'
+									blurDataURL={`https:${file.url}?fm=jpg&fl=progressive`}
 								/>
 							</div>
 						);
