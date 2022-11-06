@@ -16,7 +16,7 @@
 	}
 
 	@media (min-width: 1024px) {
-		padding: 2rem 8rem;
+		// padding: 2rem 8rem;
 		justify-content: space-between;
 	}
 }
@@ -30,7 +30,8 @@
 	margin-bottom: 1rem;
 
 	@media (min-width: 768px) {
-		width: auto;
+		margin-bottom: 0;
+		width: max-content;
 		text-align: left;
 	}
 }
@@ -43,7 +44,9 @@
 .list {
 	display: flex;
 	align-items: center;
+	justify-content: space-evenly;
 	list-style: none;
+	width: 100%;
 }
 
 .item {
