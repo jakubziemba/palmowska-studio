@@ -7,7 +7,7 @@
 	grid-template-columns: 1fr;
 	grid-gap: 2rem;
 	align-items: center;
-	padding: 4rem;
+	padding: 4rem 0;
 }
 
 .title,
@@ -18,6 +18,7 @@
 .title {
 	font-size: 5.6rem;
 	font-weight: 600;
+	text-align: center;
 }
 
 .text {
@@ -29,17 +30,51 @@
 	align-self: end;
 }
 
-.projects {
-	padding: 0 4rem;
-}
-
 .projectsImages {
 	display: grid;
 	grid-template-columns: auto auto;
 	justify-items: center;
-	justify-content: center;
+	// justify-content: center;
 	grid-gap: 2rem;
 	margin: 6rem auto;
+
+	a {
+		cursor: pointer;
+		transition: opacity 0.235s ease-in-out;
+
+		div {
+			position: relative;
+
+			&::after {
+				content: attr(data-alt);
+				display: flex;
+				position: absolute;
+				transform: translate(-50%, -50%);
+				top: 50%;
+				left: 50%;
+				width: 100%;
+				height: 98%;
+				opacity: 0;
+				transition: opacity 0.235s ease-in-out;
+				font-size: 2rem;
+				color: #fff;
+				text-align: center;
+				background-color: rgba(0, 0, 0, 0.5);
+				justify-content: center;
+				align-items: center;
+			}
+
+			&:hover {
+				opacity: 1;
+				transition: all 0.235s ease;
+
+				&::after {
+					opacity: 1;
+					transition: opacity 0.235s ease-in-out;
+				}
+			}
+		}
+	}
 
 	img {
 		object-fit: cover;
@@ -47,10 +82,18 @@
 		max-height: calc(100vh - 5rem);
 		width: 100%;
 		max-width: 100%;
+		margin-bottom: 0;
 	}
 }
 
 .imageWrapper {
 	width: 100%;
 	height: 100%;
+}
+
+.allProjects {
+	display: flex;
+	justify-content: center;
+	font-size: 2rem;
+	text-align: center;
 }
