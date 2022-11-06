@@ -8,35 +8,6 @@ const client = createClient({
 	accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-export async function getStaticPaths() {
-	const res = await client.getEntries({ content_type: 'project' });
-
-	const paths = res.items.map(item => {
-		console.log(item);
-		return {
-			params: { slug: item.fields.slug },
-		};
-	});
-
-	return {
-		paths,
-		fallback: false,
-	};
-}
-
-export async function getStaticProps({ params }) {
-	const { items } = await client.getEntries({
-		content_type: 'project',
-		'fields.slug': params.slug,
-	});
-
-	console.log(items);
-
-	return {
-		props: { project: items[0] },
-	};
-}
-
 export default function Project({ project }) {
 	// console.log(project);
 	const { fields, sys } = project;
@@ -47,7 +18,9 @@ export default function Project({ project }) {
 		<section className={styles.container}>
 			<div className={styles.wrapper}>
 				<h1 className={styles.title}>{projectName}</h1>
-				<div className={styles.text}>{documentToReactComponents(projectDescription)}</div>
+				{projectDescription && (
+					<div className={styles.text}>{documentToReactComponents(projectDescription)}</div>
+				)}
 			</div>
 			<div className={styles.projects}>
 				<div className={styles.projectsImages}>
@@ -78,4 +51,33 @@ export default function Project({ project }) {
 			</div>
 		</section>
 	);
+}
+
+export async function getStaticPaths() {
+	const res = await client.getEntries({ content_type: 'project' });
+
+	const paths = res.items.map(item => {
+		console.log(item);
+		return {
+			params: { slug: item.fields.slug },
+		};
+	});
+
+	return {
+		paths,
+		fallback: false,
+	};
+}
+
+export async function getStaticProps({ params }) {
+	const { items } = await client.getEntries({
+		content_type: 'project',
+		'fields.slug': params.slug,
+	});
+
+	console.log(items);
+
+	return {
+		props: { project: items[0] },
+	};
 }
