@@ -1,5 +1,5 @@
 import { createClient } from 'contentful';
-import Image from 'next/image';
+import Image from 'next/future/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import styles from './slug.module.scss';
 
@@ -50,22 +50,25 @@ export default function Project({ project }) {
 				<div className={styles.text}>{documentToReactComponents(projectDescription)}</div>
 			</div>
 			<div className={styles.projects}>
-				<h1>Projekty</h1>
 				<div className={styles.projectsImages}>
 					{images.map((item, index) => {
 						const { file } = item.fields;
+						const width = file.details.image.width;
+						const height = file.details.image.height;
+
 						return (
-							<div key={index}>
-								<div className={styles.imageWrapper}>
-									<Image
-										src={`https:${file.url}`}
-										width={file.details.image.width}
-										height={file.details.image.height}
-										alt={file.fileName}
-										quality={90}
-										objectFit='contain'
-									/>
-								</div>
+							<div
+								key={index}
+								className={styles.imageWrapper}
+								style={{ gridColumn: width > height ? '1 / 3' : 'auto' }}
+							>
+								<Image
+									src={`https:${file.url}`}
+									width={width}
+									height={height}
+									alt={file.fileName}
+									quality={90}
+								/>
 							</div>
 						);
 					})}
