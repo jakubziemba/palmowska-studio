@@ -8,32 +8,28 @@ const client = createClient({
 	accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-export default function About({ data }) {
-	console.log(data);
+const RICHTEXT_OPTIONS = {
+	renderText: text => {
+		return text.split('\n').reduce((children, textSegment, index) => {
+			return [...children, index > 0 && <br key={index} />, textSegment];
+		}, []);
+	},
+};
 
+export default function About({ data }) {
 	return (
 		<div className={styles.container}>
 			<h1>Cześć!</h1>
 			{/* <div className={styles.content}> */}
-			<p className={styles.description}>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptas placeat eum. Eaque
-				aliquid numquam eius! Sequi, non quaerat. Vitae perspiciatis aut ratione harum cum voluptate
-				asperiores magnam iure non! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-				Placeat, necessitatibus officia atque quis veritatis, expedita cupiditate, reprehenderit
-				omnis facere quaerat dolor! Accusamus assumenda ipsam tempore aliquam repudiandae magni
-				velit maxime? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid voluptas
-				placeat eum. Eaque aliquid numquam eius! Sequi, non quaerat. Vitae perspiciatis aut ratione
-				harum cum voluptate asperiores magnam iure non! Lorem ipsum dolor sit amet, consectetur
-				adipisicing elit. Placeat, necessitatibus officia atque quis veritatis, expedita cupiditate,
-				reprehenderit omnis facere quaerat dolor! Accusamus assumenda ipsam tempore aliquam
-				repudiandae magni velit maxime? Lorem ipsum dolor sit amet consectetur adipisicing elit.
-				Aliquid voluptas placeat eum. Eaque aliquid numquam eius! Sequi, non quaerat. Vitae
-				perspiciatis aut ratione harum cum voluptate asperiores magnam iure non! Lorem ipsum dolor
-				sit amet, consectetur adipisicing elit. Placeat, necessitatibus officia atque quis
-				veritatis, expedita cupiditate, reprehenderit omnis facere quaerat dolor! Accusamus
-				assumenda ipsam tempore aliquam repudiandae magni velit maxime? Lorem ipsum dolor sit amet
-				consectetur adipisicing elit. Aliquid voluptas placeat eum. Eaque aliquid numquam eius!
-			</p>
+			<div className={styles.description}>
+				{documentToReactComponents(data.aboutDescription, RICHTEXT_OPTIONS)}
+				<Image
+					src={`https:${data.signature.fields.file.url}`}
+					width={data.signature.fields.file.details.image.width}
+					height={data.signature.fields.file.details.image.height}
+					alt='signature'
+				/>
+			</div>
 			<Image
 				src={`https:${data.aboutImage.fields.file.url}`}
 				width={data.aboutImage.fields.file.details.image.width}

@@ -1,5 +1,4 @@
 .container {
-	padding: 4rem 4rem;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1.5fr;
 	column-gap: 2rem;
@@ -16,7 +15,7 @@
 }
 
 .content {
-	padding: 2rem 4rem;
+	padding: 2rem 0;
 }
 
 .description {
@@ -25,4 +24,12 @@
 	column-gap: 4rem;
 	font-size: 1.2rem;
 	text-align: justify;
+
+	img {
+		display: flex;
+		margin-top: 5rem;
+		max-width: 150px;
+		height: auto;
+		margin-left: auto;
+	}
 }
