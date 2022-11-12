@@ -1,6 +1,7 @@
 import { createClient } from 'contentful';
 import Image from 'next/future/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import styles from './page.module.scss';
 
 const client = createClient({
@@ -9,21 +10,30 @@ const client = createClient({
 });
 
 export default function Home({ projects }) {
-	console.log(projects);
-
+	const heading = 'Studio projektowania wnętrz';
 	return (
 		<section className={styles.container}>
 			<div className={styles.wrapper}>
-				{/* {posts.map(post => (
-					<h1 key={post.slug} className={styles.title}>
-						{post.projectName}
-					</h1>
-				))} */}
-				<h1 className={styles.title}>Studio projektowania wnętrz</h1>
+				<div className={styles.title}>
+					{heading.split(' ').map((word, index) => (
+						<motion.h1
+							initial={{ opacity: 0, y: 50 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5, delay: index * 0.15 }}
+							key={index}
+							className={styles.title}
+						>
+							{word}
+						</motion.h1>
+					))}
+				</div>
 				<p className={styles.text}>
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam quod quia quae voluptas
-					quas voluptates quibusdam lorem ipsum dolor sit amet consectetur adipisicing elit.
-					Quisquam quod quia quae voluptas quas voluptates quibusdam
+					Moim celem jest odejście od chwilowych trendów na rzecz głębokiej refleksji przestrzennej
+					i funkcjonalnej zgodnej z charakterem miejsca i sposobem życia moich Inwestorów. W swoich
+					projektach sięgam po niekonwencjonalne formy, kolory i faktury tak, by stworzyć
+					niepowtarzalną atmosferę, która działa na wszystkie zmysły. Nieodłącznym elementem moich
+					aranżacji są przedmioty w stylu vintage w nieoczywisty sposób zestawione z dekoracjami o
+					współczesnym rodowodzie.
 				</p>
 			</div>
 			<div className={styles.projectsWrapper}>
@@ -53,7 +63,7 @@ export default function Home({ projects }) {
 											loading='lazy'
 										/>
 										<div className={styles.overlay}>
-											<div className={styles.text}>{project.fields.projectTitle}</div>
+											{/* <div className={styles.text}>{project.fields.projectTitle}</div> */}
 										</div>
 									</div>
 								</a>
@@ -74,7 +84,7 @@ export async function getStaticProps() {
 		content_type: 'projectLink',
 	});
 
-	console.log(items);
+	// console.log(items);
 
 	return {
 		props: { projects: items },
