@@ -51,7 +51,7 @@ export async function getStaticProps() {
 		content_type: 'aboutMe',
 	});
 
-	console.log(items);
+	// console.log(items);
 
 	return {
 		props: { data: items[0].fields },

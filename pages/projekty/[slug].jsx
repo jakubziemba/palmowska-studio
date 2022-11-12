@@ -22,18 +22,48 @@ export default function Project({ project }) {
 		projectDescription,
 		images,
 	} = fields;
-	console.log(fields);
+	// console.log(fields);
 
 	return (
 		<section className={styles.container}>
 			<div className={styles.wrapper}>
 				<h1 className={styles.title}>{projectName}</h1>
-				{apartment && <p className={styles.text}>{apartment}</p>}
-				{location && <p className={styles.text}>{location}</p>}
-				{livingArea && <p className={styles.text}>{livingArea}</p>}
-				{projectBy && <p className={styles.text}>{projectBy}</p>}
-				{date && <p className={styles.text}>{date}</p>}
-				{photos && <p className={styles.text}>{photos}</p>}
+				{apartment && (
+					<>
+						{/* <p className={styles.textTitle}>Apartament</p> */}
+						<p className={styles.text}>{apartment}</p>
+					</>
+				)}
+				{location && (
+					<>
+						<p className={styles.textTitle}>Lokalizacja</p>
+						<p className={styles.text}>{location}</p>
+					</>
+				)}
+				{livingArea && (
+					<>
+						<p className={styles.textTitle}>Metraż</p>
+						<p className={styles.text}>{livingArea}</p>
+					</>
+				)}
+				{projectBy && (
+					<>
+						<p className={styles.textTitle}>Projekt</p>
+						<p className={styles.text}>{projectBy}</p>
+					</>
+				)}
+				{date && (
+					<>
+						<p className={styles.textTitle}>Data realizacji</p>
+						<p className={styles.text}>{date}</p>
+					</>
+				)}
+				{photos && (
+					<>
+						<p className={styles.textTitle}>Zdjęcia</p>
+						<p className={styles.text}>{photos}</p>
+					</>
+				)}
 				{projectDescription && (
 					<div className={styles.text}>{documentToReactComponents(projectDescription)}</div>
 				)}
@@ -73,7 +103,7 @@ export async function getStaticPaths() {
 	const res = await client.getEntries({ content_type: 'project' });
 
 	const paths = res.items.map(item => {
-		console.log(item);
+		// console.log(item);
 		return {
 			params: { slug: item.fields.slug },
 		};
@@ -91,7 +121,7 @@ export async function getStaticProps({ params }) {
 		'fields.slug': params.slug,
 	});
 
-	console.log(items);
+	// console.log(items);
 
 	return {
 		props: { project: items[0] },

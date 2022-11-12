@@ -1,7 +1,11 @@
 .container {
 	display: grid;
 	grid-template-columns: 1fr;
-	padding: 3rem var(--page-padding) 0;
+	padding: 3rem var(--page-padding-mobile) 0;
+
+	@media (min-width: 56.25em) {
+		padding: 3rem var(--page-padding-desktop);
+	}
 }
 
 .images {

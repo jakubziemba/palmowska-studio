@@ -2,10 +2,14 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	column-gap: 2rem;
-	padding: 3rem var(--page-padding);
+	padding: 3rem var(--page-padding-mobile);
 
 	@media (min-width: 768px) {
 		grid-template-columns: 1fr 1fr 1fr;
+	}
+
+	@media (min-width: 56.25em) {
+		padding: 3rem var(--page-padding-desktop);
 	}
 
 	h1 {

@@ -13,7 +13,7 @@
  *
 */
 
-@import url('https://api.fontshare.com/v2/css?f[]=author@1&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap');
 
 @font-face {
 	font-family: 'Gambetta';
@@ -47,7 +47,7 @@
 
 html {
 	/* COLORS */
-	--color-white: #f5f5f5;
+	--color-white: hsl(42, 25%, 95%);
 	--color-pink: #f0dde0;
 	--color-lightbrown: #e6d2cb;
 	--color-washedgreen: #727d71;
@@ -56,7 +56,8 @@ html {
 	--color-lilac: #73628a;
 
 	/* PADDINGS */
-	--page-padding: 1rem;
+	--page-padding-mobile: 1rem;
+	--page-padding-desktop: 2rem;
 
 	/* FONT SIZE */
 	--fs-sm: 0.8rem;
@@ -79,7 +80,7 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 	font-weight: 400;
 	color: #333;
-	background-color: hsl(60, 8%, 95%);
+	background-color: var(--color-white);
 }
 
 a {
@@ -94,19 +95,19 @@ a {
 }
 
 h1 {
-	font-family: 'Author', sans-serif;
+	font-family: 'Satoshi', sans-serif;
 	font-weight: 500;
-	letter-spacing: -0.04em;
+	letter-spacing: -0.02em;
 	font-size: 2.8rem;
+	margin-left: -0.1rem;
 	/* margin-bottom: 2rem; */
 }
 
 h3 {
-	/* font-family: 'Author', sans-serif; */
+	font-family: 'Satoshi', sans-serif;
 	font-weight: 400;
-	letter-spacing: -0.04em;
+	letter-spacing: -0.01em;
 	font-size: 1.3rem;
-	/* margin-bottom: 1rem; */
 }
 
 p {
