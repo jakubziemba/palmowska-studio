@@ -6,13 +6,13 @@
 .wrapper {
 	display: flex;
 	flex-flow: row wrap;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	min-height: 3rem;
-	padding: 2rem 1rem;
+	padding: 2rem var(--page-padding-mobile);
 
-	@media (min-width: 768px) {
-		padding: 2rem 1rem;
+	@media (min-width: 56.25em) {
+		padding: 3rem var(--page-padding-desktop);
 	}
 
 	@media (min-width: 1024px) {
@@ -22,12 +22,11 @@
 }
 
 .logo {
-	font-size: 2rem;
+	font-size: 1.2rem;
 	text-transform: uppercase;
 	color: #333;
-	width: 100%;
-	text-align: center;
-	margin-bottom: 1rem;
+	text-align: left;
+	font-family: 'Satoshi', sans-serif;
 
 	@media (min-width: 768px) {
 		margin-bottom: 0;

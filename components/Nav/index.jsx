@@ -1,5 +1,6 @@
 import { NavLink } from '../NavLink';
 import styles from './styles.module.scss';
+import { MenuButton } from './menuButton';
 
 export default function Nav() {
 	return (
@@ -8,14 +9,15 @@ export default function Nav() {
 				<div className={styles.logo}>
 					<NavLink href='/'>Kamila Palmowska</NavLink>
 				</div>
-				<nav className={styles.nav}>
+				<MenuButton />
+				{/* <nav className={styles.nav}>
 					<ul className={styles.list}>
 						<li className={styles.item}>
 							<NavLink href='/projekty'>Projekty</NavLink>
 						</li>
-						{/* <li className={styles.item}>
+						<li className={styles.item}>
 							<NavLink href='/publikacje'>Publikacje</NavLink>
-						</li> */}
+						</li>
 						<li className={styles.item}>
 							<NavLink href='/o-mnie'>O mnie</NavLink>
 						</li>
@@ -23,7 +25,7 @@ export default function Nav() {
 							<NavLink href='/kontakt'>Kontakt</NavLink>
 						</li>
 					</ul>
-				</nav>
+				</nav> */}
 			</div>
 		</div>
 	);
