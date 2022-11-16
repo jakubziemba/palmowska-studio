@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react';
 import { createClient } from 'contentful';
 import Image from 'next/future/image';
 import Link from 'next/link';
@@ -10,42 +9,30 @@ const client = createClient({
 });
 
 export default function Projekty({ projects }) {
-	const [projectData, setProjectData] = useState(projects);
-
-	// const [projectsList, setProjectsList] = useState([]);
-	// console.log(projects);
-	// console.log(projectData);
-
-	// useEffect(() => {
-	// 	projectData.map(project => {
-	// 		setProjectData(prev => [...prev, project]);
-	// 		// setProjectData(prev => [...prev, project.fields]);
-	// 	});
-	// 	// projectData.sort((a, b) => a.id - b.id);
-	// 	// console.log(projectData);
-	// }, []);
+	const sorted = projects.sort((a, b) => b.id - a.id);
 
 	return (
 		<div className={styles.container}>
 			<h1>Projekty</h1>
 			<div className={styles.images}>
-				{projects.map(project => {
-					const thumbnail = project.fields.thumbnail.fields;
+				{sorted.map(project => {
+					const { slug, projectName } = project;
+					const thumbnail = project.thumbnail.fields;
 
 					return (
-						<Link href={`/projekty/${project.fields.slug}`} key={project.fields.slug}>
+						<Link href={`/projekty/${slug}`} key={slug}>
 							<a className={styles.project}>
 								<div className={styles.imageWrapper}>
 									<Image
 										src={`https:${thumbnail.file.url}`}
 										width={thumbnail.file.details.image.width}
 										height={thumbnail.file.details.image.height}
-										alt={project.fields.projectName}
+										alt={projectName}
 										quality={90}
 										loading='lazy'
 										blurDataURL={`https:${thumbnail.file.url}?fm=jpg&fl=progressive`}
 									/>
-									<h3>{project.fields.projectName}</h3>
+									<h3>{projectName}</h3>
 								</div>
 							</a>
 						</Link>
@@ -61,7 +48,16 @@ export async function getStaticProps() {
 		content_type: 'project',
 	});
 
+	// console.log(items);
+
+	const projects = items.map(({ fields }) => ({
+		id: fields.id,
+		slug: fields.slug,
+		projectName: fields.projectName,
+		thumbnail: fields.thumbnail,
+	}));
+
 	return {
-		props: { projects: items },
+		props: { projects },
 	};
 }
