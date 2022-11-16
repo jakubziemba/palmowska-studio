@@ -1,18 +1,24 @@
-export const MenuButton = () => {
+import { useEffect } from 'react';
+import styles from './styles.module.scss';
+
+export const MenuButton = ({ isMenuOpen, setIsMenuOpen }) => {
+	useEffect(() => {
+		const body = document.querySelector('body');
+		if (isMenuOpen) {
+			body.style.overflow = 'hidden';
+		} else {
+			body.style.overflow = 'auto';
+		}
+	}, [isMenuOpen]);
+
 	return (
-		<>
-			<svg
-				className='menu-button'
-				height='24'
-				viewBox='0 0 24 24'
-				width='24'
-				xmlns='http://www.w3.org/2000/svg'
-			>
-				<path
-					className='heroicon-ui'
-					d='M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z'
-				/>
-			</svg>
-		</>
+		<div
+			className={`${styles.menuButton} ${isMenuOpen ? styles.open : ''}`}
+			onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}
+		>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
 	);
 };
