@@ -1,0 +1,34 @@
+.container {
+	width: 100%;
+}
+
+.wrapper {
+	padding-top: 3rem;
+
+	h1 {
+		font-size: 5rem;
+		font-weight: 700;
+		margin-bottom: 5rem;
+		padding-left: var(--page-padding-mobile);
+
+		@media (min-width: 56.25em) {
+			padding-left: var(--page-padding-desktop);
+		}
+	}
+}
+
+.publication {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 3rem;
+	font-size: 3rem;
+	font-family: 'Satoshi', sans-serif;
+	font-weight: 600;
+	letter-spacing: -0.02em;
+	padding-left: var(--page-padding-mobile);
+	text-transform: uppercase;
+
+	@media (min-width: 56.25em) {
+		padding-left: var(--page-padding-desktop);
+	}
+}
