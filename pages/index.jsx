@@ -27,14 +27,19 @@ export default function Home({ projects }) {
 						</motion.h1>
 					))}
 				</div>
-				<p className={styles.text}>
+				<motion.p
+					className={styles.text}
+					initial={{ opacity: 0, y: 50 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.5, delay: 0.5 }}
+				>
 					Moim celem jest odejście od chwilowych trendów na rzecz głębokiej refleksji przestrzennej
 					i funkcjonalnej zgodnej z charakterem miejsca i sposobem życia moich Inwestorów. W swoich
 					projektach sięgam po niekonwencjonalne formy, kolory i faktury tak, by stworzyć
 					niepowtarzalną atmosferę, która działa na wszystkie zmysły. Nieodłącznym elementem moich
 					aranżacji są przedmioty w stylu vintage w nieoczywisty sposób zestawione z dekoracjami o
 					współczesnym rodowodzie.
-				</p>
+				</motion.p>
 			</div>
 			<div className={styles.projectsWrapper}>
 				<h1 className={styles.title}>Projekty</h1>
