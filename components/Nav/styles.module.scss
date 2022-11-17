@@ -9,7 +9,7 @@
 	justify-content: space-between;
 	align-items: center;
 	min-height: 3rem;
-	padding: 2rem var(--page-padding-mobile);
+	padding: 2rem 0.5rem 2rem var(--page-padding-mobile);
 
 	@media (min-width: 56.25em) {
 		padding: 3rem var(--page-padding-desktop);
@@ -42,6 +42,7 @@
 	align-items: center;
 	cursor: pointer;
 	z-index: 2;
+	padding: 0.5rem;
 
 	div {
 		width: 22px;
@@ -102,14 +103,14 @@
 		margin: 0 0 0 0.8rem;
 	}
 	// margin: 0 0 0 2rem;
-	color: #333;
+	color: var(--color-black);
 	font-size: 1.2rem;
 }
 
 .link {
-	color: #333;
+	color: var(--color-black);
 	&:last-child {
-		border: 2px solid #333;
+		border: 2px solid var(--color-black);
 		padding: 0.5rem 1rem;
 	}
 }
