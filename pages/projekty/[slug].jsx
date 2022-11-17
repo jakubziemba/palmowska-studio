@@ -9,8 +9,6 @@ const client = createClient({
 });
 
 export default function Project({ project }) {
-	// console.log(project);
-	const { fields, sys } = project;
 	const {
 		projectName,
 		apartment,
@@ -21,8 +19,7 @@ export default function Project({ project }) {
 		photos,
 		projectDescription,
 		images,
-	} = fields;
-	// console.log(fields);
+	} = project;
 
 	return (
 		<section className={styles.container}>
@@ -30,7 +27,6 @@ export default function Project({ project }) {
 				<h1 className={styles.title}>{projectName}</h1>
 				{apartment && (
 					<>
-						{/* <p className={styles.textTitle}>Apartament</p> */}
 						<p className={styles.text}>{apartment}</p>
 					</>
 				)}
@@ -103,7 +99,6 @@ export async function getStaticPaths() {
 	const res = await client.getEntries({ content_type: 'project' });
 
 	const paths = res.items.map(item => {
-		// console.log(item);
 		return {
 			params: { slug: item.fields.slug },
 		};
@@ -121,9 +116,21 @@ export async function getStaticProps({ params }) {
 		'fields.slug': params.slug,
 	});
 
-	// console.log(items);
+	const projectData = items.map(({ fields }) => {
+		return {
+			id: fields?.id,
+			projectName: fields?.projectName,
+			apartment: fields?.apartment,
+			location: fields?.location,
+			livingArea: fields?.livingArea,
+			projectBy: fields?.projectBy,
+			date: fields?.date,
+			photos: fields?.photos,
+			images: fields?.images,
+		};
+	});
 
 	return {
-		props: { project: items[0] },
+		props: { project: projectData[0] },
 	};
 }
