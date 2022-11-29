@@ -48,8 +48,6 @@ export async function getStaticProps() {
 		content_type: 'project',
 	});
 
-	// console.log(items);
-
 	const projects = items.map(({ fields }) => ({
 		id: fields.id,
 		slug: fields.slug,
