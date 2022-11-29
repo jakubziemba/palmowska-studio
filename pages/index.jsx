@@ -33,16 +33,14 @@ export default function Home({ projects }) {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.5 }}
 				>
-					Moim celem jest odejście od chwilowych trendów na rzecz głębokiej refleksji przestrzennej
-					i funkcjonalnej zgodnej z charakterem miejsca i sposobem życia moich Inwestorów. W swoich
-					projektach sięgam po niekonwencjonalne formy, kolory i faktury tak, by stworzyć
-					niepowtarzalną atmosferę, która działa na wszystkie zmysły. Nieodłącznym elementem moich
-					aranżacji są przedmioty w stylu vintage w nieoczywisty sposób zestawione z dekoracjami o
-					współczesnym rodowodzie.
+					Każdy projekt jest kolejną, wyjątkową historią, którą tworzę razem z Klientem. Staram się
+					odchodzić od chwilowych trendów na rzecz głębokiej refleksji przestrzennej i funkcjonalnej
+					zgodnej z charakterem miejsca i sposobem życia mieszkańców. W kreowanych wnętrzach sięgam
+					po niekonwencjonalne formy, kolory i faktury, tworząc niepowtarzalną atmosferę, która
+					działa na wszystkie zmysły.
 				</motion.p>
 			</div>
 			<div className={styles.projectsWrapper}>
-				<h1 className={styles.title}>Projekty</h1>
 				<div className={styles.projectsImages}>
 					{projects.map((project, index) => {
 						const thumbnail = project.fields.featuredImage.fields.file;
@@ -50,7 +48,11 @@ export default function Home({ projects }) {
 						const height = thumbnail.details.image.height;
 
 						return (
-							<Link href={`/projekty/${project.fields.slug}`} key={index} passHref>
+							<Link
+								href={`/projekty/${project.fields.slug}`}
+								key={project.fields.projectTitle}
+								passHref
+							>
 								<a data-alt={project.fields.projectTitle}>
 									<div
 										data-alt={project.fields.projectTitle}
@@ -67,9 +69,10 @@ export default function Home({ projects }) {
 											blurDataURL={`https:${thumbnail.url}?fm=jpg&fl=progressive`}
 											loading='lazy'
 										/>
-										<div className={styles.overlay}>
-											{/* <div className={styles.text}>{project.fields.projectTitle}</div> */}
-										</div>
+										<div className={styles.overlay}></div>
+									</div>
+									<div className={styles.projectTitle}>
+										<h3>{project.fields.projectTitle}</h3>
 									</div>
 								</a>
 							</Link>
@@ -88,8 +91,6 @@ export async function getStaticProps() {
 	const { items } = await client.getEntries({
 		content_type: 'projectLink',
 	});
-
-	// console.log(items);
 
 	return {
 		props: { projects: items },
