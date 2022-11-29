@@ -12,10 +12,10 @@
  * Gambetta Semibold Italic
  *
 */
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@1&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=gambetta@1,2&display=swap');
 
-@import url('https://api.fontshare.com/v2/css?f[]=satoshi@1&display=swap');
-
-@font-face {
+/* @font-face {
 	font-family: 'Gambetta';
 	src: url('../public/Gambetta-Regular.woff2') format('woff2'),
 		url('../public/Gambetta-Regular.woff') format('woff'),
@@ -43,7 +43,7 @@
 	font-weight: 600;
 	font-display: swap;
 	font-style: italic;
-}
+} */
 
 html {
 	/* COLORS */
@@ -54,12 +54,17 @@ html {
 	--color-pastelgreen: #c9e2d6;
 	--color-charcoal: #373f51;
 	--color-lilac: #73628a;
-	--color-lightblue: #bbc6c8;
-	--color-black: #111;
+	--color-lightblue: rgba(206, 216, 227, 0.45);
+	--color-black: #313131;
+	--color-projects: #454545;
 
 	/* PADDINGS */
 	--page-padding-mobile: 1rem;
 	--page-padding-desktop: 2rem;
+
+	/* TYPEFACES */
+	--font-heading: 'General Sans', sans-serif;
+	--font-text: 'Gambetta', serif;
 
 	/* FONT SIZE */
 	--fs-sm: 0.8rem;
@@ -80,8 +85,8 @@ body {
 		Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-weight: 400;
-	color: #333;
+	font-weight: 450;
+	color: var(--color-black);
 	background-color: var(--color-white);
 }
 
@@ -96,25 +101,31 @@ a {
 	padding: 0;
 }
 
+h1,
+h2,
+h3 {
+	font-family: var(--font-heading);
+	color: var(--color-black);
+}
+
 h1 {
-	font-family: 'Satoshi', sans-serif;
-	font-weight: 500;
-	letter-spacing: -0.02em;
+	font-variation-settings: 'wght' 500;
+	letter-spacing: -0.01em;
 	font-size: 2.8rem;
 	margin-left: -0.1rem;
 	/* margin-bottom: 2rem; */
 }
 
 h3 {
-	font-family: 'Satoshi', sans-serif;
-	font-weight: 400;
+	font-weight: 450;
 	letter-spacing: -0.01em;
-	font-size: 1.3rem;
+	font-size: 1.05rem;
 }
 
 p {
 	margin: 0;
 	line-height: 1.67;
+	color: var(--color-black);
 }
 
 /* @media (prefers-color-scheme: dark) {
