@@ -1,5 +1,5 @@
 .menu {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	right: 0;
 	width: 100vw;
@@ -41,14 +41,8 @@
 .item {
 	font-size: var(--fs-lg);
 	font-weight: 500;
-	margin-bottom: 2rem;
-	// text-transform: uppercase;
-	// letter-spacing: 0.01em;
+	margin: 1rem 0;
+	letter-spacing: -0.01em;
 	color: var(--color-black);
-	transition: color 0.3s ease-in-out;
-	font-family: 'General Sans', sans-serif;
-
-	// &:hover {
-	//   color: var(--color-primary);
-	// }
+	font-family: var(--font-heading);
 }
