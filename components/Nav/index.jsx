@@ -15,7 +15,7 @@ export default function Nav() {
 				</div>
 				<MenuButton isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
 				<Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-				{/* <nav className={styles.nav}>
+				<nav className={styles.nav}>
 					<ul className={styles.list}>
 						<li className={styles.item}>
 							<NavLink href='/projekty'>Projekty</NavLink>
@@ -30,7 +30,7 @@ export default function Nav() {
 							<NavLink href='/kontakt'>Kontakt</NavLink>
 						</li>
 					</ul>
-				</nav> */}
+				</nav>
 			</div>
 		</div>
 	);
