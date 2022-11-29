@@ -18,51 +18,67 @@ export default function Project({ project }) {
 		date,
 		photos,
 		projectDescription,
+		thumbnail,
 		images,
 	} = project;
 
 	return (
 		<section className={styles.container}>
+			<Image
+				src={`https:${thumbnail.url}`}
+				width={thumbnail.details.image.width}
+				height={thumbnail.details.image.height}
+				placeholder='blur'
+				blurDataURL={`https:${thumbnail.url}?fm=jpg&fl=progressive`}
+				alt='Cover image'
+				loading='eager'
+				quality={100}
+				priority
+			/>
 			<div className={styles.wrapper}>
-				<h1 className={styles.title}>{projectName}</h1>
-				{apartment && (
-					<>
-						<p className={styles.text}>{apartment}</p>
-					</>
-				)}
-				{location && (
-					<>
-						<p className={styles.textTitle}>Lokalizacja</p>
-						<p className={styles.text}>{location}</p>
-					</>
-				)}
-				{livingArea && (
-					<>
-						<p className={styles.textTitle}>Metraż</p>
-						<p className={styles.text}>{livingArea}</p>
-					</>
-				)}
-				{projectBy && (
-					<>
-						<p className={styles.textTitle}>Projekt</p>
-						<p className={styles.text}>{projectBy}</p>
-					</>
-				)}
-				{date && (
-					<>
-						<p className={styles.textTitle}>Data realizacji</p>
-						<p className={styles.text}>{date}</p>
-					</>
-				)}
-				{photos && (
-					<>
-						<p className={styles.textTitle}>Zdjęcia</p>
-						<p className={styles.text}>{photos}</p>
-					</>
-				)}
-				{projectDescription && (
-					<div className={styles.text}>{documentToReactComponents(projectDescription)}</div>
-				)}
+				<div className={styles.title}>
+					<h1 className={styles.heading}>{projectName}</h1>
+					{apartment && (
+						<>
+							<p className={styles.subheading}>{apartment}</p>
+						</>
+					)}
+				</div>
+				<div className={styles.content}>
+					{location && (
+						<>
+							<p className={styles.textTitle}>Lokalizacja</p>
+							<p className={styles.text}>{location}</p>
+						</>
+					)}
+					{livingArea && (
+						<>
+							<p className={styles.textTitle}>Metraż</p>
+							<p className={styles.text}>{livingArea}</p>
+						</>
+					)}
+					{projectBy && (
+						<>
+							<p className={styles.textTitle}>Projekt</p>
+							<p className={styles.text}>{projectBy}</p>
+						</>
+					)}
+					{date && (
+						<>
+							<p className={styles.textTitle}>Data realizacji</p>
+							<p className={styles.text}>{date}</p>
+						</>
+					)}
+					{photos && (
+						<>
+							<p className={styles.textTitle}>Zdjęcia</p>
+							<p className={styles.text}>{photos}</p>
+						</>
+					)}
+					{projectDescription && (
+						<div className={styles.text}>{documentToReactComponents(projectDescription)}</div>
+					)}
+				</div>
 			</div>
 			<div className={styles.projects}>
 				<div className={styles.projectsImages}>
@@ -126,6 +142,7 @@ export async function getStaticProps({ params }) {
 			projectBy: fields?.projectBy,
 			date: fields?.date,
 			photos: fields?.photos,
+			thumbnail: fields?.thumbnail?.fields?.file,
 			images: fields?.images,
 		};
 	});

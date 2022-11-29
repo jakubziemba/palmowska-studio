@@ -1,5 +1,30 @@
 .container {
 	width: 100%;
+
+	& > img {
+		width: 100%;
+		height: 300px;
+		object-fit: cover;
+		object-position: 40% 47%;
+
+		@media (min-width: 56.25em) {
+			height: 400px;
+			// object-position: 40% 50%;
+			animation: image-position 40s linear infinite;
+		}
+	}
+
+	@keyframes image-position {
+		0% {
+			object-position: 40% 35%;
+		}
+		50% {
+			object-position: 40% 65%;
+		}
+		100% {
+			object-position: 40% 35%;
+		}
+	}
 }
 
 .wrapper {
@@ -10,39 +35,65 @@
 	padding: 3rem var(--page-padding-mobile) 0;
 
 	@media (min-width: 56.25em) {
+		grid-template-columns: repeat(12, 1fr);
+		grid-gap: 2rem;
 		padding: 3rem var(--page-padding-desktop);
 	}
 }
 
-.text {
-	margin: 0;
+.title {
+	align-self: start;
+	margin-top: -1rem;
+	@media (min-width: 56.25em) {
+		grid-column: 1 / 8;
+	}
 }
 
-.title {
-	font-size: var(--fs-xxl);
-	// font-size: 5.6rem;
-	// font-size: 3rem;
+.heading {
+	font-size: 2.5rem;
+	// font-size: 5rem;
 	font-weight: 500;
 	// font-style: italic;
 	margin-bottom: 0.5rem;
+	line-height: 1;
 
-	@media (min-width: 768px) {
-		font-size: var(--fs-xl);
+	@media (min-width: 56.25em) {
+		font-size: 5rem;
 	}
+}
+
+.subheading {
+	margin: 1rem 0 3rem;
+
+	@media (min-width: 56.25em) {
+		font-size: 1.5rem;
+		margin-top: 3rem;
+		margin-bottom: 0;
+	}
+}
+
+.content {
+	@media (min-width: 56.25em) {
+		grid-column: 9 / 13;
+		// grid-row: 2;
+	}
+	// margin-top: 2rem;
 }
 
 .textTitle {
 	font-family: 'Satoshi', sans-serif;
-	font-size: var(--fs-bs);
-	font-weight: 400;
+	// font-size: var(--fs-bs);
+	font-size: 1.1rem;
+	font-weight: 500;
 	text-transform: uppercase;
 	line-height: normal;
+	margin-bottom: 0.3rem;
 }
 
 .text {
 	font-size: var(--fs-bs);
-	margin-bottom: 1rem;
-	font-weight: 400;
+	margin: 0 0 1rem;
+	font-weight: 420;
 	text-align: justify;
 	line-height: normal;
 	align-self: end;
@@ -72,8 +123,8 @@
 	justify-content: center;
 	padding: 3rem 0;
 
-	@media (min-width: 768px) {
-		grid-template-columns: auto auto;
+	@media (min-width: 56.25em) {
+		grid-template-columns: repeat(3, 1fr);
 		grid-gap: 2rem;
 	}
 
@@ -92,8 +143,9 @@
 	height: 100%;
 
 	img {
+		width: 100%;
 		max-height: 700px;
-		height: auto;
+		height: 100%;
 		object-fit: cover;
 	}
 }
