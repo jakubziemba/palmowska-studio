@@ -10,7 +10,7 @@ html {
 	--color-pastelgreen: #c9e2d6;
 	--color-charcoal: #373f51;
 	--color-lilac: #73628a;
-	--color-lightblue: rgba(206, 216, 227, 0.45);
+	--color-lightblue: rgba(206, 216, 227, 0.6);
 	--color-black: #313131;
 	--color-projects: #454545;
 
@@ -40,7 +40,7 @@ body {
 	font-family: var(--font-text), serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	font-weight: 450;
+	font-weight: 420;
 	color: var(--color-black);
 	background-color: var(--color-white);
 }
