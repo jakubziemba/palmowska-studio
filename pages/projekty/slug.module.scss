@@ -45,7 +45,7 @@
 	align-self: start;
 	margin-top: -1rem;
 	@media (min-width: 56.25em) {
-		grid-column: 1 / 8;
+		grid-column: 1 / 7;
 	}
 }
 
@@ -64,6 +64,7 @@
 
 .subheading {
 	margin: 1rem 0 3rem;
+	font-style: italic;
 
 	@media (min-width: 56.25em) {
 		font-size: 1.5rem;
