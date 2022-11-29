@@ -19,8 +19,7 @@ const RICHTEXT_OPTIONS = {
 export default function About({ data }) {
 	return (
 		<div className={styles.container}>
-			<h1>Cześć!</h1>
-			{/* <div className={styles.content}> */}
+			<h1>Hej, miło mi Cię poznać!</h1>
 			<div className={styles.description}>
 				{documentToReactComponents(data.aboutDescription, RICHTEXT_OPTIONS)}
 				<Image
@@ -41,7 +40,6 @@ export default function About({ data }) {
 				alt='An image of me'
 				quality={100}
 			/>
-			{/* </div> */}
 		</div>
 	);
 }
@@ -50,8 +48,6 @@ export async function getStaticProps() {
 	const { items } = await client.getEntries({
 		content_type: 'aboutMe',
 	});
-
-	// console.log(items);
 
 	return {
 		props: { data: items[0].fields },
