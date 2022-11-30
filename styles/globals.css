@@ -2,86 +2,87 @@
 @import url('https://api.fontshare.com/v2/css?f[]=gambetta@1,2&display=swap');
 
 html {
-	/* COLORS */
-	--color-white: hsl(42, 25%, 95%);
-	--color-pink: #f0dde0;
-	--color-lightbrown: #e6d2cb;
-	--color-washedgreen: #727d71;
-	--color-pastelgreen: #c9e2d6;
-	--color-charcoal: #373f51;
-	--color-lilac: #73628a;
-	--color-lightblue: rgba(206, 216, 227, 0.6);
-	--color-black: #313131;
-	--color-projects: #454545;
+  /* COLORS */
+  --color-white: hsl(42, 25%, 95%);
+  --color-pink: #f0dde0;
+  --color-lightbrown: #e6d2cb;
+  --color-washedgreen: #727d71;
+  --color-pastelgreen: #c9e2d6;
+  --color-charcoal: #373f51;
+  --color-lilac: #73628a;
+  --color-lightblue: rgba(206, 216, 227, 0.6);
+  /* --color-lightblue: #acb8c5; */
+  --color-black: #313131;
+  --color-projects: #454545;
 
-	/* PADDINGS */
-	--page-padding-mobile: 1rem;
-	--page-padding-desktop: 2rem;
+  /* PADDINGS */
+  --page-padding-mobile: 1rem;
+  --page-padding-desktop: 2rem;
 
-	/* TYPEFACES */
-	--font-heading: 'General Sans', sans-serif;
-	--font-text: 'Gambetta', serif;
+  /* TYPEFACES */
+  --font-heading: 'General Sans', sans-serif;
+  --font-text: 'Gambetta', serif;
 
-	/* FONT SIZE */
-	--fs-sm: 0.8rem;
-	--fs-bs: 1rem;
-	--fs-md: 1.563rem;
-	--fs-lg: 1.953rem;
-	--fs-xl: 2.441rem;
-	--fs-xxl: 3.052rem;
-	--fs-xxxl: 3.815rem;
+  /* FONT SIZE */
+  --fs-sm: 0.8rem;
+  --fs-bs: 1rem;
+  --fs-md: 1.563rem;
+  --fs-lg: 1.953rem;
+  --fs-xl: 2.441rem;
+  --fs-xxl: 3.052rem;
+  --fs-xxxl: 3.815rem;
 }
 
 html,
 body {
-	padding: 0;
-	margin: 0;
-	min-height: 100vh;
-	font-family: var(--font-text), serif;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-	font-weight: 420;
-	color: var(--color-black);
-	background-color: var(--color-white);
+  padding: 0;
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-text), serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 420;
+  color: var(--color-black);
+  background-color: var(--color-white);
 }
 
 a {
-	color: inherit;
-	text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 * {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 h1,
 h2,
 h3 {
-	font-family: var(--font-heading);
-	color: var(--color-black);
+  font-family: var(--font-heading);
+  color: var(--color-black);
 }
 
 h1 {
-	font-weight: 500;
-	font-variation-settings: 'wght' 500;
-	letter-spacing: -0.01em;
-	font-size: 2.8rem;
-	margin-left: -0.1rem;
+  font-weight: 500;
+  font-variation-settings: 'wght' 500;
+  letter-spacing: -0.01em;
+  font-size: 2.8rem;
+  margin-left: -0.1rem;
 }
 
 h3 {
-	font-weight: 450;
-	font-variation-settings: 'wght' 450;
-	letter-spacing: -0.01em;
-	font-size: 1.05rem;
+  font-weight: 450;
+  font-variation-settings: 'wght' 450;
+  letter-spacing: -0.01em;
+  font-size: 1.05rem;
 }
 
 p {
-	margin: 0;
-	line-height: 1.67;
-	color: var(--color-black);
+  margin: 0;
+  line-height: 1.67;
+  color: var(--color-black);
 }
 
 /* @media (prefers-color-scheme: dark) {
