@@ -1,0 +1,55 @@
+.container {
+  padding: 3rem var(--page-padding-mobile);
+
+  @media (min-width: 56.25em) {
+    padding: 3rem var(--page-padding-desktop);
+  }
+
+  h1 {
+    font-size: 3rem;
+
+    @media (min-width: 56.25em) {
+      font-size: 5rem;
+    }
+  }
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+
+  p {
+    font-size: 1rem;
+  }
+
+  @media (min-width: 56.25em) {
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1rem;
+    margin-top: 2rem;
+
+    p {
+      font-size: 1.2rem;
+      grid-column: 1 / span 6;
+    }
+  }
+}
+.links {
+  margin-top: 3rem;
+
+  @media (min-width: 56.25em) {
+    grid-row: 2;
+    grid-column: 8 / span 6;
+    margin-top: 3rem;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+
+    span {
+      font-weight: 550;
+      margin-right: 0.2rem;
+      font-family: var(--font-heading);
+    }
+  }
+}
