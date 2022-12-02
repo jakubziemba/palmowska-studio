@@ -4,52 +4,54 @@ import Image from 'next/future/image';
 import styles from './styles.module.scss';
 
 const client = createClient({
-	space: process.env.CONTENTFUL_SPACE_ID,
-	accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
+  space: process.env.CONTENTFUL_SPACE_ID,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
 const RICHTEXT_OPTIONS = {
-	renderText: text => {
-		return text.split('\n').reduce((children, textSegment, index) => {
-			return [...children, index > 0 && <br key={index} />, textSegment];
-		}, []);
-	},
+  renderText: text => {
+    return text.split('\n').reduce((children, textSegment, index) => {
+      return [...children, index > 0 && <br key={index} />, textSegment];
+    }, []);
+  },
 };
 
 export default function About({ data }) {
-	return (
-		<div className={styles.container}>
-			<h1>Hej, miło mi Cię poznać!</h1>
-			<div className={styles.description}>
-				{documentToReactComponents(data.aboutDescription, RICHTEXT_OPTIONS)}
-				<Image
-					src={`https:${data.signature.fields.file.url}`}
-					width={data.signature.fields.file.details.image.width}
-					height={data.signature.fields.file.details.image.height}
-					alt='signature'
-				/>
-			</div>
-			<Image
-				className={styles.portrait}
-				src={`https:${data.aboutImage.fields.file.url}`}
-				width={data.aboutImage.fields.file.details.image.width}
-				height={data.aboutImage.fields.file.details.image.height}
-				loading='eager'
-				placeholder='blur'
-				blurDataURL={`https:${data.aboutImage.fields.file.url}?fm=jpg&fl=progressive`}
-				alt='An image of me'
-				quality={100}
-			/>
-		</div>
-	);
+  return (
+    <div className={styles.container}>
+      <h1>Hej, miło mi Cię poznać!</h1>
+      <div className={styles.content}>
+        <Image
+          className={styles.portrait}
+          src={`https:${data.aboutImage.fields.file.url}`}
+          width={data.aboutImage.fields.file.details.image.width}
+          height={data.aboutImage.fields.file.details.image.height}
+          loading='eager'
+          placeholder='blur'
+          blurDataURL={`https:${data.aboutImage.fields.file.url}?fm=jpg&fl=progressive`}
+          alt='An image of me'
+          quality={100}
+        />
+        <div className={styles.description}>
+          {documentToReactComponents(data.aboutDescription, RICHTEXT_OPTIONS)}
+          <Image
+            src={`https:${data.signature.fields.file.url}`}
+            width={data.signature.fields.file.details.image.width}
+            height={data.signature.fields.file.details.image.height}
+            alt='signature'
+          />
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export async function getStaticProps() {
-	const { items } = await client.getEntries({
-		content_type: 'aboutMe',
-	});
+  const { items } = await client.getEntries({
+    content_type: 'aboutMe',
+  });
 
-	return {
-		props: { data: items[0].fields },
-	};
+  return {
+    props: { data: items[0].fields },
+  };
 }
