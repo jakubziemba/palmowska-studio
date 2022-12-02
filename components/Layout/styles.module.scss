@@ -1,12 +1,18 @@
 .wrapper {
-	position: relative;
-	min-height: 100vh;
-	margin: 0 auto;
-	overflow: hidden;
+  position: relative;
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  @media (min-width: 56.25em) {
+    overflow: unset;
+    // max-width: 1200px;
+  }
 }
 
 .main {
-	min-height: 80vh;
-	padding-bottom: 6rem;
-	// padding: 3rem 8rem 6rem;
+  min-height: 80vh;
+  padding-bottom: 6rem;
+  // padding: 3rem 8rem 6rem;
+  // max-width: 1200px;
+  // margin: 0 auto;
 }
