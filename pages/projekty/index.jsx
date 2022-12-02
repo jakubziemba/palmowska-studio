@@ -32,6 +32,7 @@ export default function Projekty({ projects }) {
                     loading='lazy'
                     blurDataURL={`https:${thumbnail.file.url}?fm=jpg&fl=progressive`}
                   />
+                  <div className={styles.overlay}></div>
                   <h3>{projectName}</h3>
                 </div>
               </a>
