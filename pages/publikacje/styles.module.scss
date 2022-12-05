@@ -1,34 +1,83 @@
 .container {
-	width: 100%;
+  width: 100%;
 }
 
 .wrapper {
-	padding-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
 
-	h1 {
-		font-size: 5rem;
-		font-weight: 700;
-		margin-bottom: 5rem;
-		padding-left: var(--page-padding-mobile);
+  h1 {
+    font-size: 5rem;
+    font-weight: 700;
+    margin-bottom: 5rem;
+    padding: 0 var(--page-padding-mobile);
+  }
 
-		@media (min-width: 56.25em) {
-			padding-left: var(--page-padding-desktop);
-		}
-	}
+  @media (min-width: 56.25em) {
+    h1 {
+      padding: 0 var(--page-padding-desktop);
+    }
+  }
 }
 
 .publication {
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 3rem;
-	font-size: 3rem;
-	font-family: 'Satoshi', sans-serif;
-	font-weight: 600;
-	letter-spacing: -0.02em;
-	padding-left: var(--page-padding-mobile);
-	text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  padding: 0 var(--page-padding-mobile);
+  // text-transform: uppercase;
 
-	@media (min-width: 56.25em) {
-		padding-left: var(--page-padding-desktop);
-	}
+  h2 {
+    font-size: 3rem;
+  }
+
+  @media (min-width: 56.25em) {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    padding-left: var(--page-padding-desktop);
+
+    h2 {
+      grid-column: 1 / span 12;
+      grid-row: 1;
+    }
+  }
+}
+
+.listWrapper {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 3rem 0;
+
+    li {
+      font-size: 1.3rem;
+      display: block;
+      margin-bottom: 0.5rem;
+
+      a {
+        width: max-content;
+        color: #545252;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: var(--color-black);
+          transition: color 0.15s ease;
+        }
+
+        div {
+          display: inline-block;
+          cursor: pointer;
+          width: max-content;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 56.25em) {
+    grid-column: 6 / span 12;
+  }
 }

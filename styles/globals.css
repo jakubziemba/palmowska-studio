@@ -12,7 +12,7 @@ html {
   --color-lilac: #73628a;
   --color-lightblue: rgba(206, 216, 227, 0.6);
   /* --color-lightblue: #acb8c5; */
-  --color-black: #313131;
+  --color-black: rgba(48, 48, 48, 1);
   --color-projects: #454545;
 
   /* PADDINGS */
@@ -70,6 +70,11 @@ h1 {
   letter-spacing: -0.01em;
   font-size: 2.8rem;
   margin-left: -0.1rem;
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 2.4rem;
 }
 
 h3 {

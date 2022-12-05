@@ -13,13 +13,18 @@ export default function Home({ projects }) {
   const heading = 'Studio projektowania wnętrz';
   return (
     <section className={styles.container}>
-      <div className={styles.wrapper}>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        className={styles.wrapper}
+      >
         <div className={styles.title}>
           {heading.split(' ').map((word, index) => (
             <motion.h1
-              initial={{ opacity: 0, y: 50 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.15 }}
+              // initial={{ opacity: 0, y: 50 }}
+              // animate={{ opacity: 1, y: 0 }}
+              // transition={{ duration: 0.5, delay: index * 0.15 }}
               key={index}
               className={styles.title}
             >
@@ -29,9 +34,9 @@ export default function Home({ projects }) {
         </div>
         <motion.p
           className={styles.text}
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.5 }}
+          // initial={{ opacity: 0, y: 50 }}
+          // animate={{ opacity: 1, y: 0 }}
+          // transition={{ duration: 0.5, delay: 0.5 }}
         >
           Każdy projekt jest kolejną, wyjątkową historią, którą tworzę razem z Klientem. Staram się
           odchodzić od chwilowych trendów na rzecz głębokiej refleksji przestrzennej i funkcjonalnej
@@ -39,7 +44,7 @@ export default function Home({ projects }) {
           po niekonwencjonalne formy, kolory i faktury, tworząc niepowtarzalną atmosferę, która
           działa na wszystkie zmysły.
         </motion.p>
-      </div>
+      </motion.div>
       <div className={styles.projectsWrapper}>
         <div className={styles.projectsImages}>
           {projects.map((project, index) => {
