@@ -1,54 +1,54 @@
 .container {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	padding: 2rem 0;
-	font-size: 0.875rem;
-	background-color: var(--color-lightblue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 2rem 0;
+  font-size: 0.875rem;
+  background-color: var(--color-lightblue);
 
-	// border-top: 1px solid hsla(0, 0%, 93%, 0.539);
+  // border-top: 1px solid hsla(0, 0%, 93%, 0.539);
 
-	margin-top: 10rem;
+  margin-top: 10rem;
 }
 
 .copyright {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	font-size: 1rem;
-	// font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  // font-weight: 600;
 }
 
 .contact {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	text-align: center;
-	font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
 
-	a {
-		margin-bottom: 0.5rem;
-		font-size: 1rem;
+  a {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
 
-		&:first-child {
-			margin-top: 0.5rem;
-		}
+    &:first-child {
+      margin-top: 0.5rem;
+    }
 
-		&:last-child {
-			margin-bottom: 1rem;
-		}
-	}
+    &:last-child {
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 .socialMedia {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-	a:first-child {
-		padding-right: 1rem;
-	}
+  a:not(:last-child) {
+    padding-right: 1rem;
+  }
 }
