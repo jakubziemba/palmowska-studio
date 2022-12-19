@@ -55,12 +55,14 @@
 }
 
 .description {
-  font-size: 1rem;
+  font-size: 1.2rem;
   text-align: justify;
+  line-height: 1.9;
   // text-indent: 3rem;
 
   @media (min-width: 56.25em) {
     grid-column: 7 / 12;
+    margin-top: -8px;
     // column-gap: 4rem;
   }
 
@@ -73,7 +75,7 @@
 
     @media (min-width: 56.25em) {
       max-width: 150px;
-      margin-left: auto;
+      // margin-left: auto;
     }
   }
 }
