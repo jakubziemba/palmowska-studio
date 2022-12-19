@@ -5,9 +5,31 @@
 
   @media (min-width: 56.25em) {
     padding: 3rem var(--page-padding-desktop);
+  }
+}
+
+.heading {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media (min-width: 56.25em) {
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 2rem;
+    row-gap: 3rem;
+    padding: 0 0 3rem;
 
     h1 {
       font-size: 5rem;
+      grid-column: 1 / 5;
+    }
+
+    p {
+      grid-column: 7 / 12;
+      grid-row: 2;
+      display: grid;
+      align-self: end;
+      font-size: 1.2rem;
+      line-height: 1.9;
     }
   }
 }

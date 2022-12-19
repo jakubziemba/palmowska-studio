@@ -1,7 +1,7 @@
 import { createClient } from 'contentful';
 import Image from 'next/future/image';
 import Link from 'next/link';
-import styles from './index.module.scss';
+import styles from './projekty.module.scss';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -13,7 +13,15 @@ export default function Projekty({ projects }) {
 
   return (
     <div className={styles.container}>
-      <h1>Projekty</h1>
+      <div className={styles.heading}>
+        <h1>Projekty</h1>
+        <p>
+          Biel jest podstawą każdej mojej kreacji i doskonałym tłem dla uwielbianych przeze mnie
+          wyrazistych pomysłów, nadających wnętrzom osobisty charakter i ponadczasowy wymiar.
+          Przestrzenie, które kreuję to połączenie nowoczesnych rozwiązań z klasyczną
+          powściągliwością, będącą ukłonem w stronę estetyki minionego wieku.
+        </p>
+      </div>
       <div className={styles.images}>
         {sorted.map(project => {
           const { slug, projectName } = project;
@@ -28,7 +36,7 @@ export default function Projekty({ projects }) {
                     width={thumbnail.file.details.image.width}
                     height={thumbnail.file.details.image.height}
                     alt={projectName}
-                    quality={90}
+                    quality={85}
                     loading='lazy'
                     blurDataURL={`https:${thumbnail.file.url}?fm=jpg&fl=progressive`}
                   />
