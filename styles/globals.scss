@@ -11,8 +11,8 @@ html {
   --color-pastelgreen: #c9e2d6;
   --color-charcoal: #373f51;
   --color-lilac: #73628a;
-  --color-lightblue: rgba(206, 216, 227, 0.6);
-  /* --color-lightblue: #acb8c5; */
+  /* --color-lightblue: rgba(206, 216, 227, 0.6); */
+  --color-lightblue: #acb8c5;
   --color-black: rgba(48, 48, 48, 1);
   --color-projects: #454545;
 
@@ -45,7 +45,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 420;
   color: var(--color-black);
-  background-color: var(--color-white);
+  background-color: white;
 }
 
 a {
