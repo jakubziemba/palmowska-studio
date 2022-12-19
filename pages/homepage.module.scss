@@ -17,7 +17,7 @@
 
   a {
     grid-row: 3;
-    grid-column: 5;
+    grid-column: 5 / 7;
     width: max-content;
   }
 }
@@ -188,6 +188,7 @@
   &:hover {
     color: var(--color-white);
     transition: all 0.23s ease;
+    border-color: var(--color-projects);
 
     &::before {
       top: 0%;

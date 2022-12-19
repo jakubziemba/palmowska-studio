@@ -2,7 +2,7 @@ import { createClient } from 'contentful';
 import Image from 'next/future/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import styles from './page.module.scss';
+import styles from './homepage.module.scss';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
