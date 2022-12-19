@@ -3,6 +3,10 @@ import Image from 'next/future/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './homepage.module.scss';
+import Shape1blue from '../public/svg/shape-1-blue.svg';
+import Shape1brown from '../public/svg/shape-1-brown.svg';
+import Shape2pink from '../public/svg/shape-2-pink.svg';
+import Shape3green from '../public/svg/shape-3-green.svg';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -13,6 +17,8 @@ export default function Home({ projects }) {
   const heading = 'Studio projektowania wnętrz';
   return (
     <section className={styles.container}>
+      <Shape1blue className={`${styles.shape1blue} ${styles.shape}`} />
+      <Shape2pink className={`${styles.shape2pink} ${styles.shape}`} />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -49,6 +55,8 @@ export default function Home({ projects }) {
         </Link>
       </motion.div>
       <div className={styles.projectsWrapper}>
+        <Shape1brown className={`${styles.shape1brown} ${styles.shape}`} />
+        <Shape3green className={`${styles.shape3green} ${styles.shape}`} />
         <div className={styles.projectsImages}>
           {projects.map((project, index) => {
             const thumbnail = project.fields.featuredImage.fields.file;
