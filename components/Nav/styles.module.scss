@@ -110,10 +110,32 @@
   color: var(--color-black);
   font-size: 1.2rem;
   // font-family: var(--font-heading);
+
+  a {
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -0.125rem;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: var(--color-projects);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover::before {
+      transform: scaleX(1);
+    }
+  }
 }
 
 .link {
   color: var(--color-black);
+
   &:last-child {
     border: 2px solid var(--color-black);
     padding: 0.5rem 1rem;
