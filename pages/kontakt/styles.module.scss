@@ -51,5 +51,22 @@
       margin-right: 0.2rem;
       font-family: var(--font-heading);
     }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.imageWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+
+  img {
+    width: auto;
+    height: auto;
+    max-height: 600px;
   }
 }

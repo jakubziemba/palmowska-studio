@@ -1,3 +1,4 @@
+import Image from 'next/future/image';
 import styles from './styles.module.scss';
 
 export default function Kontakt() {
@@ -21,7 +22,16 @@ export default function Kontakt() {
             <span>Instagram:</span>{' '}
             <a href='https://www.instagram.com/palmowska__studio'>@palmowska__studio</a>
           </p>
+          <p>
+            <span>Facebook:</span>{' '}
+            <a href='https://www.facebook.com/profile.php?id=100087842247172'>
+              Kamila Palmowska Studio
+            </a>
+          </p>
         </div>
+      </div>
+      <div className={styles.imageWrapper}>
+        <Image src='/me2.jpg' width='1000' height='1500' alt='Kamila Palmowska' quality='80' />
       </div>
     </div>
   );
