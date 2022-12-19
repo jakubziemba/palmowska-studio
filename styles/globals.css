@@ -1,5 +1,6 @@
 @import url('https://api.fontshare.com/v2/css?f[]=general-sans@1&display=swap');
-@import url('https://api.fontshare.com/v2/css?f[]=gambetta@1,2&display=swap');
+/* @import url('https://api.fontshare.com/v2/css?f[]=gambetta@1,2&display=swap'); */
+@import url('https://api.fontshare.com/v2/css?f[]=erode@2,1&display=swap');
 
 html {
   /* COLORS */
@@ -21,7 +22,8 @@ html {
 
   /* TYPEFACES */
   --font-heading: 'General Sans', sans-serif;
-  --font-text: 'Gambetta', serif;
+  /* --font-text: 'Gambetta', serif; */
+  --font-text: 'Erode', serif;
 
   /* FONT SIZE */
   --fs-sm: 0.8rem;
@@ -88,6 +90,8 @@ p {
   margin: 0;
   line-height: 1.67;
   color: var(--color-black);
+  letter-spacing: 0.01em;
+  font-weight: 470;
 }
 
 /* @media (prefers-color-scheme: dark) {
