@@ -44,6 +44,9 @@ export default function Home({ projects }) {
           po niekonwencjonalne formy, kolory i faktury, tworząc niepowtarzalną atmosferę, która
           działa na wszystkie zmysły.
         </motion.p>
+        <Link href='/o-mnie' passHref>
+          <a className={styles.button}>Dowiedz się więcej</a>
+        </Link>
       </motion.div>
       <div className={styles.projectsWrapper}>
         <div className={styles.projectsImages}>
@@ -69,15 +72,15 @@ export default function Home({ projects }) {
                       width={width}
                       height={height}
                       alt={project.fields.projectTitle}
-                      quality={50}
+                      quality={45}
                       placeholder='blur'
-                      blurDataURL={`https:${thumbnail.url}?fm=jpg&fl=progressive`}
+                      blurDataURL={`https:${thumbnail.url}?fm=webp&fl=progressive`}
                       loading='lazy'
                     />
                     <div className={styles.overlay}></div>
                   </div>
                   <div className={styles.projectTitle}>
-                    <h3>{project.fields.projectTitle}</h3>
+                    <h2>{project.fields.projectTitle}</h2>
                   </div>
                 </a>
               </Link>
@@ -85,7 +88,9 @@ export default function Home({ projects }) {
           })}
         </div>
         <div className={styles.allProjects}>
-          <Link href='/projekty'>Zobacz wszystkie projekty</Link>
+          <Link href='/projekty' passHref>
+            <a className={styles.button}>Zobacz wszystkie projekty</a>
+          </Link>
         </div>
       </div>
     </section>
