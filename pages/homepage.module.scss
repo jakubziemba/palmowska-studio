@@ -166,6 +166,7 @@
   font-family: var(--font-heading);
   font-variation-settings: 'wght' 500;
   font-weight: 500;
+  margin-bottom: 8rem;
 }
 
 .button {
@@ -224,6 +225,7 @@
   left: -1rem;
   width: 250px;
   transform: rotate(-30deg);
+  z-index: 0;
 }
 
 .shape2pink {
@@ -242,24 +244,26 @@
 
 @media (min-width: 56.25em) {
   .shape1blue {
-    top: 35rem;
-    right: -10%;
+    top: 30rem;
+    right: -5rem;
+    width: 500px;
   }
 
   .shape1brown {
-    top: 45rem;
-    left: -3rem;
-    // transform: rotate(-30deg);
+    top: -10rem;
+    left: 30rem;
+    width: 150px;
   }
 
   .shape2pink {
     top: 1rem;
     left: -8rem;
+    width: 600px;
   }
 
   .shape3green {
-    top: 75%;
-    left: -10%;
-    transform: rotate(30deg);
+    top: 35rem;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }
