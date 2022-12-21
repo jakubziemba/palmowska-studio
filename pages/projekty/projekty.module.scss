@@ -2,6 +2,9 @@
   display: grid;
   grid-template-columns: 1fr;
   padding: 3rem var(--page-padding-mobile) 0;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
 
   @media (min-width: 56.25em) {
     padding: 3rem var(--page-padding-desktop);
@@ -11,6 +14,11 @@
 .heading {
   display: grid;
   grid-template-columns: 1fr;
+  position: relative;
+
+  h1 {
+    margin-bottom: 3rem;
+  }
 
   @media (min-width: 56.25em) {
     grid-template-columns: repeat(12, 1fr);
@@ -96,4 +104,66 @@
   opacity: 0;
   transition: all 0.32s ease;
   background-color: rgba(255, 255, 255, 0.15);
+}
+
+// SHAPES
+
+.shape {
+  position: absolute;
+  z-index: 0;
+}
+
+.shape1blue {
+  top: 35rem;
+  right: -10%;
+  width: 350px;
+}
+
+.shape1brown {
+  top: 0rem;
+  left: -1rem;
+  width: 250px;
+  transform: rotate(-30deg);
+  z-index: 0;
+}
+
+.shape2pink {
+  top: 87rem;
+  left: -8rem;
+  width: 350px;
+  height: auto;
+}
+
+.shape3green {
+  top: 75%;
+  left: -10%;
+  transform: rotate(30deg);
+  width: 450px;
+}
+
+@media (min-width: 56.25em) {
+  .shape1blue {
+    top: 78%;
+    right: 10rem;
+    width: 400px;
+    transform: rotate(30deg);
+  }
+
+  .shape1brown {
+    top: 0rem;
+    left: 5rem;
+    width: 450px;
+  }
+
+  .shape2pink {
+    top: 15rem;
+    left: 80%;
+    width: 250px;
+  }
+
+  .shape3green {
+    top: 35rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
