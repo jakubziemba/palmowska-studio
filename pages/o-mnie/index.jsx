@@ -19,7 +19,10 @@ const RICHTEXT_OPTIONS = {
 export default function About({ data }) {
   return (
     <div className={styles.container}>
-      <h1>Hej, miło mi Cię poznać!</h1>
+      <h1>
+        Hej,
+        <br /> poznajmy się!
+      </h1>
       <div className={styles.content}>
         <Image
           className={styles.portrait}
