@@ -82,7 +82,7 @@ export default function Home({ projects }) {
                       alt={project.fields.projectTitle}
                       quality={45}
                       placeholder='blur'
-                      blurDataURL={`https:${thumbnail.url}?fm=webp&fl=progressive`}
+                      blurDataURL={`https:${thumbnail.url}?fl=progressive`}
                       loading='lazy'
                     />
                     <div className={styles.overlay}></div>

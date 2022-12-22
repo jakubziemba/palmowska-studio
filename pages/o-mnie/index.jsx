@@ -1,7 +1,7 @@
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Image from 'next/future/image';
-import styles from './styles.module.scss';
+import styles from './omnie.module.scss';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -31,7 +31,7 @@ export default function About({ data }) {
           height={data.aboutImage.fields.file.details.image.height}
           loading='eager'
           placeholder='blur'
-          blurDataURL={`https:${data.aboutImage.fields.file.url}?fm=jpg&fl=progressive`}
+          blurDataURL={`https:${data.aboutImage.fields.file.url}?fl=progressive`}
           alt='An image of me'
           quality={100}
         />

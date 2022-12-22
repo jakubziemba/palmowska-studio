@@ -50,13 +50,13 @@
 }
 
 .heading {
-  font-size: 2.5rem;
+  font-size: var(--fs-xl);
   font-weight: 500;
   margin-bottom: 0.5rem;
   line-height: 1;
 
   @media (min-width: 56.25em) {
-    font-size: 5rem;
+    font-size: var(--fs-h1);
   }
 }
 
@@ -65,25 +65,27 @@
   font-style: italic;
 
   @media (min-width: 56.25em) {
-    font-size: 1.5rem;
+    font-size: var(--fs-md);
     margin-top: 3rem;
     margin-bottom: 0;
   }
 }
 
 .content {
+  margin-bottom: 3rem;
+
   @media (min-width: 56.25em) {
     grid-column: 9 / 13;
     margin-top: 0.8rem;
-    // grid-row: 2;
+    margin-bottom: 0;
   }
   // margin-top: 2rem;
 }
 
 .textTitle {
   font-family: 'Satoshi', sans-serif;
-  // font-size: var(--fs-bs);
-  font-size: 1.1rem;
+  font-size: var(--fs-md);
+  // font-size: 1.1rem;
   font-weight: 500;
   text-transform: uppercase;
   line-height: normal;
@@ -94,7 +96,7 @@
   font-size: var(--fs-bs);
   margin: 0 0 1rem;
   font-weight: 420;
-  text-align: justify;
+  text-align: left;
   line-height: normal;
   align-self: end;
   max-width: 90%;

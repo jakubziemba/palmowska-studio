@@ -1,13 +1,13 @@
 .link {
-	color: #333;
-	&:last-child {
-		border: 2px solid #333;
-		padding: 0.5rem 1rem;
-	}
+  color: #333;
+  &:last-child {
+    border: 2px solid #333;
+    padding: 0.5rem 1rem;
+  }
 }
 
 .active {
-	text-decoration: underline;
-	font-size: 2rem;
-	color: red;
+  text-decoration: underline;
+  font-size: var(--fs-lg);
+  color: red;
 }

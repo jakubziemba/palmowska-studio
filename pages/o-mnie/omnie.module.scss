@@ -14,11 +14,11 @@
 
   h1 {
     margin-bottom: 3rem;
-    font-size: 3rem;
+    font-size: var(--fs-h3);
     line-height: 1.1;
 
     @media (min-width: 56.25em) {
-      font-size: 5rem;
+      font-size: var(--fs-h1);
     }
   }
 }
@@ -56,8 +56,8 @@
 }
 
 .description {
-  font-size: 1rem;
-  text-align: justify;
+  font-size: var(--fs-bs);
+  text-align: left;
   line-height: 1.9;
   // text-indent: 3rem;
 
@@ -65,7 +65,7 @@
     grid-column: 7 / 12;
     margin-top: -8px;
     // column-gap: 4rem;
-    font-size: 1.2rem;
+    font-size: var(--fs-md);
   }
 
   img {

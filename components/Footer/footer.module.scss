@@ -4,7 +4,7 @@
   align-items: center;
   width: 100%;
   padding: 2rem 0;
-  font-size: 0.875rem;
+  font-size: var(--fs-sm);
   // background-color: var(--color-lilac);
   background-color: var(--color-lightblue);
   color: var(--color-black);
@@ -19,7 +19,7 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 1rem;
+  font-size: var(--fs-bs);
   // font-weight: 600;
 }
 
@@ -33,7 +33,7 @@
 
   a {
     margin-bottom: 0.5rem;
-    font-size: 1rem;
+    font-size: var(--fs-bs);
 
     &:first-child {
       margin-top: 0.5rem;

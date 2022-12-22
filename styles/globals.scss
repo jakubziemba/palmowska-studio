@@ -26,13 +26,15 @@ html {
   --font-text: 'Erode', serif;
 
   /* FONT SIZE */
-  --fs-sm: 0.8rem;
+  --fs-xs: 0.563rem;
+  --fs-sm: 0.75rem;
   --fs-bs: 1rem;
-  --fs-md: 1.563rem;
-  --fs-lg: 1.953rem;
-  --fs-xl: 2.441rem;
-  --fs-xxl: 3.052rem;
-  --fs-xxxl: 3.815rem;
+  --fs-md: 1.333rem;
+  --fs-lg: 1.777rem;
+  --fs-xl: 2.369rem;
+  --fs-h3: 3.175rem;
+  --fs-h2: 4.209rem;
+  --fs-h1: 5.61rem;
 }
 
 html,
@@ -69,29 +71,32 @@ h3 {
 h1 {
   font-weight: 500;
   font-variation-settings: 'wght' 500;
-  letter-spacing: -0.01em;
-  font-size: 2.8rem;
+  letter-spacing: -1px;
+  font-size: var(--fs-h3);
   margin-left: -0.1rem;
   line-height: 1;
 }
 
 h2 {
   font-weight: 500;
-  font-size: 2.4rem;
+  letter-spacing: -1px;
+  font-size: var(--fs-xl);
+  line-height: 1;
 }
 
 h3 {
   font-weight: 450;
   font-variation-settings: 'wght' 450;
-  letter-spacing: -0.01em;
-  font-size: 1.05rem;
+  // letter-spacing: -0.01em;
+  letter-spacing: -1px;
+  font-size: var(--fs-bs);
 }
 
 p {
   margin: 0;
   line-height: 1.67;
   color: var(--color-black);
-  letter-spacing: 0.01em;
+  // letter-spacing: 0.01em;
   font-weight: 470;
 }
 
