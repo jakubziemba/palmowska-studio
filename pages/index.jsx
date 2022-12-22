@@ -3,10 +3,10 @@ import Image from 'next/future/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './homepage.module.scss';
-import Shape1blue from '../public/svg/shape-1-blue.svg';
-import Shape1brown from '../public/svg/shape-1-brown.svg';
-import Shape2pink from '../public/svg/shape-2-pink.svg';
-import Shape3green from '../public/svg/shape-3-green.svg';
+import Shape1 from '../public/svg/shape-1.svg';
+import Shape2 from '../public/svg/shape-2.svg';
+import Shape3 from '../public/svg/shape-3.svg';
+import Shape4 from '../public/svg/shape-4.svg';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -17,8 +17,8 @@ export default function Home({ projects }) {
   const heading = 'Studio projektowania wnętrz';
   return (
     <section className={styles.container}>
-      <Shape1blue className={`${styles.shape1blue} ${styles.shape}`} />
-      <Shape2pink className={`${styles.shape2pink} ${styles.shape}`} />
+      <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
+      <Shape2 className={`${styles.shape2pink} ${styles.shape}`} />
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -26,17 +26,16 @@ export default function Home({ projects }) {
         className={styles.wrapper}
       >
         <div className={styles.title}>
-          {heading.split(' ').map((word, index) => (
-            <motion.h1
-              // initial={{ opacity: 0, y: 50 }}
-              // animate={{ opacity: 1, y: 0 }}
-              // transition={{ duration: 0.5, delay: index * 0.15 }}
-              key={index}
-              className={styles.title}
-            >
-              {word}
-            </motion.h1>
-          ))}
+          <motion.h1
+            // initial={{ opacity: 0, y: 50 }}
+            // animate={{ opacity: 1, y: 0 }}
+            // transition={{ duration: 0.5, delay: index * 0.15 }}
+            className={styles.title}
+          >
+            {heading.split(' ').map((word, index) => (
+              <span key={index}>{word}</span>
+            ))}
+          </motion.h1>
         </div>
         <motion.p
           className={styles.text}
@@ -55,8 +54,8 @@ export default function Home({ projects }) {
         </Link>
       </motion.div>
       <div className={styles.projectsWrapper}>
-        <Shape1brown className={`${styles.shape1brown} ${styles.shape}`} />
-        <Shape3green className={`${styles.shape3green} ${styles.shape}`} />
+        <Shape4 className={`${styles.shape1brown} ${styles.shape}`} />
+        <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
         <div className={styles.projectsImages}>
           {projects.map((project, index) => {
             const thumbnail = project.fields.featuredImage.fields.file;

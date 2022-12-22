@@ -1,9 +1,17 @@
 import Link from 'next/link';
 import styles from './publikacje.module.scss';
+import Shape1 from '../../public/svg/shape-1.svg';
+import Shape2 from '../../public/svg/shape-2.svg';
+import Shape3 from '../../public/svg/shape-3.svg';
+import Shape4 from '../../public/svg/shape-4.svg';
 
 export default function Publikacje() {
   return (
     <div className={styles.container}>
+      <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
+      <Shape4 className={`${styles.shape4brown} ${styles.shape}`} />
+      <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
+      <Shape2 className={`${styles.shape2pink} ${styles.shape}`} />
       <div className={styles.wrapper}>
         <h1>Publikacje</h1>
         <div className={styles.content}>

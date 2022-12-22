@@ -2,10 +2,10 @@ import { createClient } from 'contentful';
 import Image from 'next/future/image';
 import Link from 'next/link';
 import styles from './projekty.module.scss';
-import Shape1blue from '../../public/svg/shape-1-blue.svg';
-import Shape1brown from '../../public/svg/shape-1-brown.svg';
-import Shape2pink from '../../public/svg/shape-2-pink.svg';
-import Shape3green from '../../public/svg/shape-3-green.svg';
+import Shape1 from '../../public/svg/shape-1.svg';
+import Shape2 from '../../public/svg/shape-2.svg';
+import Shape3 from '../../public/svg/shape-3.svg';
+import Shape4 from '../../public/svg/shape-4.svg';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -17,10 +17,10 @@ export default function Projekty({ projects }) {
 
   return (
     <div className={styles.container}>
-      <Shape1brown className={`${styles.shape1brown} ${styles.shape}`} />
-      <Shape3green className={`${styles.shape3green} ${styles.shape}`} />
-      <Shape1blue className={`${styles.shape1blue} ${styles.shape}`} />
-      <Shape2pink className={`${styles.shape2pink} ${styles.shape}`} />
+      <Shape4 className={`${styles.shape1brown} ${styles.shape}`} />
+      <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
+      <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
+      <Shape2 className={`${styles.shape2pink} ${styles.shape}`} />
       <div className={styles.heading}>
         <h1>Projekty</h1>
         <p>

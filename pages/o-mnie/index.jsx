@@ -2,6 +2,10 @@ import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Image from 'next/future/image';
 import styles from './omnie.module.scss';
+import Shape1 from '../../public/svg/shape-1.svg';
+import Shape2 from '../../public/svg/shape-2.svg';
+import Shape3 from '../../public/svg/shape-3.svg';
+import Shape4 from '../../public/svg/shape-4.svg';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -19,30 +23,33 @@ const RICHTEXT_OPTIONS = {
 export default function About({ data }) {
   return (
     <div className={styles.container}>
-      <h1>
-        Hej,
-        <br /> poznajmy się!
-      </h1>
-      <div className={styles.content}>
-        <Image
-          className={styles.portrait}
-          src={`https:${data.aboutImage.fields.file.url}`}
-          width={data.aboutImage.fields.file.details.image.width}
-          height={data.aboutImage.fields.file.details.image.height}
-          loading='eager'
-          placeholder='blur'
-          blurDataURL={`https:${data.aboutImage.fields.file.url}?fl=progressive`}
-          alt='An image of me'
-          quality={100}
-        />
-        <div className={styles.description}>
-          {documentToReactComponents(data.aboutDescription, RICHTEXT_OPTIONS)}
+      <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
+      <Shape4 className={`${styles.shape4brown} ${styles.shape}`} />
+      <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
+      <Shape2 className={`${styles.shape2pink} ${styles.shape}`} />
+      <div className={styles.wrapper}>
+        <h1>Hej, poznajmy się!</h1>
+        <div className={styles.content}>
           <Image
-            src={`https:${data.signature.fields.file.url}`}
-            width={data.signature.fields.file.details.image.width}
-            height={data.signature.fields.file.details.image.height}
-            alt='signature'
+            className={styles.portrait}
+            src={`https:${data.aboutImage.fields.file.url}`}
+            width={data.aboutImage.fields.file.details.image.width}
+            height={data.aboutImage.fields.file.details.image.height}
+            loading='eager'
+            placeholder='blur'
+            blurDataURL={`https:${data.aboutImage.fields.file.url}?fl=progressive`}
+            alt='An image of me'
+            quality={100}
           />
+          <div className={styles.description}>
+            {documentToReactComponents(data.aboutDescription, RICHTEXT_OPTIONS)}
+            <Image
+              src={`https:${data.signature.fields.file.url}`}
+              width={data.signature.fields.file.details.image.width}
+              height={data.signature.fields.file.details.image.height}
+              alt='signature'
+            />
+          </div>
         </div>
       </div>
     </div>
