@@ -1,0 +1,19 @@
+.wrapper {
+  position: relative;
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  @media (min-width: 56.25em) {
+    overflow: unset;
+    // max-width: 1200px;
+  }
+}
+
+.main {
+  // min-height: 80vh;
+  background-color: var(--color-white);
+  // padding-bottom: 3rem;
+  // padding: 3rem 8rem 6rem;
+  // max-width: 1200px;
+  // margin: 0 auto;
+}
