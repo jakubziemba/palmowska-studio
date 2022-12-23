@@ -33,7 +33,7 @@ export default function Home({ projects }) {
             className={styles.title}
           >
             {heading.split(' ').map((word, index) => (
-              <span key={index}>{word}</span>
+              <span key={index}>{word} </span>
             ))}
           </motion.h1>
         </div>
@@ -79,7 +79,7 @@ export default function Home({ projects }) {
                       width={width}
                       height={height}
                       alt={project.fields.projectTitle}
-                      quality={45}
+                      quality={75}
                       placeholder='blur'
                       blurDataURL={`https:${thumbnail.url}?fl=progressive`}
                       loading='lazy'
