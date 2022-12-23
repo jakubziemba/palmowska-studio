@@ -79,7 +79,7 @@ export default function Home({ projects }) {
                       width={width}
                       height={height}
                       alt={project.fields.projectTitle}
-                      quality={75}
+                      quality={45}
                       placeholder='blur'
                       blurDataURL={`https:${thumbnail.url}?fl=progressive`}
                       loading='lazy'

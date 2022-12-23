@@ -36,7 +36,9 @@ export default function Projekty({ projects }) {
           const thumbnail = project.thumbnail.fields;
 
           return (
+
             <Link href={`/projekty/${slug}`} key={slug} passHref>
+
               <a className={styles.project}>
                 <div className={styles.imageWrapper}>
                   <Image
