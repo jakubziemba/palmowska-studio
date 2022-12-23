@@ -36,7 +36,7 @@ export default function Projekty({ projects }) {
           const thumbnail = project.thumbnail.fields;
 
           return (
-            <Link href={`/projekty/${slug}`} key={slug}>
+            <Link href={`/projekty/${slug}`} key={slug} passHref>
               <a className={styles.project}>
                 <div className={styles.imageWrapper}>
                   <Image
@@ -44,9 +44,9 @@ export default function Projekty({ projects }) {
                     width={thumbnail.file.details.image.width}
                     height={thumbnail.file.details.image.height}
                     alt={projectName}
-                    quality={85}
+                    quality={45}
+                    blurDataURL={`https:${thumbnail.file.url}?fl=progressive`}
                     loading='lazy'
-                    blurDataURL={`https:${thumbnail.file.url}?fm=jpg&fl=progressive`}
                   />
                   <div className={styles.overlay}></div>
                   <h3>{projectName}</h3>

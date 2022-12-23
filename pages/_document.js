@@ -9,6 +9,13 @@ export default function Document() {
           href='https://api.fontshare.com/v2/css?f[]=erode@2,1&f[]=general-sans@1&display=swap'
           rel='stylesheet'
         />
+        <link rel='apple-touch-icon' sizes='180x180' href='/apple-touch-icon.png' />
+        <link rel='icon' type='image/png' sizes='32x32' href='/favicon-32x32.png' />
+        <link rel='icon' type='image/png' sizes='16x16' href='/favicon-16x16.png' />
+        <link rel='manifest' href='/site.webmanifest' />
+        <link rel='mask-icon' href='~/public/safari-pinned-tab.svg' color='#f5f4ef' />
+        <meta name='msapplication-TileColor' content='#f5f4ef' />
+        <meta name='theme-color' content='#ffffff'></meta>
       </Head>
       <body>
         <Main />
