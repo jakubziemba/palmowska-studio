@@ -33,7 +33,7 @@ export default function Home({ projects }) {
             className={styles.title}
           >
             {heading.split(' ').map((word, index) => (
-              <span key={index}>{word}</span>
+              <span key={index}>{word} </span>
             ))}
           </motion.h1>
         </div>

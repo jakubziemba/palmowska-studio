@@ -32,6 +32,16 @@
 }
 
 .title {
+  font-size: var(--fs-xl);
+  span {
+    // white-space: pre-wrap;
+    display: block;
+  }
+
+  @media (min-width: 360px) {
+    font-size: var(--fs-h3);
+  }
+
   @media (min-width: 56.25em) {
     font-size: 7rem;
     font-weight: 500;
@@ -41,7 +51,6 @@
     grid-row: 1;
 
     span {
-      display: block;
     }
   }
 }
