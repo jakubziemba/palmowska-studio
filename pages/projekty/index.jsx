@@ -45,7 +45,8 @@ export default function Projekty({ projects }) {
                     height={thumbnail.file.details.image.height}
                     alt={projectName}
                     quality={45}
-                    blurDataURL={`https:${thumbnail.file.url}?fl=progressive`}
+                    placeholder='blur'
+                    blurDataURL={`https:${thumbnail.file.url}?w=20&fl=progressive&q=10`}
                     loading='lazy'
                   />
                   <div className={styles.overlay}></div>

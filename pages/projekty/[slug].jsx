@@ -30,10 +30,10 @@ export default function Project({ project }) {
         width={thumbnail.details.image.width}
         height={thumbnail.details.image.height}
         placeholder='blur'
-        blurDataURL={`https:${thumbnail.url}?fm=jpg&fl=progressive`}
-        alt='Cover image'
+        blurDataURL={`https:${thumbnail.url}?w=20&fl=progressive&q=10`}
+        alt={`Cover image for ${projectName} project`}
         loading='eager'
-        quality={100}
+        quality={90}
         priority
       />
       <div className={styles.wrapper}>
@@ -91,10 +91,6 @@ export default function Project({ project }) {
               const height = file.details.image.height;
 
               return (
-                // <div
-                // className={styles.imageWrapper}
-                // style={{ gridColumn: width > height ? '1 / 3' : 'auto' }}
-                // >
                 <Image
                   key={file.fileName}
                   src={`https:${file.url}`}
@@ -104,7 +100,7 @@ export default function Project({ project }) {
                   layout='responsive'
                   quality={85}
                   placeholder='blur'
-                  blurDataURL={`https:${file.url}?fm=jpg&fl=progressive`}
+                  blurDataURL={`https:${file.url}?w=20&fl=progressive&q=10`}
                 />
                 // </div>
               );
