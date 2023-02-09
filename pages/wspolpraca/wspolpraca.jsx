@@ -8,10 +8,10 @@ export default function Wspolpraca() {
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
-        <Shape4 className={`${styles.shape4brown} ${styles.shape}`} />
+        {/* <Shape3 className={`${styles.shape3green} ${styles.shape}`} /> */}
+        {/* <Shape4 className={`${styles.shape4brown} ${styles.shape}`} /> */}
         <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
-        <Shape2 className={`${styles.shape2pink} ${styles.shape}`} />
+        {/* <Shape2 className={`${styles.shape2pink} ${styles.shape}`} /> */}
         <div className={styles.heading}>
           <h1 className={styles.title}>Współpraca</h1>
           <p>

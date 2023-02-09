@@ -9,9 +9,9 @@ export default function Publikacje() {
   return (
     <div className={styles.container}>
       <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
-      <Shape4 className={`${styles.shape4brown} ${styles.shape}`} />
+      {/* <Shape4 className={`${styles.shape4brown} ${styles.shape}`} />
       <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
-      <Shape2 className={`${styles.shape2pink} ${styles.shape}`} />
+      <Shape2 className={`${styles.shape2pink} ${styles.shape}`} /> */}
       <div className={styles.wrapper}>
         <h1>Publikacje</h1>
         <div className={styles.content}>
