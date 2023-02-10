@@ -18,9 +18,9 @@ export default function Projekty({ projects }) {
   return (
     <div className={styles.container}>
       <Shape4 className={`${styles.shape1brown} ${styles.shape}`} />
-      <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
+      {/* <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
       <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
-      <Shape2 className={`${styles.shape2pink} ${styles.shape}`} />
+      <Shape2 className={`${styles.shape2pink} ${styles.shape}`} /> */}
       <div className={styles.heading}>
         <h1>Projekty</h1>
         <p>
@@ -45,7 +45,8 @@ export default function Projekty({ projects }) {
                     height={thumbnail.file.details.image.height}
                     alt={projectName}
                     quality={45}
-                    blurDataURL={`https:${thumbnail.file.url}?fl=progressive`}
+                    placeholder='blur'
+                    blurDataURL={`https:${thumbnail.file.url}?w=20&fl=progressive&q=10`}
                     loading='lazy'
                   />
                   <div className={styles.overlay}></div>

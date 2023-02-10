@@ -1,13 +1,12 @@
 html {
   /* COLORS */
-  --color-white: hsl(42, 25%, 95%);
+  --color-white: #f7f6f2;
   --color-pink: #f0dde0;
   --color-lightbrown: #e6d2cb;
   --color-washedgreen: #727d71;
   --color-pastelgreen: #c9e2d6;
   --color-charcoal: #373f51;
   --color-lilac: #73628a;
-  /* --color-lightblue: rgba(206, 216, 227, 0.6); */
   --color-lightblue: #acb8c5;
   --color-black: rgba(48, 48, 48, 1);
   --color-projects: #454545;
@@ -18,7 +17,6 @@ html {
 
   /* TYPEFACES */
   --font-heading: 'General Sans', sans-serif;
-  /* --font-text: 'Gambetta', serif; */
   --font-text: 'Erode', serif;
 
   /* FONT SIZE */
@@ -41,7 +39,7 @@ body {
   font-family: var(--font-text), serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-weight: 420;
+  font-weight: 400;
   color: var(--color-black);
   background-color: white;
 }
@@ -66,7 +64,6 @@ h3 {
 
 h1 {
   font-weight: 500;
-  font-variation-settings: 'wght' 500;
   letter-spacing: -1px;
   font-size: var(--fs-h3);
   margin-left: -0.1rem;
@@ -81,10 +78,8 @@ h2 {
 }
 
 h3 {
-  font-weight: 450;
-  font-variation-settings: 'wght' 450;
+  font-weight: 500;
   letter-spacing: -0.01em;
-  // letter-spacing: -1px;
   font-size: var(--fs-bs);
 }
 
@@ -92,8 +87,7 @@ p {
   margin: 0;
   line-height: 1.67;
   color: var(--color-black);
-  // letter-spacing: 0.01em;
-  font-weight: 470;
+  font-weight: 400;
 }
 
 /* @media (prefers-color-scheme: dark) {

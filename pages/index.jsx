@@ -17,7 +17,7 @@ export default function Home({ projects }) {
   const heading = 'Studio projektowania wnętrz';
   return (
     <section className={styles.container}>
-      <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
+      {/* <Shape1 className={`${styles.shape1blue} ${styles.shape}`} /> */}
       <Shape2 className={`${styles.shape2pink} ${styles.shape}`} />
       <motion.div
         initial={{ opacity: 0 }}
@@ -54,8 +54,8 @@ export default function Home({ projects }) {
         </Link>
       </motion.div>
       <div className={styles.projectsWrapper}>
-        <Shape4 className={`${styles.shape1brown} ${styles.shape}`} />
-        <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
+        {/* <Shape4 className={`${styles.shape1brown} ${styles.shape}`} /> */}
+        {/* <Shape3 className={`${styles.shape3green} ${styles.shape}`} /> */}
         <div className={styles.projectsImages}>
           {projects.map((project, index) => {
             const thumbnail = project.fields.featuredImage.fields.file;
@@ -81,7 +81,7 @@ export default function Home({ projects }) {
                       alt={project.fields.projectTitle}
                       quality={75}
                       placeholder='blur'
-                      blurDataURL={`https:${thumbnail.url}?fl=progressive`}
+                      blurDataURL={`https:${thumbnail.url}?w=20&fl=progressive&q=10`}
                       loading='lazy'
                     />
                     <div className={styles.overlay}></div>
