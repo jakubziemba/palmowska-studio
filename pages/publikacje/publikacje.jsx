@@ -22,6 +22,16 @@ export default function Publikacje() {
             <div className={styles.listWrapper}>
               <ul>
                 <li>
+                  <a href='https://label-magazine.com/wnetrza/artykuly/kancelaria-prawna'>
+                    Kancelaria prawna, w której połączono vintage i współczesny dizajn
+                  </a>
+                </li>
+                <li>
+                  <a href='https://label-magazine.com/wnetrza/artykuly/historyczne-wnetrze-w-nowym-wydaniu'>
+                    Historyczne wnętrze w nowym wydaniu. Odwiedzamy warszawską kamienicę z 1890 roku
+                  </a>
+                </li>
+                <li>
                   <a href='https://label-magazine.com/wnetrza/artykuly/mikrokawalerka-jak-urzadzic-bardzo-mala-przestrzen'>
                     Mikrokawalerka – jak urządzić bardzo małą przestrzeń?
                   </a>
@@ -55,6 +65,12 @@ export default function Publikacje() {
             </h2>
             <div className={styles.listWrapper}>
               <ul>
+                <li>
+                  <a href='https://www.elle.pl/decoration/artykul/nowoczesny-minimalizm-w-starej-kamienicy-w-srodku-klasyczna-jodelka-rozowy-stolik-kostka-i-piekne-kafle'>
+                    Nowoczesny minimalizm w starej kamienicy. W środku klasyczna jodełka, różowy
+                    stolik kostka i piękne kafle
+                  </a>
+                </li>
                 <li>
                   <a href='https://www.elle.pl/decoration/artykul/kolory-i-etro-szyk-w-mieszkaniu-na-warszawskim-mokotowie'>
                     Kolory i retro szyk w mieszkaniu na warszawskim Mokotowie
@@ -150,6 +166,20 @@ export default function Publikacje() {
                 <li>
                   <a href='https://internityhome.pl/inspiracje/realizacje/nowoczesny-vintage-morr-studio'>
                     Nowoczesny vintage na 37 metrach kw. (proj. Morr Studio)
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className={styles.publication}>
+            <h2>
+              <span>06</span>PLN Design
+            </h2>
+            <div className={styles.listWrapper}>
+              <ul>
+                <li>
+                  <a href='https://plndesign.pl/75-metrowe-biuro-marki-modowej-w-warszawskiej-kamienicy/'>
+                    75-metrowe biuro marki modowej w warszawskiej kamienicy
                   </a>
                 </li>
               </ul>
