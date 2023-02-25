@@ -20,18 +20,21 @@ export default function Project({ project }) {
     photos,
     projectDescription,
     thumbnail,
+    projectCover,
     images,
   } = project;
+
+  // const cover = projectCover || thumbnail;
 
   return (
     <section className={styles.container}>
       <Image
-        src={`https:${thumbnail.url}?fm=webp`}
-        width={thumbnail.details.image.width}
-        height={thumbnail.details.image.height}
+        src={`https:${projectCover.url}?fm=webp`}
+        width={projectCover.details.image.width}
+        height={projectCover.details.image.height}
         placeholder='blur'
-        blurDataURL={`https:${thumbnail.url}?w=20&fl=progressive&q=10`}
-        alt={`Cover image for ${projectName} project`}
+        blurDataURL={`https:${projectCover.url}?w=20&fl=progressive&q=10`}
+        alt={`projectCover image for ${projectName} project`}
         loading='eager'
         quality={90}
         priority
@@ -145,6 +148,7 @@ export async function getStaticProps({ params }) {
       date: fields?.date,
       photos: fields?.photos,
       thumbnail: fields?.thumbnail?.fields?.file,
+      projectCover: fields?.projectCover?.fields?.file || fields?.thumbnail?.fields?.file,
       images: fields?.images,
     };
   });
