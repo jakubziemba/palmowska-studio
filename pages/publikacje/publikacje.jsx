@@ -22,6 +22,11 @@ export default function Publikacje() {
             <div className={styles.listWrapper}>
               <ul>
                 <li>
+                  <a href='https://label-magazine.com/wnetrza/artykuly/nadwislanska-harmonia-w-krakowie'>
+                    Nadwiślańska harmonia w Krakowie – mieszkanie w kolorach ziemi
+                  </a>
+                </li>
+                <li>
                   <a href='https://label-magazine.com/wnetrza/artykuly/kancelaria-prawna'>
                     Kancelaria prawna, w której połączono vintage i współczesny dizajn
                   </a>
@@ -148,6 +153,11 @@ export default function Publikacje() {
             </h2>
             <div className={styles.listWrapper}>
               <ul>
+                <li>
+                  <a href='https://internityhome.pl/inspiracje/realizacje/nadwislanska-harmonia-w-80-metrowym-mieszkaniu-proj-kamila-palmowska/'>
+                    Nadwiślańska harmonia w 80 – metrowym mieszkaniu | proj.: Kamila Palmowska
+                  </a>
+                </li>
                 <li>
                   <a href='https://internityhome.pl/inspiracje/realizacje/mikrokawalerka-z-antresola-pelna-kolorow-i-ciekawych-rozwiazan/'>
                     Mikrokawalerka z antresolą pełna kolorów i ciekawych rozwiązań
