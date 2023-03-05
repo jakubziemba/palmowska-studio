@@ -14,6 +14,8 @@ const client = createClient({
 });
 
 export default function Home({ projects }) {
+  projects.sort((a, b) => a.fields.id - b.fields.id);
+
   const heading = 'Studio projektowania wnętrz';
   return (
     <section className={styles.container}>
@@ -58,6 +60,7 @@ export default function Home({ projects }) {
         {/* <Shape3 className={`${styles.shape3green} ${styles.shape}`} /> */}
         <div className={styles.projectsImages}>
           {projects.map((project, index) => {
+            const id = project.fields.id;
             const thumbnail = project.fields.featuredImage.fields.file;
             const width = thumbnail.details.image.width;
             const height = thumbnail.details.image.height;
