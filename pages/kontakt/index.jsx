@@ -16,8 +16,8 @@ export default function Kontakt() {
         <h1>Kontakt</h1>
         <div className={styles.content}>
           <p>
-            Chcesz skonsultować lub wycenić pomysł? A może dowiedzieć się jak pracuję? <br />
-            Chętnie doradzę, skonsultuję Twój projekt i opowiem o współpracy.
+            Jeżeli chciałbyś dowiedzieć się więcej na temat współpracy ze mną, umówić się na
+            spotkanie bądź wycenić projekt, zapraszam do kontaktu.
           </p>
           <div className={styles.links}>
             <p>
@@ -33,9 +33,7 @@ export default function Kontakt() {
             </p>
             <p>
               <span>Facebook:</span>{' '}
-              <a href='https://www.facebook.com/profile.php?id=100087842247172'>
-                Kamila Palmowska Studio
-              </a>
+              <a href='https://www.facebook.com/profile.php?id=100087842247172'>Palmowska Studio</a>
             </p>
           </div>
         </div>
