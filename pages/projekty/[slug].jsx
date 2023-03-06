@@ -24,19 +24,17 @@ export default function Project({ project }) {
     images,
   } = project;
 
-  // const cover = projectCover || thumbnail;
-
   return (
     <section className={styles.container}>
       <Image
-        src={`https:${projectCover.url}?fm=webp`}
+        src={`https:${projectCover.url}?fm=webp&w=1800&q=93`}
         width={projectCover.details.image.width}
         height={projectCover.details.image.height}
         placeholder='blur'
         blurDataURL={`https:${projectCover.url}?w=20&fl=progressive&q=10`}
         alt={`projectCover image for ${projectName} project`}
         loading='eager'
-        quality={90}
+        quality={93}
         priority
       />
       <div className={styles.wrapper}>
