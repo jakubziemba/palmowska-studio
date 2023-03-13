@@ -188,8 +188,13 @@ export default function Publikacje() {
             <div className={styles.listWrapper}>
               <ul>
                 <li>
+                  <a href='https://plndesign.pl/eleganckie-wnetrza-kancelarii-prawnej-przy-mokotowskiej-51-53-w-warszawie'>
+                    Eleganckie wnętrza kancelarii prawnej przy Mokotowskiej 51/53 w Warszawie
+                  </a>
+                </li>
+                <li>
                   <a href='https://plndesign.pl/80-metrowe-mieszkanie-w-krakowie-dla-mlodego-malzenstwa-przestrzen-w-duchu-japandi/'>
-                    80-metrowe mieszkanie w Krakowie dla młodego małżeństwa – przestrzeń w duchu
+                    80-metrowe mieszkanie w Krakowie dla młodego małżeństwa - przestrzeń w duchu
                     japandi
                   </a>
                 </li>
