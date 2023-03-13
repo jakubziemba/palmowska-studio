@@ -194,8 +194,7 @@ export default function Publikacje() {
                 </li>
                 <li>
                   <a href='https://plndesign.pl/80-metrowe-mieszkanie-w-krakowie-dla-mlodego-malzenstwa-przestrzen-w-duchu-japandi/'>
-                    80-metrowe mieszkanie w Krakowie dla młodego małżeństwa - przestrzeń w duchu
-                    japandi
+                    80-metrowe mieszkanie w Krakowie dla młodego małżeństwa - przestrzeń w duchu japandi
                   </a>
                 </li>
                 <li>
