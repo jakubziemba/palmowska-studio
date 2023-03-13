@@ -78,7 +78,7 @@ export default function Home({ projects }) {
                     style={{ gridColumn: width > height ? '1 / 3' : 'auto' }}
                   >
                     <Image
-                      src={`https:${thumbnail.url}`}
+                      src={`https:${thumbnail.url}?w=800`}
                       width={width}
                       height={height}
                       alt={project.fields.projectTitle}
