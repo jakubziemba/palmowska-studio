@@ -71,6 +71,22 @@
     font-size: var(--fs-md);
   }
 
+  a {
+    font-style: italic;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      display: inline-block;
+      bottom: -2px;
+      left: 0;
+      height: 1px;
+      width: 100%;
+      background-color: var(--color-black);
+    }
+  }
+
   img {
     display: flex;
     margin-top: 5rem;

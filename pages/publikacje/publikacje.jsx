@@ -22,6 +22,11 @@ export default function Publikacje() {
             <div className={styles.listWrapper}>
               <ul>
                 <li>
+                  <a href='https://label-magazine.com/wnetrza/artykuly/zielona-przystan-przytulne-mieszkanie-mlodego-malzenstwa-z-dzieckiem'>
+                    Zielona przystań. Przytulne mieszkanie młodego małżeństwa z dzieckiem
+                  </a>
+                </li>
+                <li>
                   <a href='https://label-magazine.com/wnetrza/artykuly/nadwislanska-harmonia-w-krakowie'>
                     Nadwiślańska harmonia w Krakowie – mieszkanie w kolorach ziemi
                   </a>
@@ -188,13 +193,19 @@ export default function Publikacje() {
             <div className={styles.listWrapper}>
               <ul>
                 <li>
+                  <a href='https://plndesign.pl/75-metrowe-warszawskie-mieszkanie-dla-mlodego-malzenstwa-i-ich-dwuletniego-synka/'>
+                    75-metrowe warszawskie mieszkanie dla młodego małżeństwa i ich dwuletniego synka
+                  </a>
+                </li>
+                <li>
                   <a href='https://plndesign.pl/eleganckie-wnetrza-kancelarii-prawnej-przy-mokotowskiej-51-53-w-warszawie'>
                     Eleganckie wnętrza kancelarii prawnej przy Mokotowskiej 51/53 w Warszawie
                   </a>
                 </li>
                 <li>
                   <a href='https://plndesign.pl/80-metrowe-mieszkanie-w-krakowie-dla-mlodego-malzenstwa-przestrzen-w-duchu-japandi/'>
-                    80-metrowe mieszkanie w Krakowie dla młodego małżeństwa - przestrzeń w duchu japandi
+                    80-metrowe mieszkanie w Krakowie dla młodego małżeństwa - przestrzeń w duchu
+                    japandi
                   </a>
                 </li>
                 <li>
