@@ -76,6 +76,12 @@ export default function Publikacje() {
             <div className={styles.listWrapper}>
               <ul>
                 <li>
+                  <a href='https://www.elle.pl/decoration/artykul/dwupoziomowe-mieszkanie-w-krakowie-miks-japandi-i-elegancji-rodem-z-kamienicy-tak-mieszka-mlode-malzenstwo#dwupoziomowe-mieszkanie-w-krakowie-projekt-kamila-palmowska-12'>
+                    Dwupoziomowe mieszkanie w Krakowie. Miks japandi i elegancji rodem z kamienicy -
+                    tak mieszka młode małżeństwo
+                  </a>
+                </li>
+                <li>
                   <a href='https://www.elle.pl/decoration/artykul/nowoczesny-minimalizm-w-starej-kamienicy-w-srodku-klasyczna-jodelka-rozowy-stolik-kostka-i-piekne-kafle'>
                     Nowoczesny minimalizm w starej kamienicy. W środku klasyczna jodełka, różowy
                     stolik kostka i piękne kafle
@@ -212,6 +218,31 @@ export default function Publikacje() {
                 <li>
                   <a href='https://plndesign.pl/75-metrowe-biuro-marki-modowej-w-warszawskiej-kamienicy/'>
                     75-metrowe biuro marki modowej w warszawskiej kamienicy
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className={styles.publication}>
+            <h2>
+              <span>07</span>Architektura i Biznes
+            </h2>
+            <div className={styles.listWrapper}>
+              <ul>
+                <li>
+                  <a href='https://www.architekturaibiznes.pl/pdd-special/kamila-palmowska-w-cyklu-10-pytan-do-architekta-wnetrz,26017.html'>
+                    „Dom to przede wszystkim emocje związane z danym miejscem”. Kamila Palmowska w
+                    cyklu „10 pytań do architekta wnętrz”
+                  </a>
+                </li>
+                <li>
+                  <a href='https://www.architekturaibiznes.pl/pdd-special/harmonijna-przystan-dla-mlodego-malzenstwa,25906.html'>
+                    Harmonijna przystań dla młodego małżeństwa
+                  </a>
+                </li>
+                <li>
+                  <a href='https://www.architekturaibiznes.pl/pdd-special/flower-power-czyli-wnetrze-z-dusza,12895.html'>
+                    Flower Power, czyli wnętrze z duszą
                   </a>
                 </li>
               </ul>
