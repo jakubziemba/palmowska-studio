@@ -139,7 +139,7 @@ export async function getStaticProps({ params }) {
     return {
       id: fields?.id,
       projectName: fields?.projectName,
-      apartment: fields?.apartment,
+      apartment: fields?.apartment || null,
       location: fields?.location,
       livingArea: fields?.livingArea,
       projectBy: fields?.projectBy,
