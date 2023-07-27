@@ -2,11 +2,11 @@ import { createClient } from 'contentful';
 import Image from 'next/future/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import styles from './homepage.module.scss';
 import Shape1 from '../public/svg/shape-1.svg';
 import Shape2 from '../public/svg/shape-2.svg';
 import Shape3 from '../public/svg/shape-3.svg';
 import Shape4 from '../public/svg/shape-4.svg';
+import styles from './homepage.module.scss';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -18,13 +18,13 @@ export default function Home({ projects }) {
 
   const heading = 'Studio projektowania wnętrz';
   return (
-    <section className={styles.container}>
+    <motion.section className={styles.container}>
       {/* <Shape1 className={`${styles.shape1blue} ${styles.shape}`} /> */}
       <Shape2 className={`${styles.shape2pink} ${styles.shape}`} />
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.7 }}
+      <div
+        // initial={{ opacity: 0 }}
+        // animate={{ opacity: 1 }}
+        // transition={{ duration: 0.6 }}
         className={styles.wrapper}
       >
         <div className={styles.title}>
@@ -54,7 +54,7 @@ export default function Home({ projects }) {
         <Link href='/o-mnie' passHref>
           <a className={styles.button}>Dowiedz się więcej</a>
         </Link>
-      </motion.div>
+      </div>
       <div className={styles.projectsWrapper}>
         {/* <Shape4 className={`${styles.shape1brown} ${styles.shape}`} /> */}
         {/* <Shape3 className={`${styles.shape3green} ${styles.shape}`} /> */}
@@ -103,7 +103,7 @@ export default function Home({ projects }) {
           </Link>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

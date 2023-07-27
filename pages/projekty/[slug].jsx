@@ -2,6 +2,7 @@ import { createClient } from 'contentful';
 import Image from 'next/future/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import { motion } from 'framer-motion';
 import styles from './slug.module.scss';
 
 const client = createClient({
@@ -19,13 +20,18 @@ export default function Project({ project }) {
     date,
     photos,
     projectDescription,
-    thumbnail,
     projectCover,
     images,
   } = project;
 
   return (
-    <section className={styles.container}>
+    <motion.section
+      className={styles.container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <Image
         src={`https:${projectCover.url}?fm=webp&w=1800&q=93`}
         width={projectCover.details.image.width}
@@ -83,7 +89,6 @@ export default function Project({ project }) {
         </div>
       </div>
       <div className={styles.projects}>
-        {/* <div className={styles.projectsImages}> */}
         <ResponsiveMasonry columnsCountBreakPoints={{ 320: 1, 750: 2, 900: 3 }}>
           <Masonry gutter='16px'>
             {images.map(item => {
@@ -103,14 +108,13 @@ export default function Project({ project }) {
                   placeholder='blur'
                   blurDataURL={`https:${file.url}?w=20&fl=progressive&q=10`}
                 />
-                // </div>
               );
             })}
           </Masonry>
         </ResponsiveMasonry>
         {/* </div> */}
       </div>
-    </section>
+    </motion.section>
   );
 }
 

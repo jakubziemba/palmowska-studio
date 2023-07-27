@@ -1,6 +1,7 @@
 import { createClient } from 'contentful';
 import Image from 'next/future/image';
 import Link from 'next/link';
+import { motion } from 'framer-motion';
 import styles from './projekty.module.scss';
 import Shape1 from '../../public/svg/shape-1.svg';
 import Shape2 from '../../public/svg/shape-2.svg';
@@ -16,7 +17,13 @@ export default function Projekty({ projects }) {
   const sorted = projects.sort((a, b) => b.id - a.id);
 
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <Shape4 className={`${styles.shape1brown} ${styles.shape}`} />
       {/* <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
       <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
@@ -57,7 +64,7 @@ export default function Projekty({ projects }) {
           );
         })}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

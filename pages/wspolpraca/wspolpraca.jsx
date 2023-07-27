@@ -1,4 +1,5 @@
 import styles from './wspolpraca.module.scss';
+import { motion } from 'framer-motion';
 import Shape1 from '../../public/svg/shape-1.svg';
 import Shape2 from '../../public/svg/shape-2.svg';
 import Shape3 from '../../public/svg/shape-3.svg';
@@ -6,7 +7,13 @@ import Shape4 from '../../public/svg/shape-4.svg';
 
 export default function Wspolpraca() {
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <div className={styles.wrapper}>
         {/* <Shape3 className={`${styles.shape3green} ${styles.shape}`} /> */}
         {/* <Shape4 className={`${styles.shape4brown} ${styles.shape}`} /> */}
@@ -108,6 +115,6 @@ export default function Wspolpraca() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
