@@ -1,12 +1,12 @@
 import { createClient } from 'contentful';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
-import Image from "next/legacy/image";
 import { motion } from 'framer-motion';
 import styles from './omnie.module.scss';
 import Shape1 from '../../public/svg/shape-1.svg';
 import Shape2 from '../../public/svg/shape-2.svg';
 import Shape3 from '../../public/svg/shape-3.svg';
 import Shape4 from '../../public/svg/shape-4.svg';
+import MyImage from '../../components/MyImage';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -37,7 +37,7 @@ export default function About({ data }) {
       <div className={styles.wrapper}>
         <h1>Hej, poznajmy się!</h1>
         <div className={styles.content}>
-          <Image
+          <MyImage
             className={styles.portrait}
             src={`https:${data.aboutImage.fields.file.url}`}
             width={data.aboutImage.fields.file.details.image.width}
@@ -50,7 +50,7 @@ export default function About({ data }) {
           />
           <div className={styles.description}>
             {documentToReactComponents(data.aboutDescription, RICHTEXT_OPTIONS)}
-            <Image
+            <MyImage
               src={`https:${data.signature.fields.file.url}`}
               width={data.signature.fields.file.details.image.width}
               height={data.signature.fields.file.details.image.height}

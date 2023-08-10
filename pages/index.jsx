@@ -1,5 +1,4 @@
 import { createClient } from 'contentful';
-import Image from 'next/legacy/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Shape1 from '../public/svg/shape-1.svg';
@@ -7,6 +6,7 @@ import Shape2 from '../public/svg/shape-2.svg';
 import Shape3 from '../public/svg/shape-3.svg';
 import Shape4 from '../public/svg/shape-4.svg';
 import styles from './homepage.module.scss';
+import MyImage from '../components/MyImage';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -82,7 +82,7 @@ export default function Home({ projects }) {
                   data-alt={project.fields.projectTitle}
                   style={{ gridColumn: width > height ? '1 / 3' : 'auto' }}
                 >
-                  <Image
+                  <MyImage
                     src={`https:${thumbnail.url}?w=800`}
                     width={width}
                     height={height}

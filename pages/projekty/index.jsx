@@ -1,5 +1,4 @@
 import { createClient } from 'contentful';
-import Image from "next/legacy/image";
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './projekty.module.scss';
@@ -7,6 +6,7 @@ import Shape1 from '../../public/svg/shape-1.svg';
 import Shape2 from '../../public/svg/shape-2.svg';
 import Shape3 from '../../public/svg/shape-3.svg';
 import Shape4 from '../../public/svg/shape-4.svg';
+import MyImage from '../../components/MyImage';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -45,7 +45,7 @@ export default function Projekty({ projects }) {
           return (
             <Link className={styles.project} href={`/projekty/${slug}`} key={slug} passHref>
               <div className={styles.imageWrapper}>
-                <Image
+                <MyImage
                   src={`https:${thumbnail.file.url}`}
                   width={thumbnail.file.details.image.width}
                   height={thumbnail.file.details.image.height}

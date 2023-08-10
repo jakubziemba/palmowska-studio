@@ -1,9 +1,10 @@
 import { createClient } from 'contentful';
-import Image from "next/legacy/image";
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import { motion } from 'framer-motion';
 import styles from './slug.module.scss';
+import Image from 'next/image';
+import MyImage from '../../components/MyImage';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -97,13 +98,12 @@ export default function Project({ project }) {
               const height = file.details.image.height;
 
               return (
-                <Image
+                <MyImage
                   key={file.fileName}
                   src={`https:${file.url}`}
                   width={width}
                   height={height}
                   alt={file.fileName}
-                  layout='responsive'
                   quality={85}
                   placeholder='blur'
                   blurDataURL={`https:${file.url}?w=20&fl=progressive&q=10`}

@@ -1,10 +1,10 @@
-import Image from "next/legacy/image";
 import { motion } from 'framer-motion';
 import styles from './styles.module.scss';
 import Shape1 from '../../public/svg/shape-1.svg';
 import Shape2 from '../../public/svg/shape-2.svg';
 import Shape3 from '../../public/svg/shape-3.svg';
 import Shape4 from '../../public/svg/shape-4.svg';
+import MyImage from '../../components/MyImage';
 
 export default function Kontakt() {
   return (
@@ -45,7 +45,7 @@ export default function Kontakt() {
           </div>
         </div>
         <div className={styles.imageWrapper}>
-          <Image src='/me2.jpg' width='1000' height='1500' alt='Kamila Palmowska' quality='80' />
+          <MyImage src='/me2.jpg' width='1000' height='1500' alt='Kamila Palmowska' quality='80' />
         </div>
       </div>
     </motion.div>
