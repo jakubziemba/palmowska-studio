@@ -97,6 +97,7 @@ export default function Home({ projects }) {
                 <div className={styles.projectTitle}>
                   <h2>{project.fields.projectTitle}</h2>
                 </div>
+
               </Link>
             );
           })}
