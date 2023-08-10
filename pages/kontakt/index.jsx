@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import Image from "next/legacy/image";
 import { motion } from 'framer-motion';
 import styles from './styles.module.scss';
 import Shape1 from '../../public/svg/shape-1.svg';
