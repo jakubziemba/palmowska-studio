@@ -1,5 +1,5 @@
 import { createClient } from 'contentful';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import { motion } from 'framer-motion';

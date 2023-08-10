@@ -17,32 +17,32 @@ export default function Menu({ isMenuOpen, setIsMenuOpen }) {
         <ul className={styles.list}>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
             <Link href='/' className={styles.link} passHref>
-              <a className={styles.link}>Strona główna</a>
+              Strona główna
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
             <Link href='/projekty' className={styles.link} passHref>
-              <a className={styles.link}>Projekty</a>
+              Projekty
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
             <Link href='/publikacje' className={styles.link} passHref>
-              <a className={styles.link}>Publikacje</a>
+              Publikacje
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
             <Link href='/wspolpraca' className={styles.link} passHref>
-              <a className={styles.link}>Współpraca</a>
+              Współpraca
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
             <Link href='/o-mnie' className={styles.link} passHref>
-              <a className={styles.link}>O mnie</a>
+              O mnie
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
             <Link href='/kontakt' className={styles.link} passHref>
-              <a className={styles.link}>Kontakt</a>
+              Kontakt
             </Link>
           </li>
         </ul>

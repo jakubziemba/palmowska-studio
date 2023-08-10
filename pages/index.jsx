@@ -1,5 +1,5 @@
 import { createClient } from 'contentful';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Shape1 from '../public/svg/shape-1.svg';
@@ -51,8 +51,8 @@ export default function Home({ projects }) {
           po niekonwencjonalne formy, kolory i faktury, tworząc niepowtarzalną atmosferę, która
           działa na wszystkie zmysły.
         </motion.p>
-        <Link href='/o-mnie' passHref>
-          <a className={styles.button}>Dowiedz się więcej</a>
+        <Link className={styles.button} href='/o-mnie' passHref>
+          Dowiedz się więcej
         </Link>
       </div>
       <div className={styles.projectsWrapper}>
@@ -69,37 +69,35 @@ export default function Home({ projects }) {
               <Link
                 href={`/projekty/${project.fields.slug}`}
                 key={project.fields.projectTitle}
-                passHref
+                data-alt={project.fields.projectTitle}
               >
-                <a data-alt={project.fields.projectTitle}>
-                  <div
-                    className={styles.imageWrapper}
-                    data-alt={project.fields.projectTitle}
-                    style={{ gridColumn: width > height ? '1 / 3' : 'auto' }}
-                  >
-                    <Image
-                      src={`https:${thumbnail.url}?w=800`}
-                      width={width}
-                      height={height}
-                      alt={project.fields.projectTitle}
-                      quality={75}
-                      placeholder='blur'
-                      blurDataURL={`https:${thumbnail.url}?w=20&fl=progressive&q=10`}
-                      loading='lazy'
-                    />
-                    <div className={styles.overlay}></div>
-                  </div>
-                  <div className={styles.projectTitle}>
-                    <h2>{project.fields.projectTitle}</h2>
-                  </div>
-                </a>
+                <div
+                  className={styles.imageWrapper}
+                  data-alt={project.fields.projectTitle}
+                  style={{ gridColumn: width > height ? '1 / 3' : 'auto' }}
+                >
+                  <Image
+                    src={`https:${thumbnail.url}?w=800`}
+                    width={width}
+                    height={height}
+                    alt={project.fields.projectTitle}
+                    quality={75}
+                    placeholder='blur'
+                    blurDataURL={`https:${thumbnail.url}?w=20&fl=progressive&q=10`}
+                    loading='lazy'
+                  />
+                  <div className={styles.overlay}></div>
+                </div>
+                <div className={styles.projectTitle}>
+                  <h2>{project.fields.projectTitle}</h2>
+                </div>
               </Link>
             );
           })}
         </div>
         <div className={styles.allProjects}>
-          <Link href='/projekty' passHref>
-            <a className={styles.button}>Zobacz wszystkie projekty</a>
+          <Link className={styles.button} href='/projekty'>
+            Zobacz wszystkie projekty
           </Link>
         </div>
       </div>
