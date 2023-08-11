@@ -2,11 +2,9 @@ import { createClient } from 'contentful';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './projekty.module.scss';
-import Shape1 from '../../public/svg/shape-1.svg';
-import Shape2 from '../../public/svg/shape-2.svg';
-import Shape3 from '../../public/svg/shape-3.svg';
 import Shape4 from '../../public/svg/shape-4.svg';
 import MyImage from '../../components/MyImage';
+import { useState, useEffect } from 'react';
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -14,8 +12,10 @@ const client = createClient({
 });
 
 export default function Projekty({ projects }) {
-  const sorted = projects.sort((a, b) => b.id - a.id);
-
+  const [isMobile, setIsMobile] = useState(false);
+  useEffect(() => {
+    window.innerWidth < 768 ? setIsMobile(true) : setIsMobile(false);
+  }, []);
   return (
     <motion.div
       className={styles.container}
@@ -25,9 +25,6 @@ export default function Projekty({ projects }) {
       transition={{ duration: 0.6 }}
     >
       <Shape4 className={`${styles.shape1brown} ${styles.shape}`} />
-      {/* <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
-      <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
-      <Shape2 className={`${styles.shape2pink} ${styles.shape}`} /> */}
       <div className={styles.heading}>
         <h1>Projekty</h1>
         <p>
@@ -38,22 +35,26 @@ export default function Projekty({ projects }) {
         </p>
       </div>
       <div className={styles.images}>
-        {sorted.map(project => {
-          const { slug, projectName } = project;
-          const thumbnail = project.thumbnail.fields;
+        {projects.map((project, index) => {
+          const {
+            slug,
+            projectName,
+            thumbnail: { fields: thumbnail },
+          } = project;
 
           return (
             <Link className={styles.project} href={`/projekty/${slug}`} key={slug} passHref>
               <div className={styles.imageWrapper}>
                 <MyImage
-                  src={`https:${thumbnail.file.url}`}
+                  src={`https:${thumbnail.file.url}?fm=webp`}
                   width={thumbnail.file.details.image.width}
                   height={thumbnail.file.details.image.height}
                   alt={projectName}
                   quality={45}
                   placeholder='blur'
                   blurDataURL={`https:${thumbnail.file.url}?w=20&fl=progressive&q=10`}
-                  loading='lazy'
+                  priority={isMobile && index === 0}
+                  loading={isMobile && index === 0 ? 'eager' : 'lazy'}
                 />
                 <div className={styles.overlay}></div>
                 <h3>{projectName}</h3>
@@ -71,12 +72,14 @@ export async function getStaticProps() {
     content_type: 'project',
   });
 
-  const projects = items.map(({ fields }) => ({
-    id: fields.id,
-    slug: fields.slug,
-    projectName: fields.projectName,
-    thumbnail: fields.thumbnail,
-  }));
+  const projects = items
+    .map(({ fields }) => ({
+      id: fields.id,
+      slug: fields.slug,
+      projectName: fields.projectName,
+      thumbnail: fields.thumbnail,
+    }))
+    .sort((a, b) => b.id - a.id);
 
   return {
     props: { projects },

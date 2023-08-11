@@ -25,6 +25,17 @@ export default function Project({ project }) {
     images,
   } = project;
 
+  const variants = {
+    animate: {
+      objectPosition: ['40% 35%', '40% 65%', '40% 35%'],
+      transition: {
+        duration: 40,
+        repeat: Infinity,
+        ease: 'linear',
+      },
+    },
+  };
+
   return (
     <motion.section
       className={styles.container}
@@ -34,15 +45,13 @@ export default function Project({ project }) {
       transition={{ duration: 0.6 }}
     >
       <Image
-        src={`https:${projectCover.url}?fm=webp&w=1800&q=93`}
+        src={`https:${projectCover.url}?fm=webp`}
         width={projectCover.details.image.width}
         height={projectCover.details.image.height}
-        placeholder='blur'
-        blurDataURL={`https:${projectCover.url}?w=20&fl=progressive&q=10`}
-        alt={`projectCover image for ${projectName} project`}
-        loading='eager'
-        quality={93}
-        priority
+        alt={projectName}
+        quality={85}
+        priority={true}
+        sizes='(max-width: 480px) 100vw,(max-width: 600px) 100vw, (max-width: 768px) 100vw, 100vw'
       />
       <div className={styles.wrapper}>
         <div className={styles.title}>
@@ -98,15 +107,14 @@ export default function Project({ project }) {
               const height = file.details.image.height;
 
               return (
-                <MyImage
+                <Image
                   key={file.fileName}
-                  src={`https:${file.url}`}
+                  src={`https://${file.url}?fm=webp&q=80`}
                   width={width}
                   height={height}
-                  alt={file.fileName}
-                  quality={85}
-                  placeholder='blur'
-                  blurDataURL={`https:${file.url}?w=20&fl=progressive&q=10`}
+                  alt={projectName}
+                  quality={80}
+                  sizes='(max-width: 480px) 100vw, (max-width: 768px) 389px, (max-width: 1024px) 342px, (max-width: 1280px) 320px, 50vw'
                 />
               );
             })}

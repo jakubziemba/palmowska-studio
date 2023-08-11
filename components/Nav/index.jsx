@@ -4,6 +4,14 @@ import styles from './styles.module.scss';
 import { MenuButton } from './menuButton';
 import Menu from '../Menu';
 
+const links = [
+  { path: '/projekty', label: 'Projekty' },
+  { path: '/publikacje', label: 'Publikacje' },
+  { path: '/wspolpraca', label: 'Współpraca' },
+  { path: '/o-mnie', label: 'O mnie' },
+  { path: '/kontakt', label: 'Kontakt' },
+];
+
 export default function Nav() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -17,21 +25,11 @@ export default function Nav() {
         <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         <nav className={styles.nav}>
           <ul className={styles.list}>
-            <li className={styles.item}>
-              <NavLink href='/projekty'>Projekty</NavLink>
-            </li>
-            <li className={styles.item}>
-              <NavLink href='/publikacje'>Publikacje</NavLink>
-            </li>
-            <li className={styles.item}>
-              <NavLink href='/wspolpraca'>Współpraca</NavLink>
-            </li>
-            <li className={styles.item}>
-              <NavLink href='/o-mnie'>O mnie</NavLink>
-            </li>
-            <li className={styles.item}>
-              <NavLink href='/kontakt'>Kontakt</NavLink>
-            </li>
+            {links.map(link => (
+              <li key={link.path} className={styles.item}>
+                <NavLink href={link.path}>{link.label}</NavLink>
+              </li>
+            ))}
           </ul>
         </nav>
       </div>
