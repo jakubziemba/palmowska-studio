@@ -1,4 +1,5 @@
-import { createClient } from 'contentful';
+'use client';
+
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './projekty.module.scss';
@@ -6,16 +7,13 @@ import Shape4 from '../../public/svg/shape-4.svg';
 import MyImage from '../../components/MyImage';
 import { useState, useEffect } from 'react';
 
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-});
-
 export default function Projekty({ projects }) {
   const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
     window.innerWidth < 768 ? setIsMobile(true) : setIsMobile(false);
   }, []);
+
   return (
     <motion.div
       className={styles.container}
@@ -65,23 +63,4 @@ export default function Projekty({ projects }) {
       </div>
     </motion.div>
   );
-}
-
-export async function getStaticProps() {
-  const { items } = await client.getEntries({
-    content_type: 'project',
-  });
-
-  const projects = items
-    .map(({ fields }) => ({
-      id: fields.id,
-      slug: fields.slug,
-      projectName: fields.projectName,
-      thumbnail: fields.thumbnail,
-    }))
-    .sort((a, b) => b.id - a.id);
-
-  return {
-    props: { projects },
-  };
 }

@@ -1,15 +1,17 @@
+'use client';
+
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import styles from './menu.module.scss';
 
 export default function Menu({ isMenuOpen, setIsMenuOpen }) {
-  const router = useRouter();
+  // const router = useRouter();
 
-  useEffect(() => {
-    router.events.on('routeChangeStart', () => setIsMenuOpen(false));
-    return () => router.events.off('routeChangeStart', () => setIsMenuOpen(false));
-  }, [router.events, setIsMenuOpen]);
+  // useEffect(() => {
+  //   router.events.on('routeChangeStart', () => setIsMenuOpen(false));
+  //   return () => router.events.off('routeChangeStart', () => setIsMenuOpen(false));
+  // }, [router.events, setIsMenuOpen]);
 
   return (
     <div className={`${styles.menu} ${isMenuOpen ? styles.open : ''}`}>

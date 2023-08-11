@@ -1,9 +1,8 @@
+'use client';
+
 import styles from './wspolpraca.module.scss';
 import { motion } from 'framer-motion';
 import Shape1 from '../../public/svg/shape-1.svg';
-import Shape2 from '../../public/svg/shape-2.svg';
-import Shape3 from '../../public/svg/shape-3.svg';
-import Shape4 from '../../public/svg/shape-4.svg';
 
 export default function Wspolpraca() {
   return (
@@ -15,10 +14,7 @@ export default function Wspolpraca() {
       transition={{ duration: 0.6 }}
     >
       <div className={styles.wrapper}>
-        {/* <Shape3 className={`${styles.shape3green} ${styles.shape}`} /> */}
-        {/* <Shape4 className={`${styles.shape4brown} ${styles.shape}`} /> */}
         <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
-        {/* <Shape2 className={`${styles.shape2pink} ${styles.shape}`} /> */}
         <div className={styles.heading}>
           <h1 className={styles.title}>Współpraca</h1>
           <p>

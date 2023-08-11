@@ -1,15 +1,11 @@
-import { createClient } from 'contentful';
+'use client';
+
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import { motion } from 'framer-motion';
 import styles from './slug.module.scss';
 import Image from 'next/image';
-import MyImage from '../../components/MyImage';
-
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-});
+import MyImage from '../../../components/MyImage';
 
 export default function Project({ project }) {
   const {
@@ -24,7 +20,6 @@ export default function Project({ project }) {
     projectCover,
     images,
   } = project;
-
   const variants = {
     animate: {
       objectPosition: ['40% 35%', '40% 65%', '40% 35%'],
@@ -35,7 +30,6 @@ export default function Project({ project }) {
       },
     },
   };
-
   return (
     <motion.section
       className={styles.container}
@@ -105,16 +99,14 @@ export default function Project({ project }) {
               const { file } = item.fields;
               const width = file.details.image.width;
               const height = file.details.image.height;
-
               return (
-                <Image
+                <MyImage
                   key={file.fileName}
                   src={`https://${file.url}?fm=webp&q=80`}
                   width={width}
                   height={height}
                   alt={projectName}
                   quality={80}
-                  sizes='(max-width: 480px) 100vw, (max-width: 768px) 389px, (max-width: 1024px) 342px, (max-width: 1280px) 320px, 50vw'
                 />
               );
             })}
@@ -124,46 +116,4 @@ export default function Project({ project }) {
       </div>
     </motion.section>
   );
-}
-
-export async function getStaticPaths() {
-  const res = await client.getEntries({ content_type: 'project' });
-
-  const paths = res.items.map(item => {
-    return {
-      params: { slug: item.fields.slug },
-    };
-  });
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
-  const { items } = await client.getEntries({
-    content_type: 'project',
-    'fields.slug': params.slug,
-  });
-
-  const projectData = items.map(({ fields }) => {
-    return {
-      id: fields?.id,
-      projectName: fields?.projectName,
-      apartment: fields?.apartment || null,
-      location: fields?.location,
-      livingArea: fields?.livingArea,
-      projectBy: fields?.projectBy,
-      date: fields?.date,
-      photos: fields?.photos,
-      thumbnail: fields?.thumbnail?.fields?.file,
-      projectCover: fields?.projectCover?.fields?.file || fields?.thumbnail?.fields?.file,
-      images: fields?.images,
-    };
-  });
-
-  return {
-    props: { project: projectData[0] },
-  };
 }

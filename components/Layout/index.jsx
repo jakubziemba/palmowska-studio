@@ -1,3 +1,5 @@
+'use client';
+
 import Nav from '../Nav';
 import Footer from '../Footer';
 import styles from './styles.module.scss';

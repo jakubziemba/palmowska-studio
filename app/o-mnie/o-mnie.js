@@ -1,17 +1,10 @@
-import { createClient } from 'contentful';
+'use client';
+
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import { motion } from 'framer-motion';
 import styles from './omnie.module.scss';
-import Shape1 from '../../public/svg/shape-1.svg';
 import Shape2 from '../../public/svg/shape-2.svg';
-import Shape3 from '../../public/svg/shape-3.svg';
-import Shape4 from '../../public/svg/shape-4.svg';
 import MyImage from '../../components/MyImage';
-
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-});
 
 const RICHTEXT_OPTIONS = {
   renderText: text => {
@@ -30,9 +23,6 @@ export default function About({ data }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
-      {/* <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
-      <Shape4 className={`${styles.shape4brown} ${styles.shape}`} />
-      <Shape1 className={`${styles.shape1blue} ${styles.shape}`} /> */}
       <Shape2 className={`${styles.shape2pink} ${styles.shape}`} />
       <div className={styles.wrapper}>
         <h1>Hej, poznajmy się!</h1>
@@ -61,14 +51,4 @@ export default function About({ data }) {
       </div>
     </motion.div>
   );
-}
-
-export async function getStaticProps() {
-  const { items } = await client.getEntries({
-    content_type: 'aboutMe',
-  });
-
-  return {
-    props: { data: items[0].fields },
-  };
 }

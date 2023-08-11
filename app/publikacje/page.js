@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import styles from './publikacje.module.scss';
 import { motion } from 'framer-motion';
