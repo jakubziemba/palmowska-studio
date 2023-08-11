@@ -16,33 +16,33 @@ export default function Menu({ isMenuOpen, setIsMenuOpen }) {
       <div className={styles.wrapper}>
         <ul className={styles.list}>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
-            <Link href='/' className={styles.link} passHref>
-              <a className={styles.link}>Strona główna</a>
+            <Link href='/' className={styles.link}>
+              Strona główna
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
-            <Link href='/projekty' className={styles.link} passHref>
-              <a className={styles.link}>Projekty</a>
+            <Link href='/projekty' className={styles.link}>
+              Projekty
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
-            <Link href='/publikacje' className={styles.link} passHref>
-              <a className={styles.link}>Publikacje</a>
+            <Link href='/publikacje' className={styles.link}>
+              Publikacje
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
-            <Link href='/wspolpraca' className={styles.link} passHref>
-              <a className={styles.link}>Współpraca</a>
+            <Link href='/wspolpraca' className={styles.link}>
+              Współpraca
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
-            <Link href='/o-mnie' className={styles.link} passHref>
-              <a className={styles.link}>O mnie</a>
+            <Link href='/o-mnie' className={styles.link}>
+              O mnie
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
-            <Link href='/kontakt' className={styles.link} passHref>
-              <a className={styles.link}>Kontakt</a>
+            <Link href='/kontakt' className={styles.link}>
+              Kontakt
             </Link>
           </li>
         </ul>

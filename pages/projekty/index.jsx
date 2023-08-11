@@ -1,5 +1,5 @@
 import { createClient } from 'contentful';
-import Image from 'next/future/image';
+import Image from 'next/image';
 import Link from 'next/link';
 import styles from './projekty.module.scss';
 import Shape1 from '../../public/svg/shape-1.svg';
@@ -36,23 +36,21 @@ export default function Projekty({ projects }) {
           const thumbnail = project.thumbnail.fields;
 
           return (
-            <Link href={`/projekty/${slug}`} key={slug} passHref>
-              <a className={styles.project}>
-                <div className={styles.imageWrapper}>
-                  <Image
-                    src={`https:${thumbnail.file.url}`}
-                    width={thumbnail.file.details.image.width}
-                    height={thumbnail.file.details.image.height}
-                    alt={projectName}
-                    quality={45}
-                    placeholder='blur'
-                    blurDataURL={`https:${thumbnail.file.url}?w=20&fl=progressive&q=10`}
-                    loading='lazy'
-                  />
-                  <div className={styles.overlay}></div>
-                  <h3>{projectName}</h3>
-                </div>
-              </a>
+            <Link className={styles.project} href={`/projekty/${slug}`} key={slug} passHref>
+              <div className={styles.imageWrapper}>
+                <Image
+                  src={`https:${thumbnail.file.url}`}
+                  width={thumbnail.file.details.image.width}
+                  height={thumbnail.file.details.image.height}
+                  alt={projectName}
+                  quality={45}
+                  placeholder='blur'
+                  blurDataURL={`https:${thumbnail.file.url}?w=20&fl=progressive&q=10`}
+                  loading='lazy'
+                />
+                <div className={styles.overlay}></div>
+                <h3>{projectName}</h3>
+              </div>
             </Link>
           );
         })}

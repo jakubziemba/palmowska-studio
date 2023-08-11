@@ -1,4 +1,4 @@
-import Image from 'next/future/image';
+import Image from 'next/image';
 import styles from './styles.module.scss';
 import Shape1 from '../../public/svg/shape-1.svg';
 import Shape2 from '../../public/svg/shape-2.svg';
