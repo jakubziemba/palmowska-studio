@@ -6,7 +6,7 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-export async function getAboutData() {
+async function getAboutData() {
   const { items } = await client.getEntries({
     content_type: 'aboutMe',
   });

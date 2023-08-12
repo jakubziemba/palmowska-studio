@@ -41,7 +41,7 @@ export default function Kontakt() {
           </div>
         </div>
         <div className={styles.imageWrapper}>
-          <MyImage src='/me2.jpg' width='1000' height='1500' alt='Kamila Palmowska' quality='80' />
+          <MyImage src='/me2.jpg' width={1000} height={1500} alt='Kamila Palmowska' quality={80} />
         </div>
       </div>
     </motion.div>

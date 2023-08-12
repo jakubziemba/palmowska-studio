@@ -32,11 +32,12 @@ export default function About({ data }) {
             src={`https:${data.aboutImage.fields.file.url}`}
             width={data.aboutImage.fields.file.details.image.width}
             height={data.aboutImage.fields.file.details.image.height}
+            priority={true}
             loading='eager'
             placeholder='blur'
             blurDataURL={`https:${data.aboutImage.fields.file.url}?fl=progressive`}
             alt='An image of me'
-            quality={100}
+            quality={80}
           />
           <div className={styles.description}>
             {documentToReactComponents(data.aboutDescription, RICHTEXT_OPTIONS)}

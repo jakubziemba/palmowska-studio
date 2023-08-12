@@ -6,7 +6,7 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-export async function generateStaticParams() {
+async function generateStaticParams() {
   const res = await client.getEntries({ content_type: 'project' });
 
   const paths = res.items.map(item => {
@@ -18,7 +18,7 @@ export async function generateStaticParams() {
   return paths;
 }
 
-export async function getProject() {
+async function getProject() {
   const params = await generateStaticParams();
 
   const { items } = await client.getEntries({

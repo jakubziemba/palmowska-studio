@@ -6,7 +6,7 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-export async function getProjects() {
+async function getProjects() {
   const { items } = await client.getEntries({
     content_type: 'project',
   });
