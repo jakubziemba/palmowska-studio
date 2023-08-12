@@ -1,5 +1,5 @@
 import { AnimatePresence } from 'framer-motion';
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import localFont from 'next/font/local';
 import '../styles/globals.scss';
 
