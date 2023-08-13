@@ -20,6 +20,7 @@ export default function Project({ project }) {
     projectCover,
     images,
   } = project;
+
   const variants = {
     animate: {
       objectPosition: ['40% 35%', '40% 65%', '40% 35%'],

@@ -6,24 +6,18 @@ const client = createClient({
   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
 });
 
-async function generateStaticParams() {
+export async function generateStaticParams() {
   const res = await client.getEntries({ content_type: 'project' });
-
-  const paths = res.items.map(item => {
-    return { params: { slug: item.fields.slug } };
-  });
-
-  // console.log(paths);
+  const paths = res.items.map(item => ({ params: { slug: item.fields.slug } }));
 
   return paths;
 }
 
-async function getProject() {
-  const params = await generateStaticParams();
-
+async function getProject(params) {
+  const { slug } = params;
   const { items } = await client.getEntries({
     content_type: 'project',
-    'fields.slug': params.slug,
+    'fields.slug': slug,
   });
 
   const projectData = items.map(({ fields }) => {
@@ -41,11 +35,12 @@ async function getProject() {
       images: fields?.images,
     };
   });
+
   return projectData[0];
 }
 
-export default async function Page() {
-  const project = await getProject();
+export default async function Page({ params }) {
+  const project = await getProject(params);
 
   return <Project project={project} />;
 }

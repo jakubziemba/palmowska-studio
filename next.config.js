@@ -5,9 +5,6 @@ const nextConfig = {
     domains: ['images.ctfassets.net'],
     formats: ['image/avif', 'image/webp'],
   },
-  compiler: {
-    styledComponents: true,
-  },
 
   webpack(config) {
     config.module.rules.push({
