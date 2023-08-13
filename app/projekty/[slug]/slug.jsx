@@ -101,13 +101,14 @@ export default function Project({ project }) {
               const width = file.details.image.width;
               const height = file.details.image.height;
               return (
-                <MyImage
+                <Image
                   key={file.fileName}
                   src={`https://${file.url}?fm=webp&q=80`}
                   width={width}
                   height={height}
                   alt={projectName}
                   quality={80}
+                  sizes='(max-width: 480px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 50vw'
                 />
               );
             })}
