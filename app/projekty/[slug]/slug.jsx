@@ -1,13 +1,11 @@
-import { createClient } from 'contentful';
-import Image from 'next/future/image';
+'use client';
+
 import { documentToReactComponents } from '@contentful/rich-text-react-renderer';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import { motion } from 'framer-motion';
 import styles from './slug.module.scss';
-
-const client = createClient({
-  space: process.env.CONTENTFUL_SPACE_ID,
-  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
-});
+import Image from 'next/image';
+import MyImage from '../../../components/MyImage';
 
 export default function Project({ project }) {
   const {
@@ -19,23 +17,37 @@ export default function Project({ project }) {
     date,
     photos,
     projectDescription,
-    thumbnail,
     projectCover,
     images,
   } = project;
 
+  const variants = {
+    animate: {
+      objectPosition: ['40% 35%', '40% 65%', '40% 35%'],
+      transition: {
+        duration: 40,
+        repeat: Infinity,
+        ease: 'linear',
+      },
+    },
+  };
   return (
-    <section className={styles.container}>
+    <motion.section
+      className={styles.container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <Image
-        src={`https:${projectCover.url}?fm=webp&w=1800&q=93`}
+        src={`https:${projectCover.url}?fm=webp&q=80`}
         width={projectCover.details.image.width}
         height={projectCover.details.image.height}
-        placeholder='blur'
-        blurDataURL={`https:${projectCover.url}?w=20&fl=progressive&q=10`}
-        alt={`projectCover image for ${projectName} project`}
+        alt={projectName}
+        quality={80}
         loading='eager'
-        quality={93}
-        priority
+        priority={true}
+        sizes='(max-width: 480px) 50vw,(max-width: 600px) 75vw, (max-width: 768px) 80vw, 100vw'
       />
       <div className={styles.wrapper}>
         <div className={styles.title}>
@@ -83,75 +95,28 @@ export default function Project({ project }) {
         </div>
       </div>
       <div className={styles.projects}>
-        {/* <div className={styles.projectsImages}> */}
         <ResponsiveMasonry columnsCountBreakPoints={{ 320: 1, 750: 2, 900: 3 }}>
           <Masonry gutter='16px'>
             {images.map(item => {
               const { file } = item.fields;
               const width = file.details.image.width;
               const height = file.details.image.height;
-
               return (
                 <Image
                   key={file.fileName}
-                  src={`https:${file.url}`}
+                  src={`https:${file.url}?fm=webp&q=80`}
                   width={width}
                   height={height}
-                  alt={file.fileName}
-                  layout='responsive'
-                  quality={85}
-                  placeholder='blur'
-                  blurDataURL={`https:${file.url}?w=20&fl=progressive&q=10`}
+                  alt={projectName}
+                  quality={80}
+                  sizes='(max-width: 480px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 50vw, (max-width: 1280px) 33vw, 50vw'
                 />
-                // </div>
               );
             })}
           </Masonry>
         </ResponsiveMasonry>
         {/* </div> */}
       </div>
-    </section>
+    </motion.section>
   );
-}
-
-export async function getStaticPaths() {
-  const res = await client.getEntries({ content_type: 'project' });
-
-  const paths = res.items.map(item => {
-    return {
-      params: { slug: item.fields.slug },
-    };
-  });
-
-  return {
-    paths,
-    fallback: false,
-  };
-}
-
-export async function getStaticProps({ params }) {
-  const { items } = await client.getEntries({
-    content_type: 'project',
-    'fields.slug': params.slug,
-  });
-
-  const projectData = items.map(({ fields }) => {
-    return {
-      id: fields?.id,
-      projectName: fields?.projectName,
-      apartment: fields?.apartment || null,
-      location: fields?.location,
-      livingArea: fields?.livingArea,
-      projectBy: fields?.projectBy,
-      date: fields?.date,
-      photos: fields?.photos,
-      thumbnail: fields?.thumbnail?.fields?.file,
-      projectCover: fields?.projectCover?.fields?.file || fields?.thumbnail?.fields?.file,
-      images: fields?.images,
-    };
-  });
-
-  return {
-    props: { project: projectData[0] },
-  };
 }

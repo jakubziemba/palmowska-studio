@@ -1,17 +1,20 @@
+'use client';
+
 import Link from 'next/link';
 import styles from './publikacje.module.scss';
-import Shape1 from '../../public/svg/shape-1.svg';
-import Shape2 from '../../public/svg/shape-2.svg';
+import { motion } from 'framer-motion';
 import Shape3 from '../../public/svg/shape-3.svg';
-import Shape4 from '../../public/svg/shape-4.svg';
 
 export default function Publikacje() {
   return (
-    <div className={styles.container}>
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
-      {/* <Shape4 className={`${styles.shape4brown} ${styles.shape}`} />
-      <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
-      <Shape2 className={`${styles.shape2pink} ${styles.shape}`} /> */}
       <div className={styles.wrapper}>
         <h1>Publikacje</h1>
         <div className={styles.content}>
@@ -212,7 +215,6 @@ export default function Publikacje() {
                   <a href='https://plndesign.pl/80-metrowe-mieszkanie-w-krakowie-dla-mlodego-malzenstwa-przestrzen-w-duchu-japandi/'>
                     80-metrowe mieszkanie w Krakowie dla młodego małżeństwa - przestrzeń w duchu
                     japandi
-
                   </a>
                 </li>
                 <li>
@@ -250,6 +252,6 @@ export default function Publikacje() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

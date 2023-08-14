@@ -1,15 +1,17 @@
+'use client';
+
 import { useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
 import styles from './menu.module.scss';
 
 export default function Menu({ isMenuOpen, setIsMenuOpen }) {
-  const router = useRouter();
+  // const router = useRouter();
 
-  useEffect(() => {
-    router.events.on('routeChangeStart', () => setIsMenuOpen(false));
-    return () => router.events.off('routeChangeStart', () => setIsMenuOpen(false));
-  }, [router.events, setIsMenuOpen]);
+  // useEffect(() => {
+  //   router.events.on('routeChangeStart', () => setIsMenuOpen(false));
+  //   return () => router.events.off('routeChangeStart', () => setIsMenuOpen(false));
+  // }, [router.events, setIsMenuOpen]);
 
   return (
     <div className={`${styles.menu} ${isMenuOpen ? styles.open : ''}`}>
@@ -17,32 +19,32 @@ export default function Menu({ isMenuOpen, setIsMenuOpen }) {
         <ul className={styles.list}>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
             <Link href='/' className={styles.link} passHref>
-              <a className={styles.link}>Strona główna</a>
+              Strona główna
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
             <Link href='/projekty' className={styles.link} passHref>
-              <a className={styles.link}>Projekty</a>
+              Projekty
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
             <Link href='/publikacje' className={styles.link} passHref>
-              <a className={styles.link}>Publikacje</a>
+              Publikacje
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
             <Link href='/wspolpraca' className={styles.link} passHref>
-              <a className={styles.link}>Współpraca</a>
+              Współpraca
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
             <Link href='/o-mnie' className={styles.link} passHref>
-              <a className={styles.link}>O mnie</a>
+              O mnie
             </Link>
           </li>
           <li className={styles.item} onClick={() => setIsMenuOpen(isMenuOpen => !isMenuOpen)}>
             <Link href='/kontakt' className={styles.link} passHref>
-              <a className={styles.link}>Kontakt</a>
+              Kontakt
             </Link>
           </li>
         </ul>

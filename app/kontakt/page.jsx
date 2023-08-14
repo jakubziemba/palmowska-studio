@@ -1,16 +1,19 @@
-import Image from 'next/future/image';
+'use client';
+
+import { motion } from 'framer-motion';
 import styles from './styles.module.scss';
 import Shape1 from '../../public/svg/shape-1.svg';
-import Shape2 from '../../public/svg/shape-2.svg';
-import Shape3 from '../../public/svg/shape-3.svg';
-import Shape4 from '../../public/svg/shape-4.svg';
+import MyImage from '../../components/MyImage';
 
 export default function Kontakt() {
   return (
-    <div className={styles.container}>
-      {/* <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
-      <Shape4 className={`${styles.shape4brown} ${styles.shape}`} />
-      <Shape2 className={`${styles.shape2pink} ${styles.shape}`} /> */}
+    <motion.div
+      className={styles.container}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
       <div className={styles.wrapper}>
         <h1>Kontakt</h1>
@@ -38,9 +41,9 @@ export default function Kontakt() {
           </div>
         </div>
         <div className={styles.imageWrapper}>
-          <Image src='/me2.jpg' width='1000' height='1500' alt='Kamila Palmowska' quality='80' />
+          <MyImage src='/me2.jpg' width={1000} height={1500} alt='Kamila Palmowska' quality={80} />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
