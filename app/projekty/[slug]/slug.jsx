@@ -103,7 +103,7 @@ export default function Project({ project }) {
               return (
                 <Image
                   key={file.fileName}
-                  src={`https://${file.url}?fm=webp&q=80`}
+                  src={`https:${file.url}?fm=webp&q=80`}
                   width={width}
                   height={height}
                   alt={projectName}
