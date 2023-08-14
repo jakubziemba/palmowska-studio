@@ -21,7 +21,7 @@ async function getHomepageProjects() {
 
 export default async function Page() {
   const projects = await getHomepageProjects();
-  // projects.sort((a, b) => a.fields.id - b.fields.id);
+  projects.sort((a, b) => a.fields.id - b.fields.id);
 
   return <Homepage projects={projects} />;
 }

@@ -40,13 +40,14 @@ export default function Project({ project }) {
       transition={{ duration: 0.6 }}
     >
       <Image
-        src={`https:${projectCover.url}?fm=webp`}
+        src={`https:${projectCover.url}?fm=webp&q=80`}
         width={projectCover.details.image.width}
         height={projectCover.details.image.height}
         alt={projectName}
-        quality={85}
+        quality={80}
+        loading='eager'
         priority={true}
-        sizes='(max-width: 480px) 100vw,(max-width: 600px) 100vw, (max-width: 768px) 100vw, 100vw'
+        sizes='(max-width: 480px) 50vw,(max-width: 600px) 75vw, (max-width: 768px) 80vw, 100vw'
       />
       <div className={styles.wrapper}>
         <div className={styles.title}>
