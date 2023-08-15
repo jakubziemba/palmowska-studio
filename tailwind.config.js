@@ -11,6 +11,13 @@ module.exports = {
         sans: ['var(--font-sans)', 'sans-serif'],
         serif: ['var(--font-serif)', 'serif'],
       },
+      colors: {
+        lightblue: 'var(--color-lightblue)',
+      },
+      spacing: {
+        'page-mobile': 'var(--page-padding-mobile)',
+        'page-desktop': 'var(--page-padding-desktop)',
+      },
     },
   },
   plugins: [],

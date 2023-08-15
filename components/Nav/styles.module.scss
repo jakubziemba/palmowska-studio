@@ -10,11 +10,11 @@
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: center;
-  min-height: 3rem;
-  padding: 2rem 0.5rem 2rem var(--page-padding-mobile);
+  // min-height: 3rem;
+  padding: 1rem var(--page-padding-mobile);
 
   @media (min-width: 56.25em) {
-    padding: 2rem var(--page-padding-desktop);
+    padding: 1.5rem var(--page-padding-desktop);
   }
 
   @media (min-width: 1024px) {

@@ -22,7 +22,7 @@ export default function Projekty({ projects }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <Shape4 className={`${styles.shape1brown} ${styles.shape}`} />
+      {/* <Shape4 className={`${styles.shape1brown} ${styles.shape}`} /> */}
       <div className={styles.heading}>
         <h1>Projekty</h1>
         <p>

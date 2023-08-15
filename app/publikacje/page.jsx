@@ -14,7 +14,7 @@ export default function Publikacje() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <Shape3 className={`${styles.shape3green} ${styles.shape}`} />
+      {/* <Shape3 className={`${styles.shape3green} ${styles.shape}`} /> */}
       <div className={styles.wrapper}>
         <h1>Publikacje</h1>
         <div className={styles.content}>

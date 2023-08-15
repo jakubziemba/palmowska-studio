@@ -16,7 +16,7 @@ export default function Homepage({ projects }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <Shape2 className={`${styles.shape2pink} ${styles.shape}`} />
+      {/* <Shape2 className={`${styles.shape2pink} ${styles.shape}`} /> */}
       <div className={styles.wrapper}>
         <div className={styles.title}>
           <motion.h1 className={styles.title}>

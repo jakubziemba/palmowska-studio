@@ -14,7 +14,7 @@ export default function Kontakt() {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
+      {/* <Shape1 className={`${styles.shape1blue} ${styles.shape}`} /> */}
       <div className={styles.wrapper}>
         <h1>Kontakt</h1>
         <div className={styles.content}>
@@ -41,7 +41,16 @@ export default function Kontakt() {
           </div>
         </div>
         <div className={styles.imageWrapper}>
-          <MyImage src='/me2.jpg' width={1000} height={1500} alt='Kamila Palmowska' quality={80} />
+          <MyImage
+            src='/me2.jpg'
+            width={1000}
+            height={1500}
+            alt='Kamila Palmowska'
+            quality={80}
+            loading='eager'
+            priority={true}
+            sizes='(max-width: 480px) 50vw,(max-width: 600px) 75vw, (max-width: 768px) 80vw, 100vw'
+          />
         </div>
       </div>
     </motion.div>

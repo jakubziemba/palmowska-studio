@@ -23,7 +23,7 @@ export default function About({ data }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <Shape2 className={`${styles.shape2pink} ${styles.shape}`} />
+      {/* <Shape2 className={`${styles.shape2pink} ${styles.shape}`} /> */}
       <div className={styles.wrapper}>
         <h1>Hej, poznajmy się!</h1>
         <div className={styles.content}>

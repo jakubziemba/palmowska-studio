@@ -5,7 +5,6 @@ import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import { motion } from 'framer-motion';
 import styles from './slug.module.scss';
 import Image from 'next/image';
-import MyImage from '../../../components/MyImage';
 
 export default function Project({ project }) {
   const {

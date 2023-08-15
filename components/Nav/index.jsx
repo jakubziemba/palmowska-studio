@@ -5,6 +5,7 @@ import { NavLink } from '../NavLink';
 import styles from './styles.module.scss';
 import { MenuButton } from './menuButton';
 import Menu from '../Menu';
+import Logo from '../../public/palmowska-logo-bw.svg';
 
 const links = [
   { path: '/projekty', label: 'Projekty' },
@@ -21,7 +22,9 @@ export default function Nav() {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.logo}>
-          <NavLink href='/'>Kamila Palmowska</NavLink>
+          <NavLink href='/'>
+            <Logo className='w-12 h-12' />
+          </NavLink>
         </div>
         <MenuButton isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
         <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
