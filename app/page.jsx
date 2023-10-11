@@ -1,9 +1,9 @@
-import { createClient } from 'contentful';
-import Homepage from './homepage';
+import { createClient } from "contentful";
+import Homepage from "./homepage";
 
 export const metadata = {
-  title: 'Palmowska Studio | Home',
-  description: 'Studio projektowania wnętrz - Warszawa',
+  title: "Palmowska Studio | Home",
+  description: "Studio projektowania wnętrz - Warszawa",
 };
 
 const client = createClient({
@@ -13,7 +13,7 @@ const client = createClient({
 
 async function getHomepageProjects() {
   const { items } = await client.getEntries({
-    content_type: 'projectLink',
+    content_type: "projectLink",
   });
 
   return items;
@@ -22,6 +22,7 @@ async function getHomepageProjects() {
 export default async function Page() {
   const projects = await getHomepageProjects();
   projects.sort((a, b) => a.fields.id - b.fields.id);
+  const singleProject = projects[0];
 
-  return <Homepage projects={projects} />;
+  return <Homepage projects={projects} singleProject={singleProject} />;
 }

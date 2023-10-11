@@ -4,7 +4,7 @@
 
 html {
   /* COLORS */
-  --color-white: #f7f6f2;
+  --color-white: #fff5e3;
   --color-pink: #f0dde0;
   --color-lightbrown: #e6d2cb;
   --color-washedgreen: #727d71;
@@ -14,19 +14,21 @@ html {
   --color-lightblue: #acb8c5;
   --color-black: rgba(48, 48, 48, 1);
   --color-projects: #454545;
+  --color-dark: rgba(54, 54, 54, 1);
+  --color-gray: rgba(171, 171, 171, 1);
 
   /* PADDINGS */
   --page-padding-mobile: 1rem;
   --page-padding-desktop: 3rem;
 
   /* TYPEFACES */
-  --font-heading: 'General Sans', sans-serif;
-  --font-text: 'Erode', serif;
+  --font-sans: "Instrument Sans", sans-serif;
+  --font-text: "Instrument Sans", sans-serif;
 
   /* FONT SIZE */
   --fs-xs: 0.563rem;
   --fs-sm: 0.75rem;
-  --fs-bs: 1rem;
+  --fs-base: 1rem;
   --fs-md: 1.333rem;
   --fs-lg: 1.777rem;
   --fs-xl: 2.369rem;
@@ -40,12 +42,12 @@ body {
   padding: 0;
   margin: 0;
   min-height: 100vh;
-  font-family: var(--font-serif), serif;
+  font-family: var(--font-sans), sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   color: var(--color-black);
-  background-color: white;
+  background-color: #fff5e3;
 }
 
 a {
@@ -84,7 +86,7 @@ h2 {
 h3 {
   font-weight: 500;
   letter-spacing: -0.01em;
-  font-size: var(--fs-bs);
+  font-size: var(--fs-base);
 }
 
 p {

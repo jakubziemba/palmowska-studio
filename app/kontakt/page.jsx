@@ -3,7 +3,7 @@
 import { motion } from 'framer-motion';
 import styles from './styles.module.scss';
 import Shape1 from '../../public/svg/shape-1.svg';
-import MyImage from '../../components/MyImage';
+import MyImage from '../components/MyImage';
 
 export default function Kontakt() {
   return (

@@ -27,7 +27,7 @@
   }
 
   p {
-    font-size: var(--fs-bs);
+    font-size: var(--fs-base);
     max-width: 60ch;
   }
 
@@ -42,7 +42,7 @@
     }
 
     p {
-      grid-column: 7 / 12;
+      grid-column: 1 / 8;
       grid-row: 2;
       display: grid;
       align-self: end;
@@ -81,7 +81,7 @@
     // display: grid;
     margin-top: 1rem;
     align-self: end;
-    font-size: var(--fs-bs);
+    font-size: var(--fs-base);
     line-height: 1.9;
     max-width: 500px;
   }

@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './projekty.module.scss';
 import Shape4 from '../../public/svg/shape-4.svg';
-import MyImage from '../../components/MyImage';
+import MyImage from '../components/MyImage';
 import { useState, useEffect } from 'react';
 
 export default function Projekty({ projects }) {

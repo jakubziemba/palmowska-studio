@@ -38,7 +38,7 @@ export default function Project({ project }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <Image
+      {/* <Image
         src={`https:${projectCover.url}?fm=webp&q=80`}
         width={projectCover.details.image.width}
         height={projectCover.details.image.height}
@@ -47,7 +47,7 @@ export default function Project({ project }) {
         loading='eager'
         priority={true}
         sizes='(max-width: 480px) 50vw,(max-width: 600px) 75vw, (max-width: 768px) 80vw, 100vw'
-      />
+      /> */}
       <div className={styles.wrapper}>
         <div className={styles.title}>
           <h1 className={styles.heading}>{projectName}</h1>
