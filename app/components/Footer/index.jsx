@@ -1,6 +1,6 @@
 "use client";
 
-import Logo from "../../../public/palmowska-logo-bw.svg";
+import Logo from "../Nav/Logo";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { FaPinterest, FaFacebook, FaInstagram } from "react-icons/fa";
@@ -32,19 +32,19 @@ const socialMediaLinks = [
 
 export default function Footer() {
   return (
-    <footer className="flex w-full flex-col gap-6 bg-lightblue px-page-mobile py-10 [@media(min-width:900px)]:px-page-desktop">
+    <footer className="flex w-full flex-col gap-6 bg-lightblue px-page-mobile py-10 md:pb-12 [@media(min-width:900px)]:px-page-desktop">
       <div className="flex flex-col gap-10">
         <Link className="w-max" href="/">
-          <Logo className="h-20 w-16" />
+          <Logo className="h-20 w-12" />
         </Link>
       </div>
       <div className="grid auto-rows-auto grid-cols-1 gap-4 md:mt-0 md:grid-cols-[1.5fr,1fr] md:gap-y-4">
         <h5 className="font-sans text-lg font-semibold uppercase">
           Palmowska Studio
         </h5>
-        <div className="my-4 flex flex-col gap-3 text-md md:row-start-1 md:row-end-3 md:my-0">
+        <div className="my-4 flex flex-col gap-3 font-sans text-[20px] md:row-start-1 md:row-end-3 md:my-0">
           {routes.map((link) => (
-            <Link key={link.path} href={link.path} className="w-max font-sans">
+            <Link key={link.path} href={link.path} className="w-max">
               {link.label}
             </Link>
           ))}

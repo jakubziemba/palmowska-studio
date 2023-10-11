@@ -2,13 +2,12 @@
 
 import { motion } from "framer-motion";
 
-export default function Logo() {
+export default function Logo({ width, height, className }) {
   return (
     <div>
       <motion.svg
-        width={37}
-        height={75}
-        // className="h-12 w-12"
+        width="100%"
+        height="100%"
         version="1.1"
         id="Layer_1"
         xmlns="http://www.w3.org/2000/svg"
@@ -18,24 +17,25 @@ export default function Logo() {
         viewBox="0 0 47.42 98.09"
         // style="enable-background:new 0 0 47.42 98.09;"
         xmlSpace="preserve"
+        className={className}
       >
         <motion.g>
           <motion.path
-            initial={{ pathLength: 0, fill: "none" }}
-            animate={{
-              pathLength: 1,
-              transition: { fill: "#ffffff", delay: "1" },
-            }}
-            transition={{
-              duration: 1,
-              ease: "easeInOut",
-            }}
+            // initial={{ pathLength: 0, fill: "none" }}
+            // animate={{
+            //   pathLength: 1,
+            //   transition: { fill: "#ffffff", delay: "1" },
+            // }}
+            // transition={{
+            //   duration: 1,
+            //   ease: "easeInOut",
+            // }}
             className="st0"
             d="M46.77,11.89c0,0-4.38-10.94-15.49-10.94S15.5,11.89,15.5,11.89s3.6,11.02,16.14,11.02
 		S46.77,11.89,46.77,11.89z"
-            // fill="#ffffff"
+            fill="#ffffff"
             stroke="#1E1E1E"
-            strokeWidth="1"
+            strokeWidth="1.5"
             strokeMiterlimit="10"
           />
           <motion.circle
@@ -49,7 +49,7 @@ export default function Logo() {
             className="st2"
             fill="none"
             stroke="#1E1E1E"
-            strokeWidth="1"
+            strokeWidth="1.5"
             strokeMiterlimit="10"
             points="15.43,11.93 15.43,69.11 0,69.11"
           />

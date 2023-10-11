@@ -22,9 +22,9 @@ export default function Nav() {
   return (
     <header className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.logo}>
+        <div>
           <NavLink href="/">
-            <Logo className="h-12 w-12" />
+            <Logo className="h-16 w-8 lg:h-20" width={24} height={75} />
           </NavLink>
         </div>
         <MenuButton isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
