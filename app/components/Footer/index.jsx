@@ -2,6 +2,7 @@
 
 import Logo from "../../../public/palmowska-logo-bw.svg";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { FaPinterest, FaFacebook, FaInstagram } from "react-icons/fa";
 
 const routes = [
@@ -12,38 +13,43 @@ const routes = [
   { path: "/kontakt", label: "Kontakt" },
 ];
 
+const iconClassname = "h-6 w-6";
+
 const socialMediaLinks = [
   {
     path: "https://www.instagram.com/palmowska__studio",
-    label: <FaInstagram />,
+    label: <FaInstagram className={iconClassname} />,
   },
-  { path: "https://www.pinterest.com/kpalmowska", label: <FaPinterest /> },
+  {
+    path: "https://www.pinterest.com/kpalmowska",
+    label: <FaPinterest className={iconClassname} />,
+  },
   {
     path: "https://www.facebook.com/profile.php?id=100087842247172",
-    label: <FaFacebook />,
+    label: <FaFacebook className={iconClassname} />,
   },
 ];
 
 export default function Footer() {
   return (
-    <footer className="flex w-full flex-col bg-lightblue px-page-mobile py-8 lg:px-page-desktop">
+    <footer className="flex w-full flex-col gap-6 bg-lightblue px-page-mobile py-10 [@media(min-width:900px)]:px-page-desktop">
       <div className="flex flex-col gap-10">
         <Link className="w-max" href="/">
           <Logo className="h-20 w-16" />
         </Link>
       </div>
-      <div className="my-8 grid auto-rows-auto grid-cols-[1.5fr,1fr] gap-4 gap-y-8">
+      <div className="grid auto-rows-auto grid-cols-1 gap-4 md:mt-0 md:grid-cols-[1.5fr,1fr] md:gap-y-4">
         <h5 className="font-sans text-lg font-semibold uppercase">
           Palmowska Studio
         </h5>
-        <div className="row-start-1 row-end-3 flex flex-col gap-3 text-md">
+        <div className="my-4 flex flex-col gap-3 text-md md:row-start-1 md:row-end-3 md:my-0">
           {routes.map((link) => (
             <Link key={link.path} href={link.path} className="w-max font-sans">
               {link.label}
             </Link>
           ))}
         </div>
-        <div className="col-start-1 row-start-2 flex flex-col justify-center font-sans text-base font-medium">
+        <div className="my-3 flex flex-col justify-center font-sans text-base font-medium md:col-start-1 md:row-start-2 md:my-0 md:justify-normal">
           <a
             className="font-sans text-base"
             href="mailto:hello@kamilapalmowska.com"
@@ -54,14 +60,21 @@ export default function Footer() {
             +48 600 897 821
           </a>
         </div>
-        <div className="flex w-full flex-row items-end gap-3 font-sans text-md font-medium">
+        <div className="mb-3 flex w-full flex-row items-end gap-3 font-sans text-md font-medium lg:mb-0">
           {socialMediaLinks.map((link) => (
             <Link key={link.path} href={link.path} className="w-max">
-              {link.label}
+              <motion.div
+                whileHover={{
+                  scale: 1.1,
+                  transition: { duration: 0.1, ease: [0.22, 0.16, 0.89, 1.01] },
+                }}
+              >
+                {link.label}
+              </motion.div>
             </Link>
           ))}
         </div>
-        <div className="mt-8 font-sans text-sm">
+        <div className="flex items-end font-sans text-sm md:row-start-4 md:mt-6">
           © 2023 - All rights reserved.
         </div>
       </div>
