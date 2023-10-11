@@ -1,17 +1,10 @@
-import { AnimatePresence } from 'framer-motion';
-import Layout from '../components/Layout';
+import Layout from './components/Layout';
 import localFont from 'next/font/local';
 import '../styles/globals.scss';
 
-const generalSans = localFont({
-  src: '../assets/fonts/GeneralSans.woff2',
+const instrumentSans = localFont({
+  src: '../public/fonts/InstrumentSans.woff2',
   variable: '--font-sans',
-  display: 'swap',
-});
-
-const erode = localFont({
-  src: '../assets/fonts/Erode.woff2',
-  variable: '--font-serif',
   display: 'swap',
 });
 
@@ -23,13 +16,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={`${generalSans.variable} ${erode.variable}`}>
+    <html lang='en' className={`${instrumentSans.variable}`}>
       <body>
-        <Layout>
-          {/* <AnimatePresence mode='wait'> */}
-          {children}
-          {/* </AnimatePresence> */}
-        </Layout>
+        <Layout>{children}</Layout>
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
 import { motion } from 'framer-motion';
 import styles from './omnie.module.scss';
 import Shape2 from '../../public/svg/shape-2.svg';
-import MyImage from '../../components/MyImage';
+import MyImage from '../components/MyImage';
 
 const RICHTEXT_OPTIONS = {
   renderText: text => {
