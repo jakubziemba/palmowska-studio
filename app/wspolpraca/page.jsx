@@ -14,7 +14,7 @@ export default function Wspolpraca() {
       transition={{ duration: 0.6 }}
     >
       <div className={styles.wrapper}>
-        <Shape1 className={`${styles.shape1blue} ${styles.shape}`} />
+        {/* <Shape1 className={`${styles.shape1blue} ${styles.shape}`} /> */}
         <div className={styles.heading}>
           <h1 className={styles.title}>Współpraca</h1>
           <p>

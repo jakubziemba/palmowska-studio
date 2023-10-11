@@ -67,7 +67,7 @@
     font-size: var(--fs-md);
     align-self: end;
     grid-row: 2;
-    grid-column: 5 / 8;
+    grid-column: 5 / 9;
     text-align: left;
     position: relative;
     z-index: 1;
@@ -88,6 +88,7 @@
   flex-direction: column;
   line-height: 1;
   position: relative;
+  gap: 2rem;
 
   @media (min-width: 48em) {
     display: grid;
@@ -106,7 +107,6 @@
     cursor: pointer;
     height: auto;
     // max-width: 70%;
-    margin-bottom: 6rem;
 
     &:hover {
       .overlay {
@@ -125,7 +125,7 @@
       h2 {
         color: var(--color-projects);
         font-size: var(--fs-bs);
-        font-variation-settings: 'wght' 450;
+        font-variation-settings: "wght" 450;
         font-weight: 450;
         letter-spacing: -0.01em;
         line-height: 1;
@@ -201,7 +201,7 @@
   justify-content: center;
   text-align: center;
   font-family: var(--font-heading);
-  font-variation-settings: 'wght' 500;
+  font-variation-settings: "wght" 500;
   font-weight: 500;
   margin-bottom: 12rem;
 }
@@ -212,15 +212,16 @@
   padding: 0.5rem 0.75rem;
   font-family: var(--font-heading);
   font-size: var(--fs-bs);
-  font-variation-settings: 'wght' 550;
+  font-variation-settings: "wght" 550;
   font-weight: 550;
   transition: all 0.23s ease;
   position: relative;
   overflow: hidden;
   width: max-content;
+  margin-top: 6rem;
 
   &::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 100%;
     left: 0;

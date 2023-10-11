@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import styles from './projekty.module.scss';
 import Shape4 from '../../public/svg/shape-4.svg';
-import MyImage from '../../components/MyImage';
+import MyImage from '../components/MyImage';
 import { useState, useEffect } from 'react';
 
 export default function Projekty({ projects }) {
@@ -22,7 +22,7 @@ export default function Projekty({ projects }) {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <Shape4 className={`${styles.shape1brown} ${styles.shape}`} />
+      {/* <Shape4 className={`${styles.shape1brown} ${styles.shape}`} /> */}
       <div className={styles.heading}>
         <h1>Projekty</h1>
         <p>
