@@ -9,7 +9,10 @@ import styles from "./styles.module.scss";
 
 export default function Layout({ children }) {
   useEffect(() => {
-    const lenis = new Lenis();
+    const lenis = new Lenis({
+      duration: 1,
+      easing: (t) => (t === 1 ? 1 : 1 - Math.pow(2, -10 * t)),
+    });
 
     function raf(time) {
       lenis.raf(time);
