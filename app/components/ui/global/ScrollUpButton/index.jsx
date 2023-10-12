@@ -1,39 +1,8 @@
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 import { FaArrowUp } from "react-icons/fa";
 import { useState, useEffect } from "react";
+import { buttonVariants } from "./motion";
 
-const buttonVariants = {
-  hidden: {
-    opacity: 0,
-    visibility: "hidden",
-    scale: 0.8,
-    transition: {
-      duration: 0.15,
-      visibility: {
-        delay: 0.2,
-        duration: 0,
-      },
-      scale: {
-        duration: 0.2,
-      },
-    },
-  },
-  show: {
-    opacity: 1,
-    visibility: "visible",
-    scale: 1,
-    transition: {
-      duration: 0.15,
-      visibility: {
-        delay: 0,
-        duration: 0,
-      },
-      scale: {
-        duration: 0.25,
-      },
-    },
-  },
-};
 const ScrollUpButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -52,10 +21,9 @@ const ScrollUpButton = () => {
   }, []);
 
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+    // reset scroll position
+    window.scrollTo(0, 0);
+    window.history.scrollRestoration = "manual";
   };
 
   return (
