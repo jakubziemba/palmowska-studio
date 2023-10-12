@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Lenis from "@studio-freight/lenis";
 import Nav from "../Nav";
 import Footer from "../Footer";
+import ScrollUpButton from "../ui/global/ScrollUpButton";
 import styles from "./styles.module.scss";
 
 export default function Layout({ children }) {
@@ -32,6 +33,7 @@ export default function Layout({ children }) {
         // transition={{ duration: 0.6 }}
       >
         {children}
+        <ScrollUpButton />
       </motion.main>
       <Footer />
     </div>
