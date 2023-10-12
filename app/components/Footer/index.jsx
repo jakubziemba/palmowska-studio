@@ -21,7 +21,7 @@ const socialMediaLinks = [
     label: <FaInstagram className={iconClassname} />,
   },
   {
-    path: "https://www.pinterest.com/kpalmowska",
+    path: "https://www.pinterest.com/palmowskastudio/",
     label: <FaPinterest className={iconClassname} />,
   },
   {
