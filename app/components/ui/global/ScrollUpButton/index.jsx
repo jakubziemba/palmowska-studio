@@ -22,8 +22,7 @@ const ScrollUpButton = () => {
 
   const scrollToTop = () => {
     // reset scroll position
-    window.scrollTo(0, 0);
-    window.history.scrollRestoration = "manual";
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   return (
