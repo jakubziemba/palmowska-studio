@@ -2,8 +2,8 @@ import { createClient } from "contentful";
 import Homepage from "./homepage";
 
 export const metadata = {
-  title: "Palmowska Studio | Home",
-  description: "Studio projektowania wnętrz - Warszawa",
+  title: "Home | Palmowska Studio",
+  description: "Studio projektowania wnętrz w Warszawie.",
 };
 
 const client = createClient({
