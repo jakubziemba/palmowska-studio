@@ -1,5 +1,11 @@
-import { createClient } from 'contentful';
-import Projekty from './projekty';
+import { createClient } from "contentful";
+import Projekty from "./projekty";
+
+export const metadata = {
+  title: "Projekty | Palmowska Studio",
+  description:
+    "Realizacje wykonane przez Palmowska Studio. Klimatyczne wnętrza, które łączą w sobie nowoczesność z tradycją.",
+};
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -8,7 +14,7 @@ const client = createClient({
 
 async function getProjects() {
   const { items } = await client.getEntries({
-    content_type: 'project',
+    content_type: "project",
   });
 
   const projects = items

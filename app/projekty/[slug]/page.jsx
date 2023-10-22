@@ -1,5 +1,5 @@
-import { createClient } from 'contentful';
-import Project from './slug';
+import { createClient } from "contentful";
+import Project from "./slug";
 
 const client = createClient({
   space: process.env.CONTENTFUL_SPACE_ID,
@@ -7,8 +7,10 @@ const client = createClient({
 });
 
 export async function generateStaticParams() {
-  const res = await client.getEntries({ content_type: 'project' });
-  const paths = res.items.map(item => ({ params: { slug: item.fields.slug } }));
+  const res = await client.getEntries({ content_type: "project" });
+  const paths = res.items.map((item) => ({
+    params: { slug: item.fields.slug },
+  }));
 
   return paths;
 }
@@ -16,8 +18,8 @@ export async function generateStaticParams() {
 async function getProject(params) {
   const { slug } = params;
   const { items } = await client.getEntries({
-    content_type: 'project',
-    'fields.slug': slug,
+    content_type: "project",
+    "fields.slug": slug,
   });
 
   const projectData = items.map(({ fields }) => {
@@ -31,7 +33,8 @@ async function getProject(params) {
       date: fields?.date,
       photos: fields?.photos,
       thumbnail: fields?.thumbnail?.fields?.file,
-      projectCover: fields?.projectCover?.fields?.file || fields?.thumbnail?.fields?.file,
+      projectCover:
+        fields?.projectCover?.fields?.file || fields?.thumbnail?.fields?.file,
       images: fields?.images,
     };
   });
@@ -39,7 +42,17 @@ async function getProject(params) {
   return projectData[0];
 }
 
+export async function generateMetadata({ params }, parent) {
+  const project = await getProject(params);
+
+  return {
+    title: `${project.projectName} | Palmowska Studio`,
+    description: `${project.apartment && project.apartment}`,
+  };
+}
+
 export default async function Page({ params }) {
+  console.log(params);
   const project = await getProject(params);
 
   return <Project project={project} />;
