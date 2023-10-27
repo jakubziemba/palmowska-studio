@@ -1,6 +1,5 @@
 .container {
   width: 100%;
-  background-color: #fff5e3;
   position: relative;
   z-index: 1;
 }
@@ -22,26 +21,6 @@
     justify-content: space-between;
   }
 }
-
-// .logo {
-//   font-size: var(--fs-md);
-//   text-transform: uppercase;
-//   color: var(--color-black);
-//   text-align: left;
-//   font-family: "General Sans", sans-serif;
-
-//   svg {
-//     padding: 0.25rem 0;
-//     width: 24px;
-//     height: 40px;
-//   }
-
-//   @media (min-width: 768px) {
-//     margin-bottom: 0;
-//     width: max-content;
-//     text-align: left;
-//   }
-// }
 
 .menuButton {
   display: flex;
