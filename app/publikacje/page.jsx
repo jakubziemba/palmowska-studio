@@ -1,4 +1,4 @@
-import Wspolpraca from "../wspolpraca/wspolpraca";
+import Publikacje from "./publikacje";
 
 export const metadata = {
   title: "Publikacje | Palmowska Studio",
@@ -7,5 +7,5 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <Wspolpraca />;
+  return <Publikacje />;
 }
