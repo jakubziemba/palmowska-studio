@@ -4,7 +4,7 @@
 
 html {
   /* COLORS */
-  --color-white: #fff5e3;
+  --color-white: #fffaf1;
   --color-pink: #f0dde0;
   --color-lightbrown: #e6d2cb;
   --color-washedgreen: #727d71;
@@ -67,7 +67,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
   color: var(--color-black);
-  background-color: #fff5e3;
+  background-color: var(--color-white);
 }
 
 a {
