@@ -9,30 +9,30 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@contentful/rich-text-react-renderer": "^15.18.0",
-    "@studio-freight/lenis": "^1.0.27",
-    "classnames": "^2.3.2",
-    "contentful": "^9.3.5",
+    "@contentful/rich-text-react-renderer": "^15.19.6",
+    "@studio-freight/lenis": "^1.0.39",
+    "classnames": "^2.5.1",
+    "contentful": "^9.3.6",
     "framer-motion": "^7.10.3",
     "next": "^13.5.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^4.11.0",
-    "react-responsive-masonry": "^2.1.7",
-    "sass": "^1.69.4",
+    "react-icons": "^4.12.0",
+    "react-responsive-masonry": "^2.2.0",
+    "sass": "^1.71.1",
     "sharp": "^0.32.6"
   },
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
     "@types/node": "20.4.9",
-    "@types/react": "^18.2.31",
-    "autoprefixer": "^10.4.16",
+    "@types/react": "^18.2.64",
+    "autoprefixer": "^10.4.18",
     "eslint": "8.22.0",
     "eslint-config-next": "^13.5.6",
-    "postcss": "^8.4.31",
-    "prettier": "^3.0.3",
-    "prettier-plugin-tailwindcss": "^0.5.6",
-    "tailwindcss": "^3.3.3",
+    "postcss": "^8.4.35",
+    "prettier": "^3.2.5",
+    "prettier-plugin-tailwindcss": "^0.5.12",
+    "tailwindcss": "^3.4.1",
     "typescript": "5.1.6"
   }
 }

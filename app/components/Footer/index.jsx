@@ -49,16 +49,20 @@ export default function Footer() {
             </Link>
           ))}
         </div>
-        <div className="my-3 flex flex-col justify-center font-sans text-base font-medium md:col-start-1 md:row-start-2 md:my-0 md:justify-normal">
+        <div className="my-3 flex flex-col justify-center font-sans text-base font-medium md:col-start-1 md:row-start-2 md:my-0 md:justify-normal w-max gap-y-2">
           <a
             className="font-sans text-base"
             href="mailto:hello@kamilapalmowska.com"
           >
             hello@kamilapalmowska.com
           </a>
+          <span className='flex flex-col'>
           <a className="font-sans text-base" href="tel:+48 600 897 821">
             +48 600 897 821
           </a>
+          <span className='text-dark'>(9:30 - 17:30)</span>
+
+          </span>
         </div>
         <div className="mb-3 flex w-full flex-row items-end gap-3 font-sans text-md font-medium lg:mb-0">
           {socialMediaLinks.map((link) => (
@@ -75,7 +79,7 @@ export default function Footer() {
           ))}
         </div>
         <div className="flex items-end font-sans text-sm md:row-start-4 md:mt-6">
-          © 2023 - All rights reserved.
+          © 2024 - All rights reserved.
         </div>
       </div>
     </footer>

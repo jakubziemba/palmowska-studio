@@ -22,23 +22,24 @@ export default function Kontakt() {
           </p>
           <div className={styles.links}>
             <p>
-              <span>Email:</span>{" "}
+              <span className='font-[550]'>Email:</span>{" "}
               <a href="mailto:hello@kamilapalmowska.com">
                 hello@kamilapalmowska.com
               </a>
             </p>
             <p>
-              <span>Telefon:</span>{" "}
+              <span className='font-[550]'>Telefon: </span>
               <a href="tel:+48 600 897 821">+48 600 897 821</a>
+              <span className='font-normal ml-2'>(9:30-17:30)</span>
             </p>
             <p>
-              <span>Instagram:</span>{" "}
+              <span className='font-[550]'>Instagram: </span>
               <a href="https://www.instagram.com/palmowska__studio">
                 @palmowska__studio
               </a>
             </p>
             <p>
-              <span>Facebook:</span>{" "}
+              <span className='font-[550]'>Facebook: </span>
               <a href="https://www.facebook.com/profile.php?id=100087842247172">
                 Palmowska Studio
               </a>
